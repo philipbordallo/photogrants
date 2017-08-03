@@ -16,6 +16,11 @@
 	  "react"
 	],
 	"settings": {
+		"import/resolver":{
+			"webpack": {
+				"config": "config/webpack.config.babel.js"
+			}
+		},
 		"import/extensions": [
 		  ".js",
 		  ".jsx",

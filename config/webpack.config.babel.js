@@ -23,9 +23,9 @@ const LOADER = {
 	eslint: {
 		loader: 'eslint-loader',
 		options: {
-			configFile: path.resolve(ROOT_PATH, 'config', 'eslint.json');
+			configFile: path.resolve(ROOT_PATH, 'config', 'eslint.json')
 		}
-	}
+	},
 	postcss: {
 		loader: 'postcss-loader',
 		options: {
@@ -35,45 +35,48 @@ const LOADER = {
 		}
 	},
 	style: {
-	  loader: 'style-loader',
-	  options: {
-	    sourceMap: true
-	  }
+		loader: 'style-loader',
+		options: {
+			sourceMap: true
+		}
 	}
 }
 
 const RULES = {
 	jsx: {
-	  test: /\.(js|jsx)$/,
-	  exclude: /node_modules/,
-	  use: [
-	    LOADER.babel,
-	    LOADER.eslint
-	  ]
+		test: /\.(js|jsx)$/,
+		exclude: /node_modules/,
+		use: [
+			LOADER.babel,
+			LOADER.eslint
+		]
 	},
 	css: {
-	  test: /\.css$/,
-	  use: [
-	    LOADER.style,
-	    LOADER.css,
-	    LOADER.postcss
-	  ]
+		test: /\.css$/,
+		use: [
+			LOADER.style,
+			LOADER.css,
+			LOADER.postcss
+		]
 	}
 };
 
 const DEV_SERVER = {
-  compress: true,
-  historyApiFallback: true,
-  hot: true,
-  host: 'localhost',
-  inline: true,
-  port: PORT,
-  stats: {
-    assets: true,
-    timings: true,
-    chunks: false,
-    children: false
-  }
+	compress: true,
+	headers: {
+		'Access-Control-Allow-Origin': '*'
+	},
+	historyApiFallback: true,
+	host: 'localhost',
+	hot: true,
+	inline: true,
+	port: PORT,
+	stats: {
+		assets: true,
+		timings: true,
+		chunks: false,
+		children: false
+	}
 };
 
 const config = {
@@ -81,30 +84,30 @@ const config = {
 		app: path.resolve(APP_PATH, 'entry.js')
 	},
 	output: {
-		path: path.resolve(ROOT_PATH, 'build')
-		filename: 'app.js',
-		publicPath: `http://localhost:${PORT}`
-	}
+		path: APP_PATH,
+		filename: 'bundle.js',
+		publicPath: `http://localhost:${PORT}/`
+	},
 	devServer: DEV_SERVER,
 	module: {
-	  rules: [
-	    RULES.jsx,
-	    RULES.css
-	  ]
+		rules: [
+			RULES.jsx,
+			RULES.css
+		]
 	},
 	resolve: {
-	  extensions: ['.js', '.jsx', '.css'],
-	  alias: {
-	    assets: path.resolve(APP_PATH, 'assets'),
-	    components: path.resolve(APP_PATH, 'components'),
-	    layout: path.resolve(APP_PATH, 'layout')
-	  }
+		extensions: ['.js', '.jsx', '.css'],
+		alias: {
+			assets: path.resolve(APP_PATH, 'assets'),
+			components: path.resolve(APP_PATH, 'components'),
+			layout: path.resolve(APP_PATH, 'layout')
+		}
 	},
 	plugins: [
-	  new webpack.SourceMapDevToolPlugin({
-	    filename: '[file].map'
-	  }),
-	  new webpack.HotModuleReplacementPlugin()
+		new webpack.SourceMapDevToolPlugin({
+			filename: '[file].map'
+		}),
+		new webpack.HotModuleReplacementPlugin()
 	]
 };
 
