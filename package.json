@@ -1,0 +1,64 @@
+{
+  "name": "photogrants",
+  "version": "0.1.0",
+  "description": "",
+  "author": "Philip Bordallo",
+  "license": "ISC",
+  "private": true,
+  "homepage": "https://github.com/philipbordallo/photogrants#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/philipbordallo/photogrants.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "stage-3",
+      "react"
+    ]
+  },
+  "browserslist": [
+    "last 1 Android version",
+    "Chrome >= 55",
+    "last 2 ChromeAndroid versions",
+    "Firefox >= 52",
+    "last 2 FirefoxAndroid versions",
+    "Safari >= 10",
+    "Edge >= 13",
+    "Explorer >= 11",
+    "iOS >= 9.3",
+    "last 2 Opera versions",
+    "last 2 OperaMini versions",
+    "last 2 OperaMobile versions",
+    "last 2 Samsung versions"
+  ],
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "ava": "^0.21.0",
+    "babel-core": "^6.25.0",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.1.1",
+    "babel-preset-env": "^1.6.0",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-3": "^6.24.1",
+    "css-loader": "^0.28.4",
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-loader": "^1.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "postcss-loader": "^2.0.6",
+    "style-loader": "^0.18.2",
+    "webpack": "^3.4.1",
+    "webpack-devserver": "0.0.6"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1"
+  }
+}
