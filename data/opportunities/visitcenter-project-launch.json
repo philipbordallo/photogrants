@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "grant",
+	"slug": "visitcenter-project-launch",
+	"name": "Center Project Launch",
+	"url": "http://visitcenter.org/project-launch/",
+	"applicationUrl": "",
+	"yearsActive": [
+		2015, 2016, 2017
+	],
+	"date": {
+		"call": "",
+		"deadline": "March 3 2017"
+	},
+	"description": "The Project Launch is granted to an outstanding photographer working on a fine art series or documentary project. The grant includes a cash award to help complete or disseminate the works, as well as providing a platform for exposure and professional development opportunities.",
+	"eligibility": {
+		"age": null,
+		"gender": "all",
+		"students": true,
+		"description": ""
+	},
+	"fee": {
+		"amount": 55,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 5000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": true,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 3,
+			"amount": 1000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		}
+	]
+}

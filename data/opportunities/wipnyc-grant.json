@@ -1,0 +1,37 @@
+{
+	"active": true,
+	"type": "grant",
+	"slug": "wipnyc-grant",
+	"name": "Women in Photography (WIPNYC) Grant & Mentor Program",
+	"url": "https://www.wipnyc.org/grant/",
+	"applicationUrl": "https://wipnyc.picter.com",
+	"yearsActive": [
+		2009, 2010, 2011, 2012, 2017
+	],
+	"date": {
+		"call": "April 30 2017",
+		"deadline": "May 30 2017 23:59 EST"
+	},
+	"description": "The Women in Photography (WIPNYC) Grant & Mentor Program will provide one female photographer/photo-based artist with a $5000 grant to produce work in addition to being paired with four mentors over the course of a year.* The selected artist will also receive a solo show on wipnyc.org.",
+	"eligibility": {
+		"age": 18,
+		"gender": "women",
+		"students": false,
+		"description": ""
+	},
+	"fee": {
+		"amount": 0,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 5000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": true,
+			"show": true,
+			"residency": false
+		}
+	]
+}

@@ -1,0 +1,37 @@
+{
+	"active": true,
+	"type": "grant",
+	"slug": "visitcenter-project-development",
+	"name": "Center Project Development",
+	"url": "http://visitcenter.org/project-development/",
+	"applicationUrl": "",
+	"yearsActive": [
+		2012, 2013, 2014, 2015, 2016, 2017
+	],
+	"date": {
+		"call": "",
+		"deadline": "March 3 2017"
+	},
+	"description": "The Project Development Grant offers financial support to fine art, documentary, or photojournalist works-in-progress. The grant includes a cash award to help complete a project as well as platforms for feedback and professional development opportunities for the work’s final stages. This grant is awarded to projects that are still in progress and have not been exhibited or published. It requires signing of a contract to participate in an exhibition during Review Santa Fe.",
+	"eligibility": {
+		"age": null,
+		"gender": "all",
+		"students": true,
+		"description": ""
+	},
+	"fee": {
+		"amount": 55,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 5000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": true,
+			"show": true,
+			"residency": false
+		}
+	]
+}
