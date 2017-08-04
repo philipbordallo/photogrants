@@ -14,8 +14,8 @@ module.exports = {
 		'postcss-pseudoelements': {},
 		'postcss-nesting': {},
 		'postcss-pxtorem': {},
+		'postcss-font-family-system-ui': {},
 		'postcss-font-smoothing': {},
-		'postcss-font-weights': {},
-		'postcss-normalize-whitespace': {}
+		'postcss-font-weights': {}
 	}
 };

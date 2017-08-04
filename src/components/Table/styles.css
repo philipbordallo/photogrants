@@ -1,0 +1,17 @@
+@import 'variables';
+
+.root {
+	width: 100%;
+}
+
+.header {
+	font-smoothing: antialiased;
+	color: var(--lightGray);
+	font-family: var(--rubik);
+	font-size: 14px;
+	text-transform: uppercase;
+}
+
+.headerCell {
+	font-weight: normal;
+}

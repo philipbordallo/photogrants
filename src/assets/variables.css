@@ -1,4 +1,21 @@
 :root {
+	/* COLORS  */
+	--white: #FFFFFF;
+	--offWhite: #F5F5F5;
+	--lightGray: #BFBFBF;
+	--darkGray: #8F8F8F;
+	--black: #222222;
+
+	--green: #43A047;
+	--blue: #2196F3;
+
 	/* FONTS */
+	--fontColorDark: var(--black);
 	--defaultFontSize: 16px;
+	--rubik: 'Rubik', system-ui, sans-serif;
+	--sourceSans: 'Source Sans Pro', system-ui, sans-serif;
+
+	/* SIZES */
+	--defaultPadding: 12px;
+	--containerWidth: 960px;
 }

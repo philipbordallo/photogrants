@@ -1,0 +1,17 @@
+@import 'variables';
+
+.root {
+	display: flex;
+}
+
+.title {
+	margin: 2.5em auto 1em;
+	font-size: 20px;
+	font-family: var(--rubik);
+	font-weight: bold;
+	font-style: italic;
+	font-smoothing: antialiased;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+	color: var(--blue);
+}

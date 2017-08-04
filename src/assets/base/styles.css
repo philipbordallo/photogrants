@@ -15,9 +15,9 @@ html {
 }
 
 body {
-	/*background-color: var(--purple);*/
-	/*color: var(--fontColorLight);*/
-	/*font-family: var(--sansSerif);*/
+	background-color: var(--offWhite);
+	color: var(--fontColorDark);
+	font-family: var(--sourceSans);
 }
 
 a {

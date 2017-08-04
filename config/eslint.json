@@ -28,6 +28,7 @@
 		]
 	},
 	"rules": {
+		"class-methods-use-this": "off",
 	  "import/extensions": ["error", "always", {
 	    "js": "never",
 	    "jsx": "never",

@@ -73,9 +73,10 @@ const DEV_SERVER = {
 	port: PORT,
 	stats: {
 		assets: true,
-		timings: true,
+		children: false,
 		chunks: false,
-		children: false
+		modules: false,
+		timings: true
 	}
 };
 
@@ -107,7 +108,8 @@ const config = {
 		new webpack.SourceMapDevToolPlugin({
 			filename: '[file].map'
 		}),
-		new webpack.HotModuleReplacementPlugin()
+		new webpack.HotModuleReplacementPlugin(),
+		new webpack.NamedModulesPlugin()
 	]
 };
 
