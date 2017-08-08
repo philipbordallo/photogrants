@@ -1,8 +1,10 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
-import { HEADER_PROPTYPES } from './propTypes';
+import { HEADER_PROPTYPES, SORT_DIRECTION_PROPTYPES } from './propTypes';
 
 import TableHeader from './TableHeader';
+import TableRow from './TableRow';
+import TableDetailsRow from './TableDetailsRow';
 
 import Classes from './styles';
 
@@ -10,7 +12,9 @@ import Classes from './styles';
 class Table extends PureComponent {
 	static propTypes = {
 		headerData: HEADER_PROPTYPES.isRequired,
-		onTableSort: T.func.isRequired
+		onTableSort: T.func.isRequired,
+		currentSort: T.string.isRequired,
+		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
 	};
 
 	constructor(props) {
@@ -26,14 +30,25 @@ class Table extends PureComponent {
 	}
 
 	render() {
-		const { headerData, onTableSort } = this.props;
+		const { headerData, onTableSort, currentSort, sortDirection } = this.props;
 
 		return (
 			<table className={ Classes.root }>
 				<colgroup>
 					{ headerData.map(this.renderCol) }
 				</colgroup>
-				<TableHeader data={ headerData } onTableSort={ onTableSort } />
+				<TableHeader
+					data={ headerData }
+					onTableSort={ onTableSort }
+					currentSort={ currentSort }
+					sortDirection={ sortDirection }
+				/>
+				<tbody>
+					<TableRow expanded />
+					<TableDetailsRow />
+					<TableRow />
+					<TableRow />
+				</tbody>
 			</table>
 		);
 	}

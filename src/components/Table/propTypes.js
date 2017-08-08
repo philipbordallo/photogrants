@@ -12,4 +12,9 @@ export const HEADER_PROPTYPES = T.arrayOf(
 	})
 );
 
+export const SORT_DIRECTION_PROPTYPES = T.oneOf([
+	'asc',
+	'desc'
+]);
+
 export default {};

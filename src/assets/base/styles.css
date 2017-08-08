@@ -18,6 +18,7 @@ body {
 	background-color: var(--offWhite);
 	color: var(--fontColorDark);
 	font-family: var(--sourceSans);
+	line-height: 1.5;
 }
 
 a {

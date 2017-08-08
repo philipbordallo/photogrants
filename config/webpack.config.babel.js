@@ -99,9 +99,13 @@ const config = {
 	resolve: {
 		extensions: ['.js', '.jsx', '.css'],
 		alias: {
+			actions: path.resolve(APP_PATH, 'actions'),
+			api: path.resolve(APP_PATH, 'api'),
 			assets: path.resolve(APP_PATH, 'assets'),
 			components: path.resolve(APP_PATH, 'components'),
-			layout: path.resolve(APP_PATH, 'layout')
+			containers: path.resolve(APP_PATH, 'containers'),
+			layout: path.resolve(APP_PATH, 'layout'),
+			reducers: path.resolve(APP_PATH, 'reducers')
 		}
 	},
 	plugins: [

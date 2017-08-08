@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import 'normalize.css';
-
 import 'assets/base/styles';
 
-import App from './App';
+import ProvidedApp from './ProvidedApp';
 
 
 const onDOMReady = () => {
@@ -14,7 +12,7 @@ const onDOMReady = () => {
 	document.removeEventListener('DOMContentLoaded', onDOMReady);
 
 	if (applicationElement) {
-		const component = React.createElement(App);
+		const component = React.createElement(ProvidedApp);
 		ReactDOM.render(component, applicationElement);
 	}
 };

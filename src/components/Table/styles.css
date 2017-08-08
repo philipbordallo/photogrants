@@ -2,16 +2,105 @@
 
 .root {
 	width: 100%;
+	border-spacing: 0;
+	border-collapse: collapse;
+
+	& td {
+		vertical-align: top;
+	}
 }
 
-.header {
+.row {
+	background-color: var(--white);
 	font-smoothing: antialiased;
-	color: var(--lightGray);
-	font-family: var(--rubik);
-	font-size: 14px;
-	text-transform: uppercase;
+	font-size: 20px;
+	transition-property: background-color;
+	transition-duration: 250ms;
+
+	&:hover {
+		background-color: var(--lightBlue);
+		cursor: pointer;
+	}
+
+	@nest .row + & {
+		border-top: 6px solid var(--offWhite);
+	}
+
+	@nest .detailsRow + & {
+		border-top: 6px solid var(--offWhite);
+	}
 }
 
-.headerCell {
-	font-weight: normal;
+.rowCell {
+	padding: 20px 10px;
+
+	&:first-of-type {
+		padding-left: 20px;
+	}
+
+	&:last-of-type {
+		padding-right: 20px;
+	}
+}
+
+.detailsRow {
+	background-color: var(--white);
+	font-size: 16px;
+}
+
+.detailsRowCell {
+	padding: 0 20px 20px;
+}
+
+.detailsLine {
+	margin: 0 0 20px;
+	border: 0;
+	border-top: 1px solid var(--offWhite);
+}
+
+.detailsInformation {
+	display: flex;
+	justify-content: space-between;
+
+}
+
+.detailsSection {
+	&:first-of-type {
+		flex-basis: 70%;
+		margin-right: 24px
+	}
+
+	&:last-of-type {
+		flex-basis: 30%;
+	}
+}
+
+.title {
+	margin: 0 0 .2em 0;
+	font-weight: bold;
+	font-size: 16px;
+	font-smoothing: antialiased;
+
+	@nest .content + & {
+		margin-top: 1em;
+	}
+
+	@nest .list + & {
+		margin-top: 1em;
+	}
+}
+
+.content {
+	margin: 0;
+}
+
+.list li {
+	position: relative;
+	margin-left: 1rem;
+
+	&::before {
+		content: '– ';
+		position: absolute;
+		left: -.875rem;
+	}
 }
