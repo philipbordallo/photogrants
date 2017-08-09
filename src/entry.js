@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import 'whatwg-fetch'; // Polyfil for `window.fetch`
+
 import 'assets/base/styles';
 
 import ProvidedApp from './ProvidedApp';

@@ -32,6 +32,7 @@ const HEADER_META = [
 
 class Grants extends PureComponent {
 	static propTypes = {
+		loadData: T.func.isRequired,
 		sortTable: T.func.isRequired,
 		currentSort: T.string.isRequired,
 		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
@@ -41,6 +42,10 @@ class Grants extends PureComponent {
 		super(props);
 
 		this.onTableSort = this.onTableSort.bind(this);
+	}
+
+	componentWillMount() {
+		this.props.loadData();
 	}
 
 	onTableSort(event) {

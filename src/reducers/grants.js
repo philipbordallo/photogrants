@@ -3,7 +3,8 @@ import createReducer from './createReducer';
 
 const DEFAULT_STATE = {
 	currentSort: 'deadline',
-	sortDirection: 'desc'
+	sortDirection: 'desc',
+	collection: []
 };
 
 const setDirection = (state, action) => {
@@ -19,6 +20,11 @@ const grants = createReducer(DEFAULT_STATE, {
 		...state,
 		currentSort: action.currentSort,
 		sortDirection: setDirection(state, action)
+	}),
+
+	[Constants.Grants.LOAD_DATA_SUCCESS]: (state, action) => ({
+		...state,
+		collection: action.data
 	})
 });
 

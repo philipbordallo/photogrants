@@ -1,15 +1,17 @@
 import { connect } from 'react-redux';
 
-import { sortTable } from 'actions/grants';
+import { sortTable, loadData } from 'actions/grants';
 import Grants from './Grants';
 
-const mapStateToProps = state => ({
-	currentSort: state.grants.currentSort,
-	sortDirection: state.grants.sortDirection
+const mapStateToProps = ({ grants }) => ({
+	currentSort: grants.currentSort,
+	sortDirection: grants.sortDirection,
+	collection: grants.collection
 });
 
 const mapDispatchToProps = dispatch => ({
-	sortTable: (currentSort) => { dispatch(sortTable(currentSort)); }
+	sortTable: (currentSort) => { dispatch(sortTable(currentSort)); },
+	loadData: () => { dispatch(loadData()); }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Grants);
