@@ -1,13 +1,13 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
-import { HEADER_PROPTYPES, SORT_DIRECTION_PROPTYPES } from '../propTypes';
+import { CONFIG_PROPTYPES, SORT_DIRECTION_PROPTYPES } from '../propTypes';
 
 import Classes from './styles';
 
 
 class TableHeader extends PureComponent {
 	static propTypes = {
-		data: HEADER_PROPTYPES.isRequired,
+		config: CONFIG_PROPTYPES.isRequired,
 		onTableSort: T.func.isRequired,
 		currentSort: T.string.isRequired,
 		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
@@ -54,11 +54,11 @@ class TableHeader extends PureComponent {
 	}
 
 	render() {
-		const { data } = this.props;
+		const { config } = this.props;
 		return (
 			<thead className={ Classes.root }>
 				<tr>
-					{ data.map(this.renderCell) }
+					{ config.map(this.renderCell) }
 				</tr>
 			</thead>
 		);

@@ -2,25 +2,37 @@
 import Constants from 'api/constants';
 import { loadGrantData } from 'api';
 
+
+// Sort Table
 export const sortTable = currentSort =>
 	(dispatch) => {
 		dispatch({
-			type: Constants.Grants.SORT_TABLE,
+			type: Constants.grants.SORT_TABLE,
 			currentSort
 		});
 	};
 
+// Toggle Row
+export const toggleRow = expandRow =>
+	(dispatch) => {
+		dispatch({
+			type: Constants.grants.TOGGLE_ROW,
+			expandRow
+		});
+	};
+
+// Load Data
 const startLoadingData = () => ({
-	type: Constants.Grants.LOAD_DATA
+	type: Constants.grants.LOAD_DATA
 });
 
 const loadDataSuccess = data => ({
-	type: Constants.Grants.LOAD_DATA_SUCCESS,
+	type: Constants.grants.LOAD_DATA_SUCCESS,
 	data
 });
 
 const loadDataFailure = error => ({
-	type: Constants.Grants.LOAD_DATA_FAILURE,
+	type: Constants.grants.LOAD_DATA_FAILURE,
 	error
 });
 

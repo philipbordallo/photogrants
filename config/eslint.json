@@ -40,6 +40,9 @@
 	  "react/jsx-curly-spacing": ["error", "always", {
 	    "spacing": { "objectLiterals": "never" }
 	  }],
+	  "brace-style": ["error", "stroustrup", {
+	  	"allowSingleLine": true
+	  }],
 	  "comma-dangle": ["error", "never"],
 	  "quotes": ["error", "single", {
 	    "allowTemplateLiterals": true

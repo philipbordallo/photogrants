@@ -11,6 +11,7 @@ const mapStateToProps = ({ grants }) => ({
 
 const mapDispatchToProps = dispatch => ({
 	sortTable: (currentSort) => { dispatch(sortTable(currentSort)); },
+	toggleRow: (expandedRow) => { dispatch(toggleRow(expandedRow)); },
 	loadData: () => { dispatch(loadData()); }
 });
 

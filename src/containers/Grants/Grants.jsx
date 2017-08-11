@@ -1,37 +1,44 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
-import { SORT_DIRECTION_PROPTYPES } from 'components/Table/propTypes';
-
-
 import Table from 'components/Table';
 
+import { SORT_DIRECTION_PROPTYPES } from 'components/Table/propTypes';
+import { DATA_PROPTYPES } from './propTypes';
 
-const HEADER_META = [
+import AwardRowCell from './AwardRowCell';
+
+
+const TABLE_CONFIG = [
 	{
 		name: 'Name',
 		width: 70,
-		align: 'left'
+		align: 'left',
+		renderer: null
 	},
 	{
 		name: 'Fee',
 		width: 8,
-		align: 'left'
+		align: 'left',
+		renderer: null
 	},
 	{
 		name: 'Award',
 		width: 14,
-		align: 'left'
+		align: 'left',
+		renderer: AwardRowCell
 	},
 	{
 		name: 'Deadline',
 		width: 8,
-		align: 'right'
+		align: 'right',
+		renderer: null
 	}
 ];
 
 class Grants extends PureComponent {
 	static propTypes = {
+		collection: DATA_PROPTYPES.isRequired,
 		loadData: T.func.isRequired,
 		sortTable: T.func.isRequired,
 		currentSort: T.string.isRequired,
@@ -54,10 +61,12 @@ class Grants extends PureComponent {
 	}
 
 	render() {
-		const { currentSort, sortDirection } = this.props;
+		const { currentSort, sortDirection, collection } = this.props;
+
 		return (
 			<Table
-				headerData={ HEADER_META }
+				collection={ collection }
+				config={ TABLE_CONFIG }
 				onTableSort={ this.onTableSort }
 				currentSort={ currentSort }
 				sortDirection={ sortDirection }

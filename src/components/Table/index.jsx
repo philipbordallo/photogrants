@@ -1,17 +1,23 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
-import { HEADER_PROPTYPES, SORT_DIRECTION_PROPTYPES } from './propTypes';
+
+import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
+import {
+	CONFIG_PROPTYPES,
+	SORT_DIRECTION_PROPTYPES
+} from './propTypes';
 
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
-import TableDetailsRow from './TableDetailsRow';
+// import TableDetailsRow from './TableDetailsRow';
 
 import Classes from './styles';
 
 
 class Table extends PureComponent {
 	static propTypes = {
-		headerData: HEADER_PROPTYPES.isRequired,
+		config: CONFIG_PROPTYPES.isRequired,
+		collection: DATA_PROPTYPES.isRequired,
 		onTableSort: T.func.isRequired,
 		currentSort: T.string.isRequired,
 		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
@@ -21,6 +27,7 @@ class Table extends PureComponent {
 		super(props);
 
 		this.renderCol = this.renderCol.bind(this);
+		this.renderRow = this.renderRow.bind(this);
 	}
 
 	renderCol({ width }, index) {
@@ -29,25 +36,39 @@ class Table extends PureComponent {
 		);
 	}
 
+	renderRow(data) {
+		const { active, slug, row, expanded } = data;
+
+		if (active) {
+			return (
+				<TableRow
+					config={ this.props.config }
+					data={ row }
+					key={ slug }
+					expanded={ expanded }
+				/>
+			);
+		}
+
+		return null;
+	}
+
 	render() {
-		const { headerData, onTableSort, currentSort, sortDirection } = this.props;
+		const { collection, config, onTableSort, currentSort, sortDirection } = this.props;
 
 		return (
 			<table className={ Classes.root }>
 				<colgroup>
-					{ headerData.map(this.renderCol) }
+					{ config.map(this.renderCol) }
 				</colgroup>
 				<TableHeader
-					data={ headerData }
+					config={ config }
 					onTableSort={ onTableSort }
 					currentSort={ currentSort }
 					sortDirection={ sortDirection }
 				/>
 				<tbody>
-					<TableRow expanded />
-					<TableDetailsRow />
-					<TableRow />
-					<TableRow />
+					{ collection.map(this.renderRow) }
 				</tbody>
 			</table>
 		);
