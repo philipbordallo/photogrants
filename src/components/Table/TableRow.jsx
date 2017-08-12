@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
+import noop from 'utilities/noop';
+
 import { CONFIG_PROPTYPES } from './propTypes';
 
 import Classes from './styles';
@@ -14,18 +16,26 @@ class TableRow extends PureComponent {
 				T.object
 			])
 		).isRequired,
+		slug: T.string.isRequired,
 		config: CONFIG_PROPTYPES.isRequired,
+		onRowClick: T.func,
 		expanded: T.bool
 	};
 
 	static defaultProps ={
-		expanded: false
+		expanded: false,
+		onRowClick: noop()
 	};
 
 	constructor() {
 		super();
 
 		this.renderCell = this.renderCell.bind(this);
+		this.onRowClick = this.onRowClick.bind(this);
+	}
+
+	onRowClick() {
+		this.props.onRowClick(this.props.slug);
 	}
 
 	renderCell(data, index) {
@@ -50,7 +60,7 @@ class TableRow extends PureComponent {
 		const title = expanded ? 'Close expanded details' : 'Expand for more information';
 
 		return (
-			<tr className={ Classes.row } title={ title }>
+			<tr className={ Classes.row } title={ title } onClick={ this.onRowClick }>
 				{ data.map(this.renderCell) }
 			</tr>
 		);

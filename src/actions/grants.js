@@ -13,11 +13,11 @@ export const sortTable = currentSort =>
 	};
 
 // Toggle Row
-export const toggleRow = expandRow =>
+export const toggleRow = expandedRow =>
 	(dispatch) => {
 		dispatch({
 			type: Constants.grants.TOGGLE_ROW,
-			expandRow
+			expandedRow
 		});
 	};
 

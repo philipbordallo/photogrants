@@ -48,7 +48,7 @@ export const DATA_PROPTYPES = T.arrayOf(
 					'exact',
 					'upto'
 				]),
-				// currency: CURRENCY_PROPTYPES,
+				currency: CURRENCY_PROPTYPES,
 				mentorship: T.bool,
 				show: T.bool,
 				residency: T.bool

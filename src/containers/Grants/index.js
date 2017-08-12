@@ -1,12 +1,13 @@
 import { connect } from 'react-redux';
 
-import { sortTable, loadData } from 'actions/grants';
+import { sortTable, loadData, toggleRow } from 'actions/grants';
 import Grants from './Grants';
 
 const mapStateToProps = ({ grants }) => ({
 	currentSort: grants.currentSort,
 	sortDirection: grants.sortDirection,
-	collection: grants.collection
+	collection: grants.collection,
+	expandedRows: grants.expandedRows
 });
 
 const mapDispatchToProps = dispatch => ({

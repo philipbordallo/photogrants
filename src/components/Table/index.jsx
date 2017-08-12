@@ -9,7 +9,7 @@ import {
 
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
-// import TableDetailsRow from './TableDetailsRow';
+import TableDetailsRow from './TableDetailsRow';
 
 import Classes from './styles';
 
@@ -19,6 +19,7 @@ class Table extends PureComponent {
 		config: CONFIG_PROPTYPES.isRequired,
 		collection: DATA_PROPTYPES.isRequired,
 		onTableSort: T.func.isRequired,
+		onRowClick: T.func.isRequired,
 		currentSort: T.string.isRequired,
 		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
 	};
@@ -36,17 +37,24 @@ class Table extends PureComponent {
 		);
 	}
 
-	renderRow(data) {
-		const { active, slug, row, expanded } = data;
+	renderRow({ active, slug, row, expanded, show }) {
+		const { onRowClick, config } = this.props;
 
-		if (active) {
+		if (active && show === 'overview') {
 			return (
 				<TableRow
-					config={ this.props.config }
+					config={ config }
 					data={ row }
 					key={ slug }
+					slug={ slug }
+					onRowClick={ onRowClick }
 					expanded={ expanded }
 				/>
+			);
+		}
+		else if (active && show === 'details') {
+			return (
+				<TableDetailsRow key={ slug } />
 			);
 		}
 

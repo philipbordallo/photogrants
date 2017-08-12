@@ -8,8 +8,7 @@ import createReducer from './createReducer';
 const DEFAULT_STATE = {
 	currentSort: 'deadline',
 	sortDirection: 'desc',
-	collection: [],
-	expandedRows: []
+	collection: []
 };
 
 const setDirection = (state, action) => {
@@ -40,9 +39,39 @@ const setRow = ({ name, date, fee, awards }) => {
 
 const setCollection = data => data.map(item => ({
 	...item,
+	show: 'overview',
 	expanded: false,
 	row: setRow(item)
 }));
+
+const sortCollection = ({ collection }, action) => {
+	const newCollection = [...collection];
+	const currentIndex = newCollection.findIndex(item => item.slug === action.expandedRow);
+	const currentItem = collection[currentIndex];
+
+	newCollection.splice(currentIndex + 1, 0, {
+		...currentItem,
+		slug: `${currentItem.slug}-expanded`,
+		show: 'details',
+		expanded: false
+	});
+
+	return newCollection.map(item => ({
+		...item,
+		expanded: (item.slug === action.expandedRow) ? !item.expanded : item.expanded
+	}));
+};
+
+// const setExpandedRows = (state, action) => {
+// 	const newArray = [...state.expandedRows];
+// 	const isExpanded = (newArray.some(item => item === action.expandedRow));
+// 	const index = newArray.indexOf(action.expandedRow);
+
+// 	if (isExpanded && index !== -1) newArray.splice(index, 1);
+// 	else newArray.push(action.expandedRow);
+
+// 	return newArray;
+// };
 
 
 const grants = createReducer(DEFAULT_STATE, {
@@ -50,6 +79,12 @@ const grants = createReducer(DEFAULT_STATE, {
 		...state,
 		currentSort: action.currentSort,
 		sortDirection: setDirection(state, action)
+	}),
+
+	[Constants.grants.TOGGLE_ROW]: (state, action) => ({
+		...state,
+		collection: sortCollection(state, action)
+		// expandedRows: setExpandedRows(state, action)
 	}),
 
 	[Constants.grants.LOAD_DATA_SUCCESS]: (state, action) => ({

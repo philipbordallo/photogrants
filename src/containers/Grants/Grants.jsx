@@ -41,6 +41,7 @@ class Grants extends PureComponent {
 		collection: DATA_PROPTYPES.isRequired,
 		loadData: T.func.isRequired,
 		sortTable: T.func.isRequired,
+		toggleRow: T.func.isRequired,
 		currentSort: T.string.isRequired,
 		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
 	};
@@ -49,6 +50,7 @@ class Grants extends PureComponent {
 		super(props);
 
 		this.onTableSort = this.onTableSort.bind(this);
+		this.onRowClick = this.onRowClick.bind(this);
 	}
 
 	componentWillMount() {
@@ -60,6 +62,10 @@ class Grants extends PureComponent {
 		this.props.sortTable(name);
 	}
 
+	onRowClick(slug) {
+		this.props.toggleRow(slug);
+	}
+
 	render() {
 		const { currentSort, sortDirection, collection } = this.props;
 
@@ -68,6 +74,7 @@ class Grants extends PureComponent {
 				collection={ collection }
 				config={ TABLE_CONFIG }
 				onTableSort={ this.onTableSort }
+				onRowClick={ this.onRowClick }
 				currentSort={ currentSort }
 				sortDirection={ sortDirection }
 			/>
