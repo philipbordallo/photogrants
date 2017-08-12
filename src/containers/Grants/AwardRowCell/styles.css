@@ -1,0 +1,18 @@
+@import 'variables';
+
+.root {
+	display: flex;
+	align-items: center;
+}
+
+.showSymbol {
+	composes: showSymbol from 'assets/default/styles';
+}
+
+.mentorshipSymbol {
+	composes: mentorshipSymbol from 'assets/default/styles';
+}
+
+.residencySymbol {
+	composes: residencySymbol from 'assets/default/styles';
+}

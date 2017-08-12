@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
+import Classes from './styles';
+
 class AwardRowCell extends PureComponent {
 	static propTypes = {
 		amount: T.string,
@@ -20,11 +22,11 @@ class AwardRowCell extends PureComponent {
 		const { amount, mentorship, show, residency } = this.props;
 
 		return (
-			<div>
+			<div className={ Classes.root }>
 				{ amount }
-				{ mentorship ? '!' : null }
-				{ show ? '!' : null }
-				{ residency ? '!' : null }
+				{ show ? (<div className={ Classes.showSymbol } />) : null }
+				{ mentorship ? (<div className={ Classes.mentorshipSymbol } />) : null }
+				{ residency ? (<div className={ Classes.residencySymbol } />) : null }
 			</div>
 		);
 	}

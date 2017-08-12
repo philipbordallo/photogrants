@@ -1,0 +1,27 @@
+@import 'variables';
+
+.symbol {
+	display: inline-block;
+	width: .5em;
+	height: .5em;
+	margin-left: .3em;
+}
+
+.showSymbol {
+	composes: symbol;
+	background-color: var(--blue);
+}
+
+.mentorshipSymbol {
+	composes: symbol;
+	background-color: var(--purple);
+	border-radius: 50%;
+}
+
+.residencySymbol {
+	composes: symbol;
+	width: .35em;
+	height: .35em;
+	background-color: var(--pink);
+	transform: rotate(45deg);
+}

@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
-import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
+import { COLLECTION_PROPTYPES } from 'containers/Grants/propTypes';
 import {
 	CONFIG_PROPTYPES,
 	SORT_DIRECTION_PROPTYPES
@@ -16,12 +16,17 @@ import Classes from './styles';
 
 class Table extends PureComponent {
 	static propTypes = {
+		collection: COLLECTION_PROPTYPES.isRequired,
 		config: CONFIG_PROPTYPES.isRequired,
-		collection: DATA_PROPTYPES.isRequired,
-		onTableSort: T.func.isRequired,
-		onRowClick: T.func.isRequired,
 		currentSort: T.string.isRequired,
-		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
+		onRowClick: T.func.isRequired,
+		onTableSort: T.func.isRequired,
+		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
+		detailsRenderer: T.func
+	};
+
+	static defaultProps = {
+		detailsRenderer: null
 	};
 
 	constructor(props) {
@@ -37,8 +42,9 @@ class Table extends PureComponent {
 		);
 	}
 
-	renderRow({ active, slug, row, expanded, show }) {
-		const { onRowClick, config } = this.props;
+	renderRow(data) {
+		const { active, slug, row, expanded, show } = data;
+		const { onRowClick, config, detailsRenderer } = this.props;
 
 		if (active && show === 'overview') {
 			return (
@@ -54,7 +60,11 @@ class Table extends PureComponent {
 		}
 		else if (active && show === 'details') {
 			return (
-				<TableDetailsRow key={ slug } />
+				<TableDetailsRow
+					key={ slug }
+					data={ data }
+					renderer={ detailsRenderer }
+				/>
 			);
 		}
 

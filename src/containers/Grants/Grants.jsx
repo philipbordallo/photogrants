@@ -4,8 +4,9 @@ import T from 'prop-types';
 import Table from 'components/Table';
 
 import { SORT_DIRECTION_PROPTYPES } from 'components/Table/propTypes';
-import { DATA_PROPTYPES } from './propTypes';
+import { COLLECTION_PROPTYPES } from './propTypes';
 
+import GrantsDetailsRow from './GrantsDetailsRow';
 import AwardRowCell from './AwardRowCell';
 
 
@@ -38,7 +39,7 @@ const TABLE_CONFIG = [
 
 class Grants extends PureComponent {
 	static propTypes = {
-		collection: DATA_PROPTYPES.isRequired,
+		collection: COLLECTION_PROPTYPES.isRequired,
 		loadData: T.func.isRequired,
 		sortTable: T.func.isRequired,
 		toggleRow: T.func.isRequired,
@@ -73,9 +74,10 @@ class Grants extends PureComponent {
 			<Table
 				collection={ collection }
 				config={ TABLE_CONFIG }
-				onTableSort={ this.onTableSort }
-				onRowClick={ this.onRowClick }
 				currentSort={ currentSort }
+				detailsRenderer={ GrantsDetailsRow }
+				onRowClick={ this.onRowClick }
+				onTableSort={ this.onTableSort }
 				sortDirection={ sortDirection }
 			/>
 		);

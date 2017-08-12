@@ -46,9 +46,9 @@
 	&::after {
 		content: '';
 		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: -6px;
+		left: -12px;
+		bottom: 0;
+		top: -1px;
 		margin: auto;
 		width: 0;
 		height: 0;

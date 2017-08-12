@@ -24,7 +24,7 @@ class TableRow extends PureComponent {
 
 	static defaultProps ={
 		expanded: false,
-		onRowClick: noop()
+		onRowClick: noop
 	};
 
 	constructor() {

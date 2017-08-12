@@ -22,7 +22,7 @@ const setDirection = (state, action) => {
 const setRow = ({ name, date, fee, awards }) => {
 	const cost = `${getCurrencySymbol(fee.currency)}${fee.amount}`;
 	const topAward = {
-		amount: `${getCurrencySymbol(awards[0].currency)}${awards[0].amount}`,
+		amount: `${getCurrencySymbol(awards[0].currency)}${awards[0].amount.toLocaleString()}`,
 		mentorship: awards[0].mentorship,
 		show: awards[0].show,
 		residency: awards[0].residency
