@@ -44,35 +44,32 @@ const setCollection = data => data.map(item => ({
 	row: setRow(item)
 }));
 
-const sortCollection = ({ collection }, action) => {
+const expandedCollection = ({ collection }, action) => {
 	const newCollection = [...collection];
+
 	const currentIndex = newCollection.findIndex(item => item.slug === action.expandedRow);
 	const currentItem = collection[currentIndex];
 
-	newCollection.splice(currentIndex + 1, 0, {
-		...currentItem,
-		slug: `${currentItem.slug}-expanded`,
-		show: 'details',
-		expanded: false
-	});
+	const hasIndex = currentIndex !== -1;
+	const hasDetailsExpanded = (collection[currentIndex + 1] && collection[currentIndex + 1].show === 'details');
+
+	if (hasDetailsExpanded && hasIndex) {
+		newCollection.splice(currentIndex + 1, 1);
+	}
+	else if (hasIndex) {
+		newCollection.splice(currentIndex + 1, 0, {
+			...currentItem,
+			slug: `${currentItem.slug}-expanded`,
+			show: 'details',
+			expanded: false
+		});
+	}
 
 	return newCollection.map(item => ({
 		...item,
 		expanded: (item.slug === action.expandedRow) ? !item.expanded : item.expanded
 	}));
 };
-
-// const setExpandedRows = (state, action) => {
-// 	const newArray = [...state.expandedRows];
-// 	const isExpanded = (newArray.some(item => item === action.expandedRow));
-// 	const index = newArray.indexOf(action.expandedRow);
-
-// 	if (isExpanded && index !== -1) newArray.splice(index, 1);
-// 	else newArray.push(action.expandedRow);
-
-// 	return newArray;
-// };
-
 
 const grants = createReducer(DEFAULT_STATE, {
 	[Constants.grants.SORT_TABLE]: (state, action) => ({
@@ -83,7 +80,7 @@ const grants = createReducer(DEFAULT_STATE, {
 
 	[Constants.grants.TOGGLE_ROW]: (state, action) => ({
 		...state,
-		collection: sortCollection(state, action)
+		collection: expandedCollection(state, action)
 		// expandedRows: setExpandedRows(state, action)
 	}),
 
