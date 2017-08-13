@@ -105,6 +105,7 @@ const config = {
 			components: path.resolve(APP_PATH, 'components'),
 			containers: path.resolve(APP_PATH, 'containers'),
 			layout: path.resolve(APP_PATH, 'layout'),
+			polyfills: path.resolve(APP_PATH, 'polyfills'),
 			reducers: path.resolve(APP_PATH, 'reducers'),
 			utilities: path.resolve(APP_PATH, 'utilities')
 		}

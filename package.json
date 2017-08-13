@@ -24,7 +24,11 @@
   },
   "babel": {
     "presets": [
-      "env",
+      [
+        "env", {
+          "useBuiltIns": true
+        }
+      ],
       "stage-2",
       "react"
     ]
@@ -61,7 +65,7 @@
     "eslint-loader": "^1.9.0",
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "eslint-plugin-react": "^7.1.0",
+    "eslint-plugin-react": "^7.2.0",
     "jsonschema": "^1.1.1",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.1.0",
@@ -81,6 +85,7 @@
     "webpack-dev-server": "^2.6.1"
   },
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "currency-symbol-map": "^4.0.1",
     "listify": "^1.0.0",
     "moment": "^2.18.1",
@@ -91,6 +96,7 @@
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
     "redux-thunk": "^2.2.0",
+    "smoothscroll-polyfill": "^0.3.6",
     "whatwg-fetch": "^2.0.3"
   }
 }
