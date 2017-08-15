@@ -81,7 +81,6 @@ const grants = createReducer(DEFAULT_STATE, {
 	[Constants.grants.TOGGLE_ROW]: (state, action) => ({
 		...state,
 		collection: expandedCollection(state, action)
-		// expandedRows: setExpandedRows(state, action)
 	}),
 
 	[Constants.grants.LOAD_DATA_SUCCESS]: (state, action) => ({
