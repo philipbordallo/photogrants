@@ -14,10 +14,14 @@
 	},
 	"description": "The Ora Schneider Regional Grant is a month-long residency for artists residing in Greene, Columbia, Delaware, Dutchess, Ulster, Sullivan, and Orange counties. Gail Schneider Matlin—a gifted artist, former WSW board member, and daughter of Ora Schneider—funds these residencies to honor her mother’s long-time commitment to our community’s cultural life.\nWSW awards this residency to two artists, who may choose to work in any of our studio disciplines. Priority will be given to artists with experience and a working knowledge of etching, intaglio, or monoprint; letterpress; papermaking; screenprinting; photography; or ceramics.",
 	"eligibility": {
-		"age": null,
+		"age": {
+			"from": null,
+			"to": null
+		},
 		"gender": "women",
 		"students": false,
-		"description": ""
+		"location": null,
+		"other": ""
 	},
 	"fee": {
 		"amount": 0,

@@ -14,10 +14,14 @@
 	},
 	"description": "The Artist’s Book Grant is a six- to eight-week residency for artists to produce a limited edition book work. Working intensively in our studios, artists print and bind their own books, and are encouraged to create an edition size no larger than 100 and no smaller than 50.",
 	"eligibility": {
-		"age": null,
+		"age": {
+			"from": null,
+			"to": null
+		},
 		"gender": "women",
 		"students": false,
-		"description": ""
+		"location": null,
+		"other": ""
 	},
 	"fee": {
 		"amount": 0,

@@ -14,10 +14,14 @@
 	},
 	"description": "Our Art-in-Education (AIE) program is a model for arts education and operates in conjunction with the Kingston City School District. AIE provides a high quality arts experience by bringing students to a professional artist’s workspace and giving them concentrated time to learn printmaking, papermaking, and book arts.\nGenerally, the resident dedicates her first month to producing a limited edition artist’s book, which is hand-printed and bound in the studio. WSW can provide technical advice; training on new equipment, techniques, and materials; and production assistance.\nDuring the second half of the residency, the artist works with young people in WSW’s studios, teaching one to two days/week for three to four weeks, and visiting the students twice in school. Studio space and equipment is reserved for students during program hours, but artists may work at any time outside of AIE.",
 	"eligibility": {
-		"age": null,
+		"age": {
+			"from": null,
+			"to": null
+		},
 		"gender": "women",
 		"students": false,
-		"description": ""
+		"location": null,
+		"other": ""
 	},
 	"fee": {
 		"amount": 0,

@@ -14,10 +14,14 @@
 	},
 	"description": "The Project Launch is granted to an outstanding photographer working on a fine art series or documentary project. The grant includes a cash award to help complete or disseminate the works, as well as providing a platform for exposure and professional development opportunities.",
 	"eligibility": {
-		"age": null,
+		"age": {
+			"from": null,
+			"to": null
+		},
 		"gender": "all",
 		"students": true,
-		"description": ""
+		"location": null,
+		"other": ""
 	},
 	"fee": {
 		"amount": 55,

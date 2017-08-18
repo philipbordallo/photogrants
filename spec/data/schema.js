@@ -2,7 +2,7 @@ import T from './types';
 
 export default {
 	...T.object,
-	"properties": {
+	properties: {
 		"active": T.boolean,
 		"type": T.string,
 		"slug": T.string,
@@ -11,45 +11,56 @@ export default {
 		"applicationUrl": T.string,
 		"yearsActive": {
 			...T.array,
-			"items": T.integer
+			items: T.integer
 		},
 		"date": {
 			...T.object,
-			"properties": {
+			properties: {
 				"call": T.string,
 				"deadline": T.string
 			},
-			"required": ["call", "deadline"]
+			required: ["call", "deadline"]
 		},
 		"description": T.string,
 		"eligibility": {
 			...T.object,
-			"properties": {
+			properties: {
 				"age": {
-					anyOf: [
-						T.integer,
-						T.null
-					]
+					...T.object,
+					properties: {
+						"from": {
+							anyOf: [
+								T.integer,
+								T.null
+							]
+						},
+						"to": {
+							anyOf: [
+								T.integer,
+								T.null
+							]
+						}
+					}
 				},
 				"gender": T.genderRange,
 				"students": T.boolean,
 				"description": T.string
 			},
-			"required": ["age", "gender", "students", "description"]
+			required: ["age", "gender", "students", "description"]
 		},
 		"fee": {
 			...T.object,
-			"properties": {
+			properties: {
 				"amount": T.number,
 				"currency": T.currency
 			},
-			"required": ["amount", "currency"]
+			required: ["amount", "currency"]
 		},
 		"awards": {
 			...T.array,
-			"items": {
+			items: {
 				...T.object,
-				"properties": {
+				properties: {
 					"given": T.number,
 					"amount": T.number,
 					"amountType":  T.amountRange,
@@ -58,9 +69,9 @@ export default {
 					"show": T.boolean,
 					"residency": T.boolean
 				},
-				"required": ["given", "amount", "amountType", "currency", "mentorship", "show", "residency"]
+				required: ["given", "amount", "amountType", "currency", "mentorship", "show", "residency"]
 			}
 		}
 	},
-	"required": [ "active", "type", "slug", "name", "url", "applicationUrl", "yearsActive", "date", "description", "eligibility", "fee", "awards"]
+	required: [ "active", "type", "slug", "name", "url", "applicationUrl", "yearsActive", "date", "description", "eligibility", "fee", "awards"]
 };

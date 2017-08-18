@@ -14,10 +14,14 @@
 	},
 	"description": "The Women in Photography (WIPNYC) Grant & Mentor Program will provide one female photographer/photo-based artist with a $5000 grant to produce work in addition to being paired with four mentors over the course of a year.* The selected artist will also receive a solo show on wipnyc.org.",
 	"eligibility": {
-		"age": 18,
+		"age": {
+			"from": 18,
+			"to": null
+		},
 		"gender": "women",
 		"students": false,
-		"description": ""
+		"location": null,
+		"other": ""
 	},
 	"fee": {
 		"amount": 0,

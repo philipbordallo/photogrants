@@ -14,10 +14,14 @@
 	},
 	"description": "The Legacy Grant is a special six-week residency offered to an outstanding woman artist who wants to work in any of our studio disciplines. WSW’s most recent Gala honoree selects a Legacy resident from the Studio Grant application pool.",
 	"eligibility": {
-		"age": null,
+		"age": {
+			"from": null,
+			"to": null
+		},
 		"gender": "women",
 		"students": false,
-		"description": ""
+		"location": null,
+		"other": ""
 	},
 	"fee": {
 		"amount": 0,
