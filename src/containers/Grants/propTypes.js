@@ -25,7 +25,10 @@ export const DATA_PROPTYPES = T.shape({
 	}),
 	description: T.string,
 	eligibility: T.shape({
-		age: T.number,
+		age: T.shape({
+			from: T.number,
+			to: T.number
+		}),
 		gender: T.oneOf([
 			'men',
 			'women',

@@ -1,12 +1,7 @@
 @import 'variables';
 
 .root {
-	font-smoothing: antialiased;
-	color: var(--lightGray);
-	font-family: var(--rubik);
-	font-size: 14px;
-	letter-spacing: .05em;
-	text-transform: uppercase;
+	composes: sectionTitle from 'assets/default/styles';
 	user-select: none;
 }
 

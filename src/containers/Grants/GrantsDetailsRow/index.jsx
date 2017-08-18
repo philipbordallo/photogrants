@@ -1,5 +1,4 @@
 import React, { PureComponent } from 'react';
-// import T from 'prop-types';
 
 import listify from 'listify';
 import getCurrencySymbol from 'currency-symbol-map';
@@ -7,8 +6,22 @@ import getYearsActive from 'utilities/getYearsActive';
 
 import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
 
+import GrantDetail from './GrantDetail';
 
 import Classes from './styles';
+
+
+const ELIGIBILITY_META = {
+	gender: {
+		women: 'Women Only',
+		men: 'Men Only',
+		all: 'Everyone'
+	},
+	students: {
+		true: 'Eligible',
+		false: 'Not Eligible'
+	}
+};
 
 class GrantsDetailsRow extends PureComponent {
 	static propTypes = {
@@ -42,37 +55,50 @@ class GrantsDetailsRow extends PureComponent {
 	}
 
 	render() {
-		const { description, yearsActive, awards } = this.props.data;
+		const {
+			description,
+			yearsActive,
+			awards,
+			eligibility: { age, gender, students }
+		} = this.props.data;
 		const years = getYearsActive(yearsActive);
+
+		let ageText = '';
+
+		if (age.from && age.to === null) ageText = `${age.from} or older`;
+		else if (age.from === null && age.to) ageText = `${age.to} or younger`;
+		else if (age.from && age.to) ageText = `From ${age.from} to ${age.to}`;
 
 		return (
 			<div className={ Classes.root }>
-				<section className={ Classes.section }>
-					<h3 className={ Classes.title }>Description</h3>
-					<p className={ Classes.content }>
+				<section className={ Classes.information }>
+					<GrantDetail title="Description">
 						{ description }
-					</p>
+					</GrantDetail>
 
-					<h3 className={ Classes.title }>Years Active</h3>
-					<p className={ Classes.content }>
+					<GrantDetail title="Years Active">
 						{ years }
-					</p>
+					</GrantDetail>
 
-					<h3 className={ Classes.title }>Awards List</h3>
-					<ul className={ Classes.list }>
+					<GrantDetail type="list" title="Awards List">
 						{ awards.map(this.renderAwards) }
-					</ul>
+					</GrantDetail>
 				</section>
-				<section className={ Classes.section }>
-					<h3 className={ Classes.title }>Ages</h3>
-					<p className={ Classes.content }>
-						18 years & older
-					</p>
 
-					<h3 className={ Classes.title }>Gender</h3>
-					<p className={ Classes.content }>
-						Women only
-					</p>
+				<section className={ Classes.eligibility }>
+					<h3 className={ Classes.sectionTitle }>Eligibility</h3>
+
+					<GrantDetail title="Age" visible={ age.from !== null || age.to !== null }>
+						{ ageText }
+					</GrantDetail>
+
+					<GrantDetail title="Gender" visible={ gender !== 'all' }>
+						{ ELIGIBILITY_META.gender[gender] }
+					</GrantDetail>
+
+					<GrantDetail title="Students">
+						{ ELIGIBILITY_META.students[students] }
+					</GrantDetail>
 				</section>
 			</div>
 		);

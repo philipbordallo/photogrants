@@ -1,5 +1,14 @@
 @import 'variables';
 
+.sectionTitle {
+	font-smoothing: antialiased;
+	color: var(--lightGray);
+	font-family: var(--rubik);
+	font-size: 14px;
+	letter-spacing: .05em;
+	text-transform: uppercase;
+}
+
 .symbol {
 	display: inline-block;
 	width: .5em;
