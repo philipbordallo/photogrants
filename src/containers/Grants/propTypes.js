@@ -5,6 +5,19 @@ const CURRENCY_PROPTYPES = T.oneOf([
 	'USD'
 ]);
 
+export const AWARD_PROPTYPES = T.shape({
+	given: T.number,
+	amount: T.number,
+	amountType: T.oneOf([
+		'exact',
+		'upto'
+	]),
+	currency: CURRENCY_PROPTYPES,
+	mentorship: T.bool,
+	show: T.bool,
+	residency: T.bool
+});
+
 export const DATA_PROPTYPES = T.shape({
 	active: T.bool,
 	type: T.oneOf([
@@ -48,18 +61,7 @@ export const DATA_PROPTYPES = T.shape({
 		currency: CURRENCY_PROPTYPES
 	}),
 	awards: T.arrayOf(
-		T.shape({
-			given: T.number,
-			amount: T.number,
-			amountType: T.oneOf([
-				'exact',
-				'upto'
-			]),
-			currency: CURRENCY_PROPTYPES,
-			mentorship: T.bool,
-			show: T.bool,
-			residency: T.bool
-		})
+		AWARD_PROPTYPES
 	)
 });
 

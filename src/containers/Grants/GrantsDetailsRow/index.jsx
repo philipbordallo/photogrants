@@ -1,13 +1,12 @@
 import React, { PureComponent } from 'react';
 
-import listify from 'listify';
-import getCurrencySymbol from 'currency-symbol-map';
 import getYearsActive from 'utilities/getYearsActive';
 
 import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
 
-import Button from 'components/Button';
+import GrantAward from './GrantAward';
 import GrantDetail from './GrantDetail';
+import GrantLink from './GrantLink';
 
 import Classes from './styles';
 
@@ -36,63 +35,9 @@ class GrantsDetailsRow extends PureComponent {
 	}
 
 	renderAwards(data, index) {
-		const { given, amount, amountType, currency, mentorship, show, residency } = data;
-		const grant = (given > 1) ? 'grants' : 'grant';
-		const upto = (amountType === 'upto') ? `up to` : '';
-		const awardAmount = `${getCurrencySymbol(currency)}${amount.toLocaleString()}`;
-		const additionalList = [];
-
-		if (mentorship) additionalList.push('mentorship');
-		if (show) additionalList.push('show');
-		if (residency) additionalList.push('residency');
-
-		const additional = (additionalList.length > 0) ? `plus ${listify(additionalList)} opportunities` : '';
-
 		return (
-			<li key={ index }>
-				{ `${given} ${grant} worth ${upto} ${awardAmount} ${additional}` }
-			</li>
+			<GrantAward key={ index } { ...data } />
 		);
-	}
-
-	renderUrl() {
-		const { url } = this.props.data;
-
-		if (url) {
-			return (
-				<div className={ Classes.buttonWrapper }>
-					<Button
-						type="secondary"
-						href={ url }
-						target="_blank"
-					>
-						Visit Website
-					</Button>
-				</div>
-			);
-		}
-
-		return null;
-	}
-
-	renderAppUrl() {
-		const { applicationUrl } = this.props.data;
-
-		if (applicationUrl) {
-			return (
-				<div className={ Classes.buttonWrapper }>
-					<Button
-						type="primary"
-						href={ applicationUrl }
-						target="_blank"
-					>
-						Submit Application
-					</Button>
-				</div>
-			);
-		}
-
-		return null;
 	}
 
 	render() {
@@ -101,7 +46,9 @@ class GrantsDetailsRow extends PureComponent {
 			organization: { url: orgURL, name: orgName },
 			yearsActive,
 			awards,
-			eligibility: { age, gender, students }
+			eligibility: { age, gender, students },
+			url,
+			applicationUrl
 		} = this.props.data;
 		const years = getYearsActive(yearsActive);
 
@@ -130,8 +77,8 @@ class GrantsDetailsRow extends PureComponent {
 						<a href={ orgURL } target="_blank" className={ Classes.link }>{ orgName }</a>
 					</GrantDetail>
 
-					{ this.renderUrl() }
-					{ this.renderAppUrl() }
+					<GrantLink href={ url } type="website" />
+					<GrantLink href={ applicationUrl } type="application" />
 				</section>
 
 				<section className={ Classes.eligibility }>
