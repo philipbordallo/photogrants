@@ -51,3 +51,11 @@
 	margin: 0;
 }
 
+.buttonWrapper {
+	margin-top: 1.75em;
+
+	& + .buttonWrapper {
+		margin-top: .625em;
+	}
+}
+

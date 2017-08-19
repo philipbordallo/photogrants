@@ -13,6 +13,11 @@ export const DATA_PROPTYPES = T.shape({
 		'residency'
 	]),
 	slug: T.string,
+	organization: T.shape({
+		name: T.string,
+		nickname: T.string,
+		url: T.string
+	}),
 	name: T.string,
 	url: T.string,
 	applicationUrl: T.string,

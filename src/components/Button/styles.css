@@ -1,0 +1,39 @@
+@import 'variables';
+
+.root {
+	padding: .1875em .75em .3125em;
+	font-family: var(--sourceSans);
+	font-smoothing: antialiased;
+	border: 1px solid var(--blue);
+	border-radius: 5px;
+	user-select: none;
+	cursor: pointer;
+
+	@nest a& {
+		display: inline-block;
+	}
+
+	&:hover {
+		text-decoration: none;
+	}
+}
+
+.primary {
+	composes: root;
+	color: var(--white);
+	background-color: var(--blue);
+
+	@nest a& {
+		color: var(--white);
+	}
+}
+
+.secondary {
+	composes: root;
+	color: var(--blue);
+	background-color: var(--white);
+
+	@nest a& {
+		color: var(--blue);
+	}
+}

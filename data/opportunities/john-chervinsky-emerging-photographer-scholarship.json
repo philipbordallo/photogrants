@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "grant",
+	"slug": "john-chervinsky-emerging-photographer-scholarship",
+	"organization": {
+		"name": "Griffin Museum of Photography",
+		"nickname": "",
+		"url": "http://griffinmuseum.org/"
+	},
+	"name": "John Chervinsky Emerging Photographer Scholarship",
+	"url": "http://griffinmuseum.org/john-chervinsky-emerging-photographer-scholarship/",
+	"applicationUrl": "http://griffinmuseum.org/chervinsky-application/",
+	"yearsActive": [
+		2006, 2017
+	],
+	"date": {
+		"call": "August 1 2017",
+		"deadline": "September 5 2017"
+	},
+	"description": "The John Chervinsky Emerging Photographer Scholarship seeks to recognize, encourage and reward photographers with the potential to create a body of work and sustain solo exhibitions. Awarded annually, the Scholarship provides recipients with a monetary award of $3,000, exhibition of their work at the Griffin Museum of Photography, and a volume from John’s personal library of photography books. The Scholarship seeks to provide a watershed moment in the professional lives of emerging photographers, providing them with the support and encouragement necessary to develop, articulate and grow their own vision for photography.",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": true,
+		"location": null,
+		"other": ""
+	},
+	"fee": {
+		"amount": 0,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 3000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		}
+	]
+}

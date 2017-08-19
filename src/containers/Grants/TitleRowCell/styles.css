@@ -1,0 +1,9 @@
+@import 'variables';
+
+.orgName {
+	font-weight: bold;
+
+	&::after {
+		content: '\00a0'
+	}
+}

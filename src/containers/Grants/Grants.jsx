@@ -8,6 +8,7 @@ import { COLLECTION_PROPTYPES } from './propTypes';
 
 import GrantsDetailsRow from './GrantsDetailsRow';
 import AwardRowCell from './AwardRowCell';
+import TitleRowCell from './TitleRowCell';
 
 
 const TABLE_CONFIG = [
@@ -15,7 +16,7 @@ const TABLE_CONFIG = [
 		name: 'Name',
 		width: 70,
 		align: 'left',
-		renderer: null
+		renderer: TitleRowCell
 	},
 	{
 		name: 'Fee',

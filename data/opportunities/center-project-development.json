@@ -1,8 +1,13 @@
 {
 	"active": true,
 	"type": "grant",
-	"slug": "visitcenter-project-development",
-	"name": "Center Project Development",
+	"slug": "center-project-development",
+	"organization": {
+		"name": "Center",
+		"nickname": "Center",
+		"url": "http://visitcenter.org/"
+	},
+	"name": "Project Development",
 	"url": "http://visitcenter.org/project-development/",
 	"applicationUrl": "",
 	"yearsActive": [

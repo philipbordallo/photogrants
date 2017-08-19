@@ -19,7 +19,11 @@ const setDirection = (state, action) => {
 	return DEFAULT_STATE.sortDirection;
 };
 
-const setRow = ({ name, date, fee, awards }) => {
+const setRow = ({ organization: { nickname }, name, date, fee, awards }) => {
+	const title = {
+		orgName: nickname,
+		name
+	};
 	const cost = `${getCurrencySymbol(fee.currency)}${fee.amount}`;
 	const topAward = {
 		amount: `${getCurrencySymbol(awards[0].currency)}${awards[0].amount.toLocaleString()}`,
@@ -30,7 +34,7 @@ const setRow = ({ name, date, fee, awards }) => {
 	const deadline = moment(date.deadline, 'MMMM D YYYY').format('MMM D');
 
 	return [
-		name,
+		title,
 		cost,
 		topAward,
 		deadline

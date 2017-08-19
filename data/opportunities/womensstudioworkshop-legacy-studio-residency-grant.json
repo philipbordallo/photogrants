@@ -2,7 +2,12 @@
 	"active": true,
 	"type": "grant",
 	"slug": "womensstudioworkshop-legacy-studio-residency-grant",
-	"name": "Women's Studio Workshop Legacy Studio Residency Grant",
+	"organization": {
+		"name": "Women's Studio Workshop",
+		"nickname": "WSW",
+		"url": "http://www.wsworkshop.org/"
+	},
+	"name": "Legacy Studio Residency Grant",
 	"url": "http://www.wsworkshop.org/residencies/legacy-studio-residency-grant/",
 	"applicationUrl": "",
 	"yearsActive": [

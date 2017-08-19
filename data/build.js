@@ -7,8 +7,10 @@ const ALL_FILE = path.join(__dirname, 'all.json');
 
 
 const nameSort = (a, b) => {
-	const aName = a.name.toUpperCase();
-	const bName = b.name.toUpperCase();
+	const aNickname = a.organization.nickname ? `${a.organization.nickname} ` : '';
+	const bNickname = b.organization.nickname ? `${b.organization.nickname} ` : '';
+	const aName = `${aNickname}${a.name}`.toUpperCase();
+	const bName = `${bNickname}${b.name}`.toUpperCase();
 
 	if (aName > bName) return 1;
 	else if (aName < bName) return -1;

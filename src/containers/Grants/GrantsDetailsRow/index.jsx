@@ -6,6 +6,7 @@ import getYearsActive from 'utilities/getYearsActive';
 
 import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
 
+import Button from 'components/Button';
 import GrantDetail from './GrantDetail';
 
 import Classes from './styles';
@@ -54,9 +55,50 @@ class GrantsDetailsRow extends PureComponent {
 		);
 	}
 
+	renderUrl() {
+		const { url } = this.props.data;
+
+		if (url) {
+			return (
+				<div className={ Classes.buttonWrapper }>
+					<Button
+						type="secondary"
+						href={ url }
+						target="_blank"
+					>
+						Visit Website
+					</Button>
+				</div>
+			);
+		}
+
+		return null;
+	}
+
+	renderAppUrl() {
+		const { applicationUrl } = this.props.data;
+
+		if (applicationUrl) {
+			return (
+				<div className={ Classes.buttonWrapper }>
+					<Button
+						type="primary"
+						href={ applicationUrl }
+						target="_blank"
+					>
+						Submit Application
+					</Button>
+				</div>
+			);
+		}
+
+		return null;
+	}
+
 	render() {
 		const {
 			description,
+			organization: { url: orgURL, name: orgName },
 			yearsActive,
 			awards,
 			eligibility: { age, gender, students }
@@ -83,6 +125,13 @@ class GrantsDetailsRow extends PureComponent {
 					<GrantDetail type="list" title="Awards List">
 						{ awards.map(this.renderAwards) }
 					</GrantDetail>
+
+					<GrantDetail title="Organization">
+						<a href={ orgURL } target="_blank" className={ Classes.link }>{ orgName }</a>
+					</GrantDetail>
+
+					{ this.renderUrl() }
+					{ this.renderAppUrl() }
 				</section>
 
 				<section className={ Classes.eligibility }>

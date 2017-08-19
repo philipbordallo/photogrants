@@ -2,7 +2,12 @@
 	"active": true,
 	"type": "grant",
 	"slug": "womensstudioworkshop-artists-book-residency-grant",
-	"name": "Women's Studio Workshop Artist’s Book Residency Grant",
+	"organization": {
+		"name": "Women's Studio Workshop",
+		"nickname": "WSW",
+		"url": "http://www.wsworkshop.org/"
+	},
+	"name": "Artist’s Book Residency Grant",
 	"url": "http://www.wsworkshop.org/residencies/artists-book-residency-grant/",
 	"applicationUrl": "",
 	"yearsActive": [

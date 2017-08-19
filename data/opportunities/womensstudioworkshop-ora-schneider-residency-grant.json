@@ -2,7 +2,12 @@
 	"active": true,
 	"type": "grant",
 	"slug": "womensstudioworkshop-ora-schneider-residency-grant",
-	"name": "Women's Studio Workshop Ora Schneider Regional Residency Grant",
+	"organization": {
+		"name": "Women's Studio Workshop",
+		"nickname": "WSW",
+		"url": "http://www.wsworkshop.org/"
+	},
+	"name": "Ora Schneider Regional Residency Grant",
 	"url": "http://www.wsworkshop.org/residencies/ora-schneider-regional-residency-grant/",
 	"applicationUrl": "https://womensstudioworkshop.submittable.com/submit/33632/ora-schneider-regional-residency-grant",
 	"yearsActive": [
@@ -12,7 +17,7 @@
 		"call": "",
 		"deadline": "October 15 12:00 EST"
 	},
-	"description": "The Ora Schneider Regional Grant is a month-long residency for artists residing in Greene, Columbia, Delaware, Dutchess, Ulster, Sullivan, and Orange counties. Gail Schneider Matlin—a gifted artist, former WSW board member, and daughter of Ora Schneider—funds these residencies to honor her mother’s long-time commitment to our community’s cultural life.\nWSW awards this residency to two artists, who may choose to work in any of our studio disciplines. Priority will be given to artists with experience and a working knowledge of etching, intaglio, or monoprint; letterpress; papermaking; screenprinting; photography; or ceramics.",
+	"description": "The Ora Schneider Regional Grant is a month-long residency for artists residing in Greene, Columbia, Delaware, Dutchess, Ulster, Sullivan, and Orange counties. Gail Schneider Matlin—a gifted artist, former WSW board member, and daughter of Ora Schneider—funds these residencies to honor her mother’s long-time commitment to our community’s cultural life. WSW awards this residency to two artists, who may choose to work in any of our studio disciplines.",
 	"eligibility": {
 		"age": {
 			"from": null,

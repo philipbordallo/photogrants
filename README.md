@@ -40,6 +40,9 @@ photogrants
 #### Duke Center for Documentary Studies
 - [Dorothea Lange–Paul Taylor Prize](https://documentarystudies.duke.edu/awards/lange-taylor)
 
+#### Griffin Museum of Photography
+- [John Chervinsky Emerging Photographer Scholarship](http://griffinmuseum.org/john-chervinsky-emerging-photographer-scholarship/)
+
 #### Harpo Foundation
 - [Grants for Visual Artists](http://www.harpofoundation.org/apply/grants-for-visual-artists/)
 

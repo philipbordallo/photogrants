@@ -48,9 +48,7 @@ class TableRow extends PureComponent {
 
 		return (
 			<td className={ Classes.rowCell } key={ index }>
-				<div className={ Classes.rowCellContent }>
-					{ content }
-				</div>
+				{ content }
 			</td>
 		);
 	}

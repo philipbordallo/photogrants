@@ -6,6 +6,15 @@ export default {
 		"active": T.boolean,
 		"type": T.string,
 		"slug": T.string,
+		"organization": {
+			...T.object,
+			properties: {
+				"name": T.string,
+				"nickname": T.string,
+				"url": T.string
+			},
+			required: ["name", "nickname", "url"]
+		},
 		"name": T.string,
 		"url": T.string,
 		"applicationUrl": T.string,
@@ -40,13 +49,14 @@ export default {
 								T.null
 							]
 						}
-					}
+					},
+					required: ["from", "to"]
 				},
 				"gender": T.genderRange,
 				"students": T.boolean,
-				"description": T.string
+				"other": T.string
 			},
-			required: ["age", "gender", "students", "description"]
+			required: ["age", "gender", "students", "other"]
 		},
 		"fee": {
 			...T.object,
@@ -73,5 +83,5 @@ export default {
 			}
 		}
 	},
-	required: [ "active", "type", "slug", "name", "url", "applicationUrl", "yearsActive", "date", "description", "eligibility", "fee", "awards"]
+	required: [ "active", "type", "slug", "organization", "name", "url", "applicationUrl", "yearsActive", "date", "description", "eligibility", "fee", "awards"]
 };

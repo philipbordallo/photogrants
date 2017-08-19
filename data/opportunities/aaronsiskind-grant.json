@@ -2,7 +2,12 @@
 	"active": true,
 	"type": "grant",
 	"slug": "aaronsiskind-grant",
-	"name": "Aaron Siskind Foundation Individual Photographer's Fellowship",
+	"organization": {
+		"name": "Aaron Siskind Foundation",
+		"nickname": "Aaron Siskind Foundation",
+		"url": "http://www.aaronsiskind.org/"
+	},
+	"name": "Individual Photographer's Fellowship",
 	"url": "http://www.aaronsiskind.org/grant.html",
 	"applicationUrl": "https://siskindfoundation.slideroom.com/",
 	"yearsActive": [
