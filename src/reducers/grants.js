@@ -1,6 +1,8 @@
 import getCurrencySymbol from 'currency-symbol-map';
 import moment from 'moment';
 
+import { nameSort, feeSort, awardSort, deadlineSort } from 'utilities/sorts';
+
 import Constants from 'api/constants';
 import createReducer from './createReducer';
 
@@ -17,6 +19,29 @@ const setDirection = (state, action) => {
 	}
 
 	return DEFAULT_STATE.sortDirection;
+};
+
+const sortCollection = (state, action, direction) => {
+	const newCollection = [...state.collection];
+
+	if (action.currentSort === 'name') {
+		newCollection.sort(nameSort);
+	}
+	else if (action.currentSort === 'fee') {
+		newCollection.sort(feeSort);
+	}
+	else if (action.currentSort === 'award') {
+		newCollection.sort(awardSort);
+	}
+	else if (action.currentSort === 'deadline') {
+		newCollection.sort(deadlineSort);
+	}
+
+	if (direction === 'asc') {
+		newCollection.reverse();
+	}
+
+	return newCollection;
 };
 
 const setRow = ({ organization: { nickname }, name, date, fee, awards }) => {
@@ -46,7 +71,7 @@ const setCollection = data => data.map(item => ({
 	show: 'overview',
 	expanded: false,
 	row: setRow(item)
-}));
+})).sort(deadlineSort);
 
 const expandedCollection = ({ collection }, action) => {
 	const newCollection = [...collection];
@@ -76,11 +101,16 @@ const expandedCollection = ({ collection }, action) => {
 };
 
 const grants = createReducer(DEFAULT_STATE, {
-	[Constants.grants.SORT_TABLE]: (state, action) => ({
-		...state,
-		currentSort: action.currentSort,
-		sortDirection: setDirection(state, action)
-	}),
+	[Constants.grants.SORT_TABLE]: (state, action) => {
+		const direction = setDirection(state, action);
+
+		return ({
+			...state,
+			collection: sortCollection(state, action, direction),
+			currentSort: action.currentSort,
+			sortDirection: direction
+		});
+	},
 
 	[Constants.grants.TOGGLE_ROW]: (state, action) => ({
 		...state,

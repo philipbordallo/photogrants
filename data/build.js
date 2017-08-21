@@ -2,25 +2,14 @@
 import fs from 'fs';
 import path from 'path';
 
+import { nameSort } from '../src/utilities/sorts';
+
 const OPP_PATH = path.join(__dirname, 'opportunities');
 const ALL_FILE = path.join(__dirname, 'all.json');
 
 
-const nameSort = (a, b) => {
-	const aNickname = a.organization.nickname ? `${a.organization.nickname} ` : '';
-	const bNickname = b.organization.nickname ? `${b.organization.nickname} ` : '';
-	const aName = `${aNickname}${a.name}`.toUpperCase();
-	const bName = `${bNickname}${b.name}`.toUpperCase();
-
-	if (aName > bName) return 1;
-	else if (aName < bName) return -1;
-	return 0;
-};
-
-
 const Data = {
 	read(dirname) {
-
 		return new Promise((resolve, reject) => {
 			fs.readdir(dirname, (error, filenames) => {
 				if (error) reject(error);
@@ -44,6 +33,7 @@ const Data = {
 	sort(data) {
 		return new Promise((resolve) => {
 			data.sort(nameSort);
+
 			resolve(data);
 		});
 	},

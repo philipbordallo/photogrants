@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import T from 'prop-types';
 
 import Table from 'components/Table';
@@ -38,7 +38,7 @@ const TABLE_CONFIG = [
 	}
 ];
 
-class Grants extends PureComponent {
+class Grants extends Component {
 	static propTypes = {
 		collection: COLLECTION_PROPTYPES.isRequired,
 		loadData: T.func.isRequired,
@@ -51,20 +51,20 @@ class Grants extends PureComponent {
 	constructor(props) {
 		super(props);
 
-		this.onTableSort = this.onTableSort.bind(this);
-		this.onRowClick = this.onRowClick.bind(this);
+		this.handleTableSort = this.handleTableSort.bind(this);
+		this.handleRowClick = this.handleRowClick.bind(this);
 	}
 
 	componentWillMount() {
 		this.props.loadData();
 	}
 
-	onTableSort(event) {
+	handleTableSort(event) {
 		const name = event.target.textContent.toLowerCase();
 		this.props.sortTable(name);
 	}
 
-	onRowClick(slug) {
+	handleRowClick(slug) {
 		this.props.toggleRow(slug);
 	}
 
@@ -77,8 +77,8 @@ class Grants extends PureComponent {
 				config={ TABLE_CONFIG }
 				currentSort={ currentSort }
 				detailsRenderer={ GrantsDetailsRow }
-				onRowClick={ this.onRowClick }
-				onTableSort={ this.onTableSort }
+				onRowClick={ this.handleRowClick }
+				onTableSort={ this.handleTableSort }
 				sortDirection={ sortDirection }
 			/>
 		);

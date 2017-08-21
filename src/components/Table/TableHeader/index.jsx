@@ -17,10 +17,10 @@ class TableHeader extends PureComponent {
 		super(props);
 
 		this.renderCell = this.renderCell.bind(this);
-		this.onClick = this.onClick.bind(this);
+		this.handleClick = this.handleClick.bind(this);
 	}
 
-	onClick(event) {
+	handleClick(event) {
 		event.target.blur(); // Prevents :focus from being shown onClick
 		this.props.onTableSort(event);
 	}
@@ -42,7 +42,7 @@ class TableHeader extends PureComponent {
 			<th className={ Classes.cell } style={ style } key={ index }>
 				<div
 					className={ contentClassName }
-					onClick={ this.onClick }
+					onClick={ this.handleClick }
 					title={ `Sort by ${name}` }
 					tabIndex={ index + 1 }
 					role="columnheader"

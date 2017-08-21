@@ -69,7 +69,7 @@ class GrantsDetailsRow extends PureComponent {
 						{ years }
 					</GrantDetail>
 
-					<GrantDetail type="list" title="Awards List">
+					<GrantDetail title="Awards List" type="list">
 						{ awards.map(this.renderAwards) }
 					</GrantDetail>
 

@@ -8,6 +8,8 @@
 	border-radius: 5px;
 	user-select: none;
 	cursor: pointer;
+	transition-property: background-color, border-color, color;
+	transition-duration: 250ms;
 
 	@nest a& {
 		display: inline-block;
@@ -26,6 +28,11 @@
 	@nest a& {
 		color: var(--white);
 	}
+
+	&:hover {
+		background-color: var(--darkBlue);
+		border-color: var(--darkBlue);
+	}
 }
 
 .secondary {
@@ -35,5 +42,11 @@
 
 	@nest a& {
 		color: var(--blue);
+	}
+
+	&:hover {
+		background-color: var(--lightBlue);
+		color: var(--darkBlue);
+		border-color: var(--darkBlue);
 	}
 }

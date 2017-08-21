@@ -30,11 +30,11 @@ class TableRow extends PureComponent {
 	constructor() {
 		super();
 
-		this.onRowClick = this.onRowClick.bind(this);
+		this.handleRowClick = this.handleRowClick.bind(this);
 		this.renderCell = this.renderCell.bind(this);
 	}
 
-	onRowClick() {
+	handleRowClick() {
 		this.props.onRowClick(this.props.slug);
 	}
 
@@ -61,7 +61,7 @@ class TableRow extends PureComponent {
 			<tr
 				className={ Classes.row }
 				title={ title }
-				onClick={ this.onRowClick }
+				onClick={ this.handleRowClick }
 			>
 				{ data.map(this.renderCell) }
 			</tr>
