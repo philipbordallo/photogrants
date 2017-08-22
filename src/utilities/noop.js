@@ -1,5 +1,3 @@
-function noop() {
-	return null;
-}
+function noop() {}
 
 export default noop;

@@ -6,37 +6,12 @@ import Table from 'components/Table';
 import { SORT_DIRECTION_PROPTYPES } from 'components/Table/propTypes';
 import { COLLECTION_PROPTYPES } from './propTypes';
 
+import { TABLE_CONFIG } from './meta';
+
 import GrantsDetailsRow from './GrantsDetailsRow';
-import AwardRowCell from './AwardRowCell';
-import TitleRowCell from './TitleRowCell';
 
+import Classes from './styles';
 
-const TABLE_CONFIG = [
-	{
-		name: 'Name',
-		width: 70,
-		align: 'left',
-		renderer: TitleRowCell
-	},
-	{
-		name: 'Fee',
-		width: 8,
-		align: 'left',
-		renderer: null
-	},
-	{
-		name: 'Award',
-		width: 14,
-		align: 'left',
-		renderer: AwardRowCell
-	},
-	{
-		name: 'Deadline',
-		width: 8,
-		align: 'right',
-		renderer: null
-	}
-];
 
 class Grants extends Component {
 	static propTypes = {
@@ -73,6 +48,7 @@ class Grants extends Component {
 
 		return (
 			<Table
+				className={ Classes.table }
 				collection={ collection }
 				config={ TABLE_CONFIG }
 				currentSort={ currentSort }

@@ -25,9 +25,8 @@ class TableHeader extends PureComponent {
 		this.props.onTableSort(event);
 	}
 
-	renderCell({ name, align }, index) {
+	renderCell({ name }, index) {
 		const { currentSort, sortDirection } = this.props;
-		const style = { textAlign: align };
 
 		const isSorted = (currentSort === name.toLowerCase());
 		const isAscending = (sortDirection === 'asc');
@@ -39,7 +38,7 @@ class TableHeader extends PureComponent {
 		else if (isSorted && isDescending) contentClassName = Classes.cellContentDesc;
 
 		return (
-			<th className={ Classes.cell } style={ style } key={ index }>
+			<th className={ Classes.cell } key={ index }>
 				<div
 					className={ contentClassName }
 					onClick={ this.handleClick }

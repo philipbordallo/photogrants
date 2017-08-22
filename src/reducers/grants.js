@@ -1,10 +1,10 @@
+import Constants from 'api/constants';
+import createReducer from 'reducers/createReducer';
+
 import getCurrencySymbol from 'currency-symbol-map';
 import moment from 'moment';
 
 import { nameSort, feeSort, awardSort, deadlineSort } from 'utilities/sorts';
-
-import Constants from 'api/constants';
-import createReducer from './createReducer';
 
 
 const DEFAULT_STATE = {
@@ -14,7 +14,7 @@ const DEFAULT_STATE = {
 };
 
 const setDirection = (state, action) => {
-	if (state.currentSort === action.currentSort) {
+	if (state.currentSort === action.currentSort && action.currentSort !== 'deadline') {
 		return (state.sortDirection === 'asc') ? 'desc' : 'asc';
 	}
 

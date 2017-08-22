@@ -22,10 +22,12 @@ class Table extends PureComponent {
 		onRowClick: T.func.isRequired,
 		onTableSort: T.func.isRequired,
 		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
+		className: T.string,
 		detailsRenderer: T.func
 	};
 
 	static defaultProps = {
+		className: '',
 		detailsRenderer: null
 	};
 
@@ -72,10 +74,13 @@ class Table extends PureComponent {
 	}
 
 	render() {
-		const { collection, config, onTableSort, currentSort, sortDirection } = this.props;
+		const { collection, config, onTableSort, currentSort, sortDirection, className } = this.props;
+
+		let tableClasses = Classes.root;
+		if (className) tableClasses += ` ${className}`;
 
 		return (
-			<table className={ Classes.root }>
+			<table className={ tableClasses }>
 				<colgroup>
 					{ config.map(this.renderCol) }
 				</colgroup>
