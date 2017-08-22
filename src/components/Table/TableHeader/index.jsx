@@ -17,22 +17,30 @@ class TableHeader extends PureComponent {
 		super(props);
 
 		this.renderCell = this.renderCell.bind(this);
-		this.handleClick = this.handleClick.bind(this);
 	}
 
-	handleClick(event) {
-		event.target.blur(); // Prevents :focus from being shown onClick
-		this.props.onTableSort(event);
+	handleClick(name, direction) {
+		return (event) => {
+			event.target.blur(); // Prevents :focus from being shown onClick
+			this.props.onTableSort(name, direction);
+		};
 	}
 
-	renderCell({ name }, index) {
+	renderCell({ name, sortable }, index) {
 		const { currentSort, sortDirection } = this.props;
+		const sortName = name.toLowerCase();
 
-		const isSorted = (currentSort === name.toLowerCase());
+		const descOnly = sortable.every(sort => sort === 'desc');
+		const isSorted = (currentSort === sortName);
 		const isAscending = (sortDirection === 'asc');
 		const isDescending = (sortDirection === 'desc');
 
+		let nextDirection = 'desc';
 		let contentClassName = Classes.cellContent;
+
+		if (isSorted && !descOnly) {
+			nextDirection = (sortDirection === 'asc') ? 'desc' : 'asc';
+		}
 
 		if (isSorted && isAscending) contentClassName = Classes.cellContentAsc;
 		else if (isSorted && isDescending) contentClassName = Classes.cellContentDesc;
@@ -41,7 +49,7 @@ class TableHeader extends PureComponent {
 			<th className={ Classes.cell } key={ index }>
 				<div
 					className={ contentClassName }
-					onClick={ this.handleClick }
+					onClick={ this.handleClick(sortName, nextDirection) }
 					title={ `Sort by ${name}` }
 					tabIndex={ index + 1 }
 					role="columnheader"

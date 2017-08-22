@@ -34,9 +34,8 @@ class Grants extends Component {
 		this.props.loadData();
 	}
 
-	handleTableSort(event) {
-		const name = event.target.textContent.toLowerCase();
-		this.props.sortTable(name);
+	handleTableSort(name, direction) {
+		this.props.sortTable(name, direction);
 	}
 
 	handleRowClick(slug) {

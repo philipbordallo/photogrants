@@ -4,11 +4,12 @@ import { loadGrantData } from 'api';
 
 
 // Sort Table
-export const sortTable = currentSort =>
+export const sortTable = (currentSort, sortDirection) =>
 	(dispatch) => {
 		dispatch({
 			type: Constants.grants.SORT_TABLE,
-			currentSort
+			currentSort,
+			sortDirection
 		});
 	};
 

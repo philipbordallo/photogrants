@@ -13,15 +13,7 @@ const DEFAULT_STATE = {
 	collection: []
 };
 
-const setDirection = (state, action) => {
-	if (state.currentSort === action.currentSort && action.currentSort !== 'deadline') {
-		return (state.sortDirection === 'asc') ? 'desc' : 'asc';
-	}
-
-	return DEFAULT_STATE.sortDirection;
-};
-
-const sortCollection = (state, action, direction) => {
+const sortCollection = (state, action) => {
 	const newCollection = [...state.collection];
 
 	if (action.currentSort === 'name') {
@@ -37,7 +29,7 @@ const sortCollection = (state, action, direction) => {
 		newCollection.sort(deadlineSort);
 	}
 
-	if (direction === 'asc') {
+	if (action.sortDirection === 'asc') {
 		newCollection.reverse();
 	}
 
@@ -101,16 +93,12 @@ const expandedCollection = ({ collection }, action) => {
 };
 
 const grants = createReducer(DEFAULT_STATE, {
-	[Constants.grants.SORT_TABLE]: (state, action) => {
-		const direction = setDirection(state, action);
-
-		return ({
-			...state,
-			collection: sortCollection(state, action, direction),
-			currentSort: action.currentSort,
-			sortDirection: direction
-		});
-	},
+	[Constants.grants.SORT_TABLE]: (state, action) => ({
+		...state,
+		collection: sortCollection(state, action),
+		currentSort: action.currentSort,
+		sortDirection: action.sortDirection
+	}),
 
 	[Constants.grants.TOGGLE_ROW]: (state, action) => ({
 		...state,
