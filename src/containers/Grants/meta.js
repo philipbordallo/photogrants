@@ -5,25 +5,29 @@ import TitleRowCell from './TitleRowCell';
 
 export const TABLE_CONFIG = [
 	{
-		name: 'Name',
+		name: 'name',
+		title: 'Name',
 		width: 70,
 		renderer: TitleRowCell,
 		sortable: ['desc', 'asc']
 	},
 	{
-		name: 'Fee',
+		name: 'fee',
+		title: 'Fee',
 		width: 8,
 		renderer: null,
 		sortable: ['desc', 'asc']
 	},
 	{
-		name: 'Award',
+		name: 'award',
+		title: 'Award',
 		width: 14,
 		renderer: AwardRowCell,
 		sortable: ['desc', 'asc']
 	},
 	{
-		name: 'Deadline',
+		name: 'deadline',
+		title: 'Deadline',
 		width: 8,
 		renderer: null,
 		sortable: ['desc']

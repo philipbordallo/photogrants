@@ -58,3 +58,8 @@
 	border: 0;
 	border-top: 1px solid var(--offWhite);
 }
+
+.header {
+	composes: sectionTitle from 'assets/default/styles';
+	user-select: none;
+}

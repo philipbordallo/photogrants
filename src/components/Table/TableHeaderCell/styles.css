@@ -1,11 +1,7 @@
 @import 'variables';
 
-.root {
-	composes: sectionTitle from 'assets/default/styles';
-	user-select: none;
-}
 
-.cell {
+.root {
 	padding: 0 10px 10px 10px;
 	font-weight: normal;
 
@@ -18,7 +14,7 @@
 	}
 }
 
-.cellContent {
+.content {
 	display: inline-block;
 	cursor: pointer;
 	user-select: none;
@@ -34,8 +30,8 @@
 	}
 }
 
-.cellContentSorted {
-	composes: cellContent;
+.contentSorted {
+	composes: content;
 	position: relative;
 
 	&::after {
@@ -55,14 +51,14 @@
 	}
 }
 
-.cellContentAsc {
-	composes: cellContentSorted;
+.contentAsc {
+	composes: contentSorted;
 
 	&::after {
 		transform: rotate(180deg);
 	}
 }
 
-.cellContentDesc {
-	composes: cellContentSorted;
+.contentDesc {
+	composes: contentSorted;
 }
