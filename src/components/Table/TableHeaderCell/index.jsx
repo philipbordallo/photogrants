@@ -19,6 +19,7 @@ class TableHeaderCell extends Component {
 		super();
 
 		this.handleClick = this.handleClick.bind(this);
+		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}
 
 	shouldComponentUpdate(nextProps) {
@@ -28,7 +29,7 @@ class TableHeaderCell extends Component {
 		return (wasPreviousCurrentSort || isNextCurrentSort);
 	}
 
-	handleClick(event) {
+	sortTable() {
 		const { name, currentSort, sortDirection, sortable } = this.props;
 
 		const isSorted = (currentSort === name);
@@ -40,8 +41,19 @@ class TableHeaderCell extends Component {
 			direction = (sortDirection === 'asc') ? 'desc' : 'asc';
 		}
 
-		event.target.blur(); // Prevents :focus from being shown onClick
+		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
 		this.props.onTableSort(name, direction);
+	}
+
+	handleClick(event) {
+		event.target.blur(); // Prevents :focus from being shown onClick
+		this.sortTable();
+	}
+
+	handleKeyPress(event) {
+		if (event.key === 'Enter') {
+			this.sortTable();
+		}
 	}
 
 	render() {
@@ -61,6 +73,7 @@ class TableHeaderCell extends Component {
 				<div
 					className={ contentClassName }
 					onClick={ this.handleClick }
+					onKeyPress={ this.handleKeyPress }
 					title={ `Sort by ${title}` }
 					tabIndex={ tabIndex }
 					role="columnheader"

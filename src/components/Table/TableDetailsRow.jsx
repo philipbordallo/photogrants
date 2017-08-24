@@ -10,6 +10,7 @@ import Classes from './styles';
 class TableDetailsRow extends PureComponent {
 	static propTypes = {
 		data: DATA_PROPTYPES.isRequired,
+		scrollable: T.bool.isRequired,
 		renderer: T.func
 	};
 
@@ -24,24 +25,22 @@ class TableDetailsRow extends PureComponent {
 	}
 
 	componentDidMount() {
-		const viewportHeight = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-		const detailsPosition = this.detailsRef.getBoundingClientRect();
-		const rowPosition = this.detailsRef.previousSibling.getBoundingClientRect();
-		const bothHeights = detailsPosition.height + rowPosition.height;
+		if (this.props.scrollable) {
+			const detailsPosition = this.detailsRef.getBoundingClientRect();
+			const rowPosition = this.detailsRef.previousSibling.getBoundingClientRect();
 
-		const shouldScrollBottom = (detailsPosition.bottom > viewportHeight);
-		const shouldScrollTop = (rowPosition.top < 0 || bothHeights > viewportHeight);
+			const offset = { bottom: 24, top: 44 };
+			const bothHeights = detailsPosition.height + rowPosition.height + offset.top;
 
-		const offset = {
-			bottom: 24,
-			top: 6
-		};
+			const shouldScrollBottom = (detailsPosition.bottom > window.innerHeight);
+			const shouldScrollTop = (rowPosition.top - offset.top  < 0 || bothHeights > window.innerHeight);
 
-		let top = 0;
-		if (shouldScrollBottom) top = (detailsPosition.bottom + offset.bottom) - viewportHeight;
-		if (shouldScrollTop) top = rowPosition.top - offset.top;
+			let top = 0;
+			if (shouldScrollBottom) top = (detailsPosition.bottom + offset.bottom) - window.innerHeight;
+			if (shouldScrollTop) top = rowPosition.top - offset.top;
 
-		if (shouldScrollBottom || shouldScrollTop) window.scrollBy({ top, behavior: 'smooth' });
+			if (shouldScrollBottom || shouldScrollTop) window.scrollBy({ top, behavior: 'smooth' });
+		}
 	}
 
 	setDetailsRef(ref) {

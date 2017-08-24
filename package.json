@@ -25,7 +25,8 @@
   "babel": {
     "presets": [
       [
-        "env", {
+        "env",
+        {
           "useBuiltIns": true
         }
       ],
@@ -73,6 +74,7 @@
     "postcss-font-family-system-ui": "^2.0.1",
     "postcss-font-smoothing": "^0.1.0",
     "postcss-font-weights": "^4.0.0",
+    "postcss-hexrgba": "^1.0.0",
     "postcss-import": "^10.0.0",
     "postcss-loader": "^2.0.6",
     "postcss-media-minmax": "^3.0.0",

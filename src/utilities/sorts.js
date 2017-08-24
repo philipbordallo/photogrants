@@ -18,7 +18,7 @@ export const feeSort = (a, b) => {
 
 	if (aFee > bFee) return -1;
 	else if (aFee < bFee) return 1;
-	return 0;
+	return nameSort(a, b);
 };
 
 export const awardSort = (a, b) => {
@@ -29,9 +29,8 @@ export const awardSort = (a, b) => {
 
 	if (aAward > bAward) return -1;
 	else if (aAward < bAward) return 1;
-	return 0;
+	return nameSort(a, b);
 };
-
 
 export const deadlineSort = (a, b) => {
 	const now = moment().dayOfYear();
@@ -43,5 +42,5 @@ export const deadlineSort = (a, b) => {
 
 	if (aDeadline > bDeadline) return 1;
 	else if (aDeadline < bDeadline) return -1;
-	return 0;
+	return nameSort(a, b);
 };

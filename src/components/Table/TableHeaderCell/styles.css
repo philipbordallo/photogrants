@@ -2,8 +2,12 @@
 
 
 .root {
-	padding: 0 10px 10px 10px;
+	position: sticky;
+	top: 0;
+	z-index: 5;
+	padding: 10px 10px 8px 10px;
 	font-weight: normal;
+	background-color: rgba(var(--offWhite), .95);
 
 	&:first-of-type {
 		padding-left: 20px;
@@ -16,6 +20,7 @@
 
 .content {
 	display: inline-block;
+	border-bottom: 2px solid transparent;
 	cursor: pointer;
 	user-select: none;
 	transition-property: color;
@@ -25,7 +30,13 @@
 		color: var(--black)
 	}
 
+	&:focus {
+		border-color: var(--darkGray);
+		outline: none;
+	}
+
 	&:active:focus {
+		border-color: transparent;
 		outline: none;
 	}
 }

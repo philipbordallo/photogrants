@@ -14,6 +14,7 @@ module.exports = {
 		'postcss-media-minmax': {},
 		'postcss-pseudoelements': {},
 		'postcss-pxtorem': {},
+		'postcss-hexrgba': {},
 		'postcss-font-family-system-ui': {},
 		'postcss-font-smoothing': {},
 		'postcss-font-weights': {}

@@ -45,7 +45,7 @@ class Table extends PureComponent {
 	}
 
 	renderRow(data) {
-		const { active, slug, row, expanded, show } = data;
+		const { active, slug, row, expanded, show, scrollable } = data;
 		const { onRowClick, config, detailsRenderer } = this.props;
 
 		if (active && show === 'overview') {
@@ -65,6 +65,7 @@ class Table extends PureComponent {
 				<TableDetailsRow
 					key={ slug }
 					data={ data }
+					scrollable={ scrollable }
 					renderer={ detailsRenderer }
 				/>
 			);

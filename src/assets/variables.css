@@ -25,4 +25,12 @@
 	/* SIZES */
 	--defaultPadding: 12px;
 	--containerWidth: 960px;
+
+	--smallWidth: 550px;
+	--mediumWidth: 768px;
+	--largeWidth: 1280px;
 }
+
+@custom-media --smallViewport (max-width: 550px);
+@custom-media --mediumViewport (max-width: 768px);
+@custom-media --largeViewport (max-width: 1280px);

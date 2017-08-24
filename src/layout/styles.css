@@ -10,5 +10,4 @@
 	width: 100%;
 	max-width: var(--containerWidth);
 	margin: 0 auto;
-	padding: 0 var(--defaultPadding)
 }
