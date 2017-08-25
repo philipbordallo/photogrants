@@ -31,9 +31,10 @@ class TableDetailsRow extends PureComponent {
 
 			const offset = { bottom: 24, top: 44 };
 			const bothHeights = detailsPosition.height + rowPosition.height + offset.top;
+			const fromTop = rowPosition.top - offset.top;
 
 			const shouldScrollBottom = (detailsPosition.bottom > window.innerHeight);
-			const shouldScrollTop = (rowPosition.top - offset.top  < 0 || bothHeights > window.innerHeight);
+			const shouldScrollTop = (fromTop < 0 || bothHeights > window.innerHeight);
 
 			let top = 0;
 			if (shouldScrollBottom) top = (detailsPosition.bottom + offset.bottom) - window.innerHeight;

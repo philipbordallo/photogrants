@@ -11,9 +11,11 @@
     "url": "git+https://github.com/philipbordallo/photogrants.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.config.babel.js --progress",
-    "build": "webpack --config ./config/webpack.config.babel.js --progress --colors",
+    "start": "webpack-dev-server --config ./config/webpack.config.dev.babel.js --progress",
+    "build": "webpack --config ./config/webpack.config.prod.babel.js --progress --colors --display-max-modules 0",
     "data": "babel-node data/build && ava spec/data/data_spec.js",
+    "prod": "http-server",
+    "cleanup": "trash bundle.js*",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "ava": {
@@ -67,6 +69,7 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "eslint-plugin-react": "^7.2.0",
+    "http-server": "^0.10.0",
     "jsonschema": "^1.1.1",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.1.0",
@@ -83,6 +86,7 @@
     "postcss-pseudoelements": "^5.0.0",
     "postcss-pxtorem": "^4.0.1",
     "style-loader": "^0.18.2",
+    "trash": "^4.0.1",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
   },
