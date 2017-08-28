@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react';
+import React, { Component } from 'react';
 import T from 'prop-types';
 
 import noop from 'utilities/noop';
@@ -7,7 +7,7 @@ import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
 
 import Classes from './styles';
 
-class TableDetailsRow extends PureComponent {
+class TableDetailsRow extends Component {
 	static propTypes = {
 		data: DATA_PROPTYPES.isRequired,
 		scrollable: T.bool.isRequired,
@@ -42,6 +42,10 @@ class TableDetailsRow extends PureComponent {
 
 			if (shouldScrollBottom || shouldScrollTop) window.scrollBy({ top, behavior: 'smooth' });
 		}
+	}
+
+	shouldComponentUpdate(nextProps) {
+		return this.props.data.show !== nextProps.data.show;
 	}
 
 	setDetailsRef(ref) {

@@ -26,6 +26,12 @@ photogrants
 - [San Francisco Award](https://artadia.org/awards/deadlines/)
 - [Atlanta Award](https://artadia.org/awards/deadlines/)
 
+#### Artist Trust
+- [Grant for Artist Projects](http://artisttrust.org/index.php/for-artists/money#grants_for_artist_projects)
+- [Conductive Garboil Grant](http://artisttrust.org/index.php/for-artists/money#conductive_garboil_grant)
+- [Twining Humber Award](http://artisttrust.org/index.php/for-artists/money#twining_humber_award)
+- [Arts Innovator Award](http://artisttrust.org/index.php/for-artists/money#arts_innovator_awards)
+
 #### Burn Magazine
 - [Emerging Photographer Fund](http://www.burnmagazine.org/epf/)
 - [Young Talent EPF/Fujifilm Award](http://www.burnmagazine.org/epf/)
@@ -53,6 +59,13 @@ photogrants
 - [Grand Prix](http://www.images.ch/grand-prix-images/presentation/le-grand-prix-images-vevey/)
 - [Prix de Livre (Book Award)](http://www.images.ch/grand-prix-images/presentation/prix-livre-images-vevey/)
 
+#### John Simon Guggenheim Memorial Foundation
+- [Guggenheim Fellowship](https://www.gf.org/applicants/)
+
+#### The Leeway Foundation
+- [Art and Change Grant](http://www.leeway.org/grants/art_and_change_grants/)
+- [Transformation Award](http://www.leeway.org/grants/leeway_transformation_award/)
+
 #### Manuel Rivera-Ortiz Foundation for Documentary Photography & Film
 - [Call for Documentary Photography](http://mrofoundation.org/programs/photography-grants/)
 
@@ -64,6 +77,12 @@ photogrants
 
 #### Photographic Museum of Humanity
 - [PHmuseum Grant](https://phmuseum.com/grant)
+
+#### Santo Foundation
+- [Individual Artist Award](https://santofoundation.org/current-opportunities/)
+
+#### Seattle Art Museum
+- [Betty Bowen Award](http://www.seattleartmuseum.org/about-sam/art-submissions#bet)
 
 #### Society for Photographic Education
 - [Student Awards for Innovations in Imaging](https://www.spenational.org/resources/spe-awards-grants)
@@ -92,7 +111,8 @@ photogrants
 ## Other Opportunities
 
 If you are looking for artist residency programs, check out:
-
 - [ResArtis](http://www.resartis.org/)
 - [TransArtists](http://www.transartists.org)
 
+Also many state and regional art councils offer area specific grants:
+- [National Endowment for the Arts’ list of State and Regional Arts Organizations](https://www.arts.gov/partners/state-regional)

@@ -1,10 +1,9 @@
-/* eslint import/prefer-default-export:0 */
 import Constants from 'api/constants';
 import { loadGrantData } from 'api';
 
 
 // Sort Table
-export const sortTable = (currentSort, sortDirection) =>
+const sortTable = (currentSort, sortDirection) =>
 	(dispatch) => {
 		dispatch({
 			type: Constants.grants.SORT_TABLE,
@@ -14,7 +13,7 @@ export const sortTable = (currentSort, sortDirection) =>
 	};
 
 // Toggle Row
-export const toggleRow = expandedRow =>
+const toggleRow = expandedRow =>
 	(dispatch) => {
 		dispatch({
 			type: Constants.grants.TOGGLE_ROW,
@@ -37,7 +36,7 @@ const loadDataFailure = error => ({
 	error
 });
 
-export const loadData = () =>
+const loadData = () =>
 	(dispatch) => {
 		dispatch(startLoadingData);
 
@@ -50,3 +49,8 @@ export const loadData = () =>
 			});
 	};
 
+export {
+	sortTable,
+	loadData,
+	toggleRow
+};

@@ -3,7 +3,7 @@ import AwardRowCell from './AwardRowCell';
 import TitleRowCell from './TitleRowCell';
 
 
-export const TABLE_CONFIG = [
+const TABLE_CONFIG = [
 	{
 		name: 'name',
 		title: 'Name',
@@ -33,3 +33,7 @@ export const TABLE_CONFIG = [
 		sortable: ['desc']
 	}
 ];
+
+export {
+	TABLE_CONFIG
+};

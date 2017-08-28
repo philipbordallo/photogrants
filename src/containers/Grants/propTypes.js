@@ -1,11 +1,10 @@
-/* eslint import/prefer-default-export:0 */
 import T from 'prop-types';
 
 const CURRENCY_PROPTYPES = T.oneOf([
 	'USD'
 ]);
 
-export const AWARD_PROPTYPES = T.shape({
+const AWARD_PROPTYPES = T.shape({
 	given: T.number,
 	amount: T.number,
 	amountType: T.oneOf([
@@ -18,7 +17,7 @@ export const AWARD_PROPTYPES = T.shape({
 	residency: T.bool
 });
 
-export const DATA_PROPTYPES = T.shape({
+const DATA_PROPTYPES = T.shape({
 	active: T.bool,
 	type: T.oneOf([
 		'grant',
@@ -62,9 +61,20 @@ export const DATA_PROPTYPES = T.shape({
 	}),
 	awards: T.arrayOf(
 		AWARD_PROPTYPES
-	)
+	),
+	scrollable: T.bool,
+	show: T.oneOf([
+		'details',
+		'overview'
+	])
 });
 
-export const COLLECTION_PROPTYPES = T.arrayOf(
+const COLLECTION_PROPTYPES = T.arrayOf(
 	DATA_PROPTYPES
 );
+
+export {
+	AWARD_PROPTYPES,
+	DATA_PROPTYPES,
+	COLLECTION_PROPTYPES
+};
