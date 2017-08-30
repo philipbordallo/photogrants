@@ -11,8 +11,8 @@
     "url": "git+https://github.com/philipbordallo/photogrants.git"
   },
   "scripts": {
-    "start": "webpack-dev-server --config ./config/webpack.config.dev.babel.js --progress",
-    "build": "webpack --config ./config/webpack.config.prod.babel.js --progress",
+    "start": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --progress",
+    "build": "NODE_ENV=production webpack --config ./config/webpack.config.prod.js --progress",
     "data": "babel-node data/build && ava spec/data/data_spec.js",
     "prod": "http-server",
     "cleanup": "trash bundle.js* styles.css*",
@@ -29,11 +29,15 @@
       [
         "env",
         {
-          "useBuiltIns": true
+          "useBuiltIns": true,
+          "modules": false
         }
       ],
       "stage-2",
       "react"
+    ],
+    "plugins": [
+      "react-hot-loader/babel"
     ]
   },
   "browserslist": [
@@ -101,8 +105,10 @@
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-hot-loader": "^3.0.0-beta.7",
     "react-redux": "^5.0.5",
     "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
     "redux-thunk": "^2.2.0",
     "smoothscroll-polyfill": "^0.3.6",
     "whatwg-fetch": "^2.0.3"

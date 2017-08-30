@@ -1,11 +1,10 @@
-import webpack from 'webpack';
-import path from 'path';
-import ExtractTextPlugin from 'extract-text-webpack-plugin';
+const webpack = require('webpack');
+const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-import { LOADER, RESOLVER } from './utilities';
+const { LOADER, RESOLVER, ROOT_PATH, APP_PATH } = require('./utilities');
+const ENV = process.env.NODE_ENV;
 
-const ROOT_PATH = path.resolve(__dirname, '..');
-const APP_PATH = path.resolve(ROOT_PATH, 'src');
 
 const RULES = {
 	jsx: {
@@ -27,7 +26,7 @@ const RULES = {
 	}
 };
 
-const production = {
+module.exports = {
 	entry: {
 		app: path.resolve(APP_PATH, 'entry.js')
 	},
@@ -48,7 +47,7 @@ const production = {
 	},
 	plugins: [
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('production')
+			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
 		new ExtractTextPlugin({
 			filename: 'styles.css'
@@ -62,5 +61,3 @@ const production = {
 		})
 	]
 };
-
-export default production;

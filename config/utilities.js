@@ -1,10 +1,10 @@
-import path from 'path';
+const path = require('path');
 
 const ROOT_PATH = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.resolve(ROOT_PATH, 'config');
 const APP_PATH = path.resolve(ROOT_PATH, 'src');
 
-export const LOADER = {
+const LOADER = {
 	babel: {
 		loader: 'babel-loader'
 	},
@@ -35,7 +35,15 @@ export const LOADER = {
 	}
 };
 
-export const RESOLVER = {
+const RESOLVER = {
 	extensions: ['.js', '.jsx', '.css'],
 	modules: [APP_PATH, 'node_modules']
 };
+
+module.exports = {
+	ROOT_PATH,
+	CONFIG_PATH,
+	APP_PATH,
+	LOADER,
+	RESOLVER,
+}

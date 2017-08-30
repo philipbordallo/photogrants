@@ -1,10 +1,9 @@
-import webpack from 'webpack';
-import path from 'path';
+const webpack = require('webpack');
+const path = require('path');
 
-import { LOADER, RESOLVER } from './utilities';
+const { LOADER, RESOLVER, ROOT_PATH, APP_PATH } = require('./utilities');
+const ENV = process.env.NODE_ENV;
 
-const ROOT_PATH = path.resolve(__dirname, '..');
-const APP_PATH = path.resolve(ROOT_PATH, 'src');
 
 const PORT = 3000;
 
@@ -46,7 +45,7 @@ const DEV_SERVER = {
 	}
 };
 
-const development = {
+module.exports = {
 	entry: {
 		app: path.resolve(APP_PATH, 'entry.dev.js')
 	},
@@ -65,7 +64,7 @@ const development = {
 	resolve: RESOLVER,
 	plugins: [
 		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify('development')
+			'process.env.NODE_ENV': JSON.stringify(ENV)
 		}),
 		new webpack.SourceMapDevToolPlugin({
 			test: /\.(js|jsx)$/,
@@ -75,5 +74,3 @@ const development = {
 		new webpack.NamedModulesPlugin()
 	]
 };
-
-export default development;
