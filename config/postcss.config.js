@@ -8,7 +8,6 @@ module.exports = {
 			cascade: false
 		},
 		'postcss-nesting': {},
-		'postcss-discard-comments': {},
 		'postcss-custom-properties': {},
 		'postcss-custom-media': {},
 		'postcss-media-minmax': {},
@@ -17,6 +16,9 @@ module.exports = {
 		'postcss-hexrgba': {},
 		'postcss-font-family-system-ui': {},
 		'postcss-font-smoothing': {},
-		'postcss-font-weights': {}
+		'postcss-font-weights': {},
+		'csswring': {
+			removeAllComments: true
+		}
 	}
 };

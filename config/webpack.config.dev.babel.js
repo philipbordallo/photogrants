@@ -48,7 +48,7 @@ const DEV_SERVER = {
 
 const development = {
 	entry: {
-		app: path.resolve(APP_PATH, 'entry.js')
+		app: path.resolve(APP_PATH, 'entry.dev.js')
 	},
 	output: {
 		path: APP_PATH,
