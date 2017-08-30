@@ -31,7 +31,6 @@ class TableHeader extends PureComponent {
 				onTableSort={ onTableSort }
 				currentSort={ currentSort }
 				sortDirection={ sortDirection }
-				tabIndex={ index + 1 }
 			/>
 		);
 	}

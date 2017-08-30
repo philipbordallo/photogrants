@@ -64,7 +64,11 @@ const development = {
 	},
 	resolve: RESOLVER,
 	plugins: [
+		new webpack.DefinePlugin({
+			'process.env.NODE_ENV': JSON.stringify('development')
+		}),
 		new webpack.SourceMapDevToolPlugin({
+			test: /\.(js|jsx)$/,
 			filename: '[file].map'
 		}),
 		new webpack.HotModuleReplacementPlugin(),

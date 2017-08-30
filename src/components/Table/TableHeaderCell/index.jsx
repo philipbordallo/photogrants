@@ -11,8 +11,7 @@ class TableHeaderCell extends Component {
 		...SHAPE_CONFIG_PROPTYPES,
 		onTableSort: T.func.isRequired,
 		currentSort: T.string.isRequired,
-		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
-		tabIndex: T.number.isRequired
+		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
 	};
 
 	constructor() {
@@ -57,7 +56,7 @@ class TableHeaderCell extends Component {
 	}
 
 	render() {
-		const { currentSort, sortDirection, title, name, tabIndex } = this.props;
+		const { currentSort, sortDirection, title, name } = this.props;
 
 		const isSorted = (currentSort === name);
 		const isAscending = (sortDirection === 'asc');
@@ -75,7 +74,7 @@ class TableHeaderCell extends Component {
 					onClick={ this.handleClick }
 					onKeyPress={ this.handleKeyPress }
 					title={ `Sort by ${title}` }
-					tabIndex={ tabIndex }
+					tabIndex={ 0 }
 					role="columnheader"
 				>
 					{ title }

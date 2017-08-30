@@ -1,5 +1,6 @@
 import webpack from 'webpack';
 import path from 'path';
+import ExtractTextPlugin from 'extract-text-webpack-plugin';
 
 import { LOADER, RESOLVER } from './utilities';
 
@@ -16,11 +17,13 @@ const RULES = {
 	},
 	css: {
 		test: /\.css$/,
-		use: [
-			LOADER.style,
-			LOADER.css,
-			LOADER.postcss
-		]
+		use: ExtractTextPlugin.extract({
+			fallback: LOADER.style,
+			use: [
+				LOADER.css,
+				LOADER.postcss
+			]
+		})
 	}
 };
 
@@ -39,11 +42,19 @@ const production = {
 		]
 	},
 	resolve: RESOLVER,
+	stats: {
+		colors: true,
+		modules: false
+	},
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify('production')
 		}),
+		new ExtractTextPlugin({
+			filename: 'styles.css'
+		}),
 		new webpack.SourceMapDevToolPlugin({
+			test: /\.(js|jsx)$/,
 			filename: '[file].map'
 		}),
 		new webpack.optimize.UglifyJsPlugin({
