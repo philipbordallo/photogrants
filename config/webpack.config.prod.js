@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const { LOADER, RESOLVER, ROOT_PATH, APP_PATH } = require('./utilities');
+const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH } = require('./utilities');
 const ENV = process.env.NODE_ENV;
 
 
@@ -31,7 +31,7 @@ module.exports = {
 		app: path.resolve(APP_PATH, 'entry.js')
 	},
 	output: {
-		path: ROOT_PATH,
+		path: DIST_PATH,
 		filename: 'bundle.js'
 	},
 	module: {

@@ -11,11 +11,13 @@
     "url": "git+https://github.com/philipbordallo/photogrants.git"
   },
   "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --progress",
-    "build": "NODE_ENV=production webpack --config ./config/webpack.config.prod.js --progress",
+    "start": "npm run dev",
+    "build": "npm run cleanup && npm run prod && cpx index.html dist/",
+    "cleanup": "rimraf dist/",
     "data": "babel-node data/build && ava spec/data/data_spec.js",
-    "prod": "http-server",
-    "cleanup": "trash bundle.js* styles.css*",
+    "dev": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --progress",
+    "prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.js --progress",
+    "server": "http-server dist/",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "ava": {
@@ -34,7 +36,8 @@
         }
       ],
       "stage-2",
-      "react"
+      "react",
+      "@ava/stage-4"
     ],
     "plugins": [
       "react-hot-loader/babel"
@@ -65,6 +68,7 @@
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
+    "cpx": "^1.5.0",
     "css-loader": "^0.28.4",
     "csswring": "^6.0.1",
     "eslint": "^4.3.0",
@@ -91,8 +95,8 @@
     "postcss-normalize-whitespace": "^4.0.0-rc.0",
     "postcss-pseudoelements": "^5.0.0",
     "postcss-pxtorem": "^4.0.1",
+    "rimraf": "^2.6.1",
     "style-loader": "^0.18.2",
-    "trash": "^4.0.1",
     "webpack": "^3.4.1",
     "webpack-dev-server": "^2.6.1"
   },
