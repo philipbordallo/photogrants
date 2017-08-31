@@ -42,8 +42,10 @@ module.exports = {
 	},
 	resolve: RESOLVER,
 	stats: {
+		children: false,
 		colors: true,
-		modules: false
+		maxModules: 0,
+		modules: true
 	},
 	plugins: [
 		new webpack.DefinePlugin({
