@@ -12,9 +12,11 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "build": "npm run cleanup && npm run prod && cpx index.html dist/",
+    "build": "npm run cleanup && npm run data && npm run prod && cpx index.html dist/",
     "cleanup": "rimraf dist/",
-    "data": "babel-node data/build && ava spec/data/data_spec.js",
+    "data": "npm run data-test && npm run data-build",
+    "data-build": "babel-node data/build",
+    "data-test": "ava spec/data/data_spec.js",
     "dev": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --progress",
     "prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.js --progress",
     "server": "http-server dist/",
