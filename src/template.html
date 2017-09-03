@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="{{ description }}">
+
+	<title>{{ title }}</title>
+
+	<meta name="format-detection" content="telephone=no">
+
+	{{#stylesheet}}<link rel="stylesheet" type="text/css" media="all" href="styles.css">{{/stylesheet}}
+	<style type="text/css">
+		noscript { font-family: monospace; }
+	</style>
+</head>
+<body>
+	<noscript>
+		This site requires JavaScript
+	</noscript>
+
+	<div id="application"></div>
+
+	<script src="bundle.js"></script>
+	{{#analytics}}<script src="https://www.google-analytics.com/analytics.js" async defer></script>{{/analytics}}
+</body>
+</html>

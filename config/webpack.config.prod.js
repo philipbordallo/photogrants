@@ -1,8 +1,9 @@
 const webpack = require('webpack');
 const path = require('path');
+const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH } = require('./utilities');
+const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH } = require('./helpers');
 const ENV = process.env.NODE_ENV;
 
 
@@ -23,6 +24,12 @@ const RULES = {
 				LOADER.postcss
 			]
 		})
+	},
+	html: {
+		test: /\.html$/,
+		use: [
+			LOADER.handlebars
+		]
 	}
 };
 
@@ -37,7 +44,8 @@ module.exports = {
 	module: {
 		rules: [
 			RULES.jsx,
-			RULES.css
+			RULES.css,
+			RULES.html
 		]
 	},
 	resolve: RESOLVER,
@@ -50,6 +58,11 @@ module.exports = {
 	plugins: [
 		new webpack.DefinePlugin({
 			'process.env.NODE_ENV': JSON.stringify(ENV)
+		}),
+		new HTMLWebpackPlugin({
+			template: path.resolve(APP_PATH, 'entry.html.js'),
+			inject: false,
+			minify: false
 		}),
 		new ExtractTextPlugin({
 			filename: 'styles.css'

@@ -23,6 +23,9 @@ const LOADER = {
 			configFile: path.resolve(CONFIG_PATH, 'eslint.json')
 		}
 	},
+	handlebars: {
+		loader: 'handlebars-loader'
+	},
 	postcss: {
 		loader: 'postcss-loader',
 		options: {

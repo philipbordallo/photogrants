@@ -7,6 +7,7 @@ import 'assets/base/styles';
 
 import ProvidedApp from './ProvidedApp';
 
+
 const onDOMReady = () => {
 	const applicationElement = document.getElementById('application');
 
