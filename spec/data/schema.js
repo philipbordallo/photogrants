@@ -25,10 +25,10 @@ export default {
 		"date": {
 			...T.object,
 			properties: {
-				"call": T.string,
+				"callToSubmit": T.string,
 				"deadline": T.string
 			},
-			required: ["call", "deadline"]
+			required: ["callToSubmit", "deadline"]
 		},
 		"description": T.string,
 		"eligibility": {

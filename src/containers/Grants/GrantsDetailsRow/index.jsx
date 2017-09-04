@@ -1,8 +1,13 @@
 import React, { PureComponent } from 'react';
+import moment from 'moment';
 
 import getYearsActive from 'utilities/getYearsActive';
+import getDeadlineDate from 'utilities/getDeadlineDate';
+import getTimeZone from 'utilities/getTimeZone';
 
 import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
+
+import TimeZoneAbbr from 'components/TimeZoneAbbr';
 
 import GrantAward from './GrantAward';
 import GrantDetail from './GrantDetail';
@@ -48,10 +53,14 @@ class GrantsDetailsRow extends PureComponent {
 			awards,
 			eligibility: { age, gender, students },
 			url,
-			applicationUrl
+			applicationUrl,
+			date: { callToSubmit, deadline }
 		} = this.props.data;
-		const years = getYearsActive(yearsActive);
 
+		const years = getYearsActive(yearsActive);
+		const callDate = moment(callToSubmit, 'MMMM D YYYY').format('MMMM D');
+		const deadlineDate = `${getDeadlineDate(deadline)} `;
+		const timeZone = getTimeZone(deadline);
 		let ageText = '';
 
 		if (age.from && age.to === null) ageText = `${age.from} or older`;
@@ -75,6 +84,15 @@ class GrantsDetailsRow extends PureComponent {
 
 					<GrantDetail title="Organization">
 						<a href={ orgURL } target="_blank" className={ Classes.link }>{ orgName }</a>
+					</GrantDetail>
+
+					<GrantDetail title="Call To Submit" visible={ !!callToSubmit }>
+						{ callDate }
+					</GrantDetail>
+
+					<GrantDetail title="Deadline">
+						{ deadlineDate }
+						{ timeZone && <TimeZoneAbbr { ...timeZone } /> }
 					</GrantDetail>
 
 					<GrantLink href={ url } type="website" />

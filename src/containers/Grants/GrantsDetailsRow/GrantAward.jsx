@@ -5,6 +5,7 @@ import getCurrencySymbol from 'currency-symbol-map';
 
 import { COLLECTION_PROPTYPES } from 'containers/Grants/propTypes';
 
+
 class GrantAward extends PureComponent {
 	static propTypes = COLLECTION_PROPTYPES.isRequired;
 

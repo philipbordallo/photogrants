@@ -3,6 +3,7 @@ import T from 'prop-types';
 
 import Classes from './styles';
 
+
 class AwardRowCell extends PureComponent {
 	static propTypes = {
 		amount: T.string,

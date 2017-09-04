@@ -60,6 +60,10 @@ ul {
 	padding: 0;
 }
 
+abbr[title] {
+	text-decoration: none;
+}
+
 fieldset {
 	border: 0;
 	margin: 0;

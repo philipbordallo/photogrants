@@ -22,7 +22,8 @@
     "dev": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --progress",
     "prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.js",
     "server": "http-server dist/",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "ava spec/**/*_spec.js",
+    "test-watch": "npm test -- --watch --verbose"
   },
   "ava": {
     "require": [
@@ -44,7 +45,15 @@
       "@ava/stage-4"
     ],
     "plugins": [
-      "react-hot-loader/babel"
+      "react-hot-loader/babel",
+      [
+        "module-resolver", {
+          "root": [
+            "./src"
+          ],
+          "alias": {}
+        }
+      ]
     ]
   },
   "browserslist": [
@@ -69,6 +78,7 @@
     "babel-core": "^6.25.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.1.1",
+    "babel-plugin-module-resolver": "^2.7.1",
     "babel-preset-env": "^1.6.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
