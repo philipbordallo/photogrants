@@ -1,7 +1,8 @@
 import T from 'prop-types';
 
 const CURRENCY_PROPTYPES = T.oneOf([
-	'USD'
+	'USD',
+	'GBP'
 ]);
 
 const AWARD_PROPTYPES = T.shape({
@@ -52,7 +53,12 @@ const DATA_PROPTYPES = T.shape({
 			'nonbinary',
 			'all'
 		]),
-		students: T.bool,
+		students: T.oneOf([
+			'ineligible',
+			'only',
+			'accepted',
+			'all'
+		]),
 		description: T.sting
 	}),
 	fee: T.shape({

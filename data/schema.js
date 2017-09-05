@@ -53,7 +53,7 @@ export default {
 					required: ["from", "to"]
 				},
 				"gender": T.genderRange,
-				"students": T.boolean,
+				"students": T.studentRange,
 				"other": T.string
 			},
 			required: ["age", "gender", "students", "other"]

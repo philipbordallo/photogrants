@@ -24,7 +24,7 @@
 			"to": null
 		},
 		"gender": "all",
-		"students": true,
+		"students": "accepted",
 		"location": null,
 		"other": ""
 	},

@@ -54,6 +54,6 @@ if (ENV === 'test') {
 }
 
 module.exports = {
-	presets: presets,
-	plugins: plugins
+	presets,
+	plugins
 };

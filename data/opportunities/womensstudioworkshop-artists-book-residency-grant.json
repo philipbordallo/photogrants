@@ -1,6 +1,6 @@
 {
 	"active": true,
-	"type": "grant",
+	"type": "residency",
 	"slug": "womensstudioworkshop-artists-book-residency-grant",
 	"organization": {
 		"name": "Women's Studio Workshop",
@@ -24,7 +24,7 @@
 			"to": null
 		},
 		"gender": "women",
-		"students": false,
+		"students": "ineligible",
 		"location": null,
 		"other": ""
 	},

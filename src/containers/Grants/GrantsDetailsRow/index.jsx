@@ -23,8 +23,9 @@ const ELIGIBILITY_META = {
 		all: 'Everyone'
 	},
 	students: {
-		true: 'Eligible',
-		false: 'Not Eligible'
+		accepted: 'Accepted',
+		ineligible: 'Ineligible',
+		only: 'Only'
 	}
 };
 
