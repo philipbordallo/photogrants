@@ -15,7 +15,7 @@
     "build": "npm run cleanup && npm run data-prod && npm run prod",
     "cleanup": "rimraf dist/",
     "data": "npm run data-test && npm run data-build",
-    "data-build": "babel-node data/build",
+    "data-build": "NODE_ENV=data babel-node data/build",
     "data-test": "npm run test spec/data/data_spec.js",
     "data-test-min": "npm run test -- --tap spec/data/data_spec.js | tap-min",
     "data-prod": "npm run data-test-min && npm run data-build",
@@ -33,40 +33,8 @@
   },
   "babel": {
     "presets": [
-      [
-        "env",
-        {
-          "useBuiltIns": true,
-          "modules": false
-        }
-      ],
-      "stage-2",
-      "react"
-    ],
-    "env": {
-      "development": {
-        "plugins": [
-          "react-hot-loader/babel"
-        ]
-      },
-      "test": {
-        "presets": [
-          "@ava/stage-4"
-        ],
-        "plugins": [
-          [
-            "module-resolver", {
-              "root": [
-                "./src"
-              ],
-              "alias": {
-                "data": "./data"
-              }
-            }
-          ]
-        ]
-      }
-    }
+      "./config/babel.config.js"
+    ]
   },
   "browserslist": [
     "last 1 Android version",
