@@ -16,14 +16,14 @@
     "cleanup": "rimraf dist/",
     "data": "npm run data-test && npm run data-build",
     "data-build": "babel-node data/build",
-    "data-test": "ava spec/data/data_spec.js",
-    "data-test-min": "ava --tap spec/data/data_spec.js | tap-min",
+    "data-test": "npm run test spec/data/data_spec.js",
+    "data-test-min": "npm run test -- --tap spec/data/data_spec.js | tap-min",
     "data-prod": "npm run data-test-min && npm run data-build",
     "dev": "NODE_ENV=development webpack-dev-server --config ./config/webpack.config.dev.js --progress",
     "prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.js",
     "server": "http-server dist/",
-    "test": "ava spec/**/*_spec.js",
-    "test-watch": "npm test -- --watch --verbose"
+    "test": "NODE_ENV=test ava",
+    "test-watch": "npm test -- --watch --verbose spec/"
   },
   "ava": {
     "require": [
@@ -41,20 +41,32 @@
         }
       ],
       "stage-2",
-      "react",
-      "@ava/stage-4"
+      "react"
     ],
-    "plugins": [
-      "react-hot-loader/babel",
-      [
-        "module-resolver", {
-          "root": [
-            "./src"
-          ],
-          "alias": {}
-        }
-      ]
-    ]
+    "env": {
+      "development": {
+        "plugins": [
+          "react-hot-loader/babel"
+        ]
+      },
+      "test": {
+        "presets": [
+          "@ava/stage-4"
+        ],
+        "plugins": [
+          [
+            "module-resolver", {
+              "root": [
+                "./src"
+              ],
+              "alias": {
+                "data": "./data"
+              }
+            }
+          ]
+        ]
+      }
+    }
   },
   "browserslist": [
     "last 1 Android version",

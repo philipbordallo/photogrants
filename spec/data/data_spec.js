@@ -1,10 +1,10 @@
 import test from 'ava';
 import path from 'path'
 
-import { Validator } from 'jsonschema';
-import schema from './schema';
+import schema from 'data/schema';
+import finder from 'data/finder';
 
-import finder from '../../data/finder';
+import { Validator } from 'jsonschema';
 
 
 const ROOT_PATH = path.resolve(__dirname, '..', '..');
