@@ -4,7 +4,7 @@ export default {
 	...T.object,
 	properties: {
 		"active": T.boolean,
-		"type": T.string,
+		"type": T.oppTypes,
 		"slug": T.string,
 		"organization": {
 			...T.object,
@@ -54,9 +54,10 @@ export default {
 				},
 				"gender": T.genderRange,
 				"students": T.studentRange,
+				"location": T.string,
 				"other": T.string
 			},
-			required: ["age", "gender", "students", "other"]
+			required: ["age", "gender", "students", "location", "other"]
 		},
 		"fee": {
 			...T.object,

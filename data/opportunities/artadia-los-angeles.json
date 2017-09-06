@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "award",
+	"slug": "artadia-los-angeles",
+	"organization": {
+		"name": "Artadia",
+		"nickname": "Artadia",
+		"url": "https://artadia.org"
+	},
+	"name": "Los Angeles",
+	"url": "https://artadia.org/city/los-angeles/",
+	"applicationUrl": "https://artadia.org/awards/howtoapply/",
+	"yearsActive": [
+		2013, 2016, 2017
+	],
+	"date": {
+		"callToSubmit": "January 1 2017",
+		"deadline": "February 1 2017"
+	},
+	"description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": "ineligible",
+		"location": "Los Angeles, CA, USA",
+		"other": "Residents of Los Angeles County"
+	},
+	"fee": {
+		"amount": 0,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 2,
+			"amount": 10000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		}
+	]
+}

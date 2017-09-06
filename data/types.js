@@ -44,6 +44,14 @@ export default {
 			"upto"
 		]
 	},
+	oppTypes: {
+		type: "string",
+		enum: [
+			'grant',
+			'award',
+			'residency'
+		]
+	},
 	currency: {
 		type: "string",
 		enum: [

@@ -25,7 +25,7 @@
 		},
 		"gender": "all",
 		"students": "ineligible",
-		"location": null,
+		"location": "",
 		"other": ""
 	},
 	"fee": {

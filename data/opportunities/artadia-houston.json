@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "award",
+	"slug": "artadia-houston",
+	"organization": {
+		"name": "Artadia",
+		"nickname": "Artadia",
+		"url": "https://artadia.org"
+	},
+	"name": "Houston",
+	"url": "https://artadia.org/city/houston/",
+	"applicationUrl": "https://artadia.org/awards/howtoapply/",
+	"yearsActive": [
+		2003, 2004, 2006, 2008, 2010, 2012, 2015, 2017
+	],
+	"date": {
+		"callToSubmit": "April 15 2017",
+		"deadline": "May 15 2017"
+	},
+	"description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": "ineligible",
+		"location": "Houston, TX, USA",
+		"other": "Residents of Houston, Harris County"
+	},
+	"fee": {
+		"amount": 0,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 2,
+			"amount": 10000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		}
+	]
+}

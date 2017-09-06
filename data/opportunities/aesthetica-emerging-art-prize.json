@@ -25,7 +25,7 @@
 		},
 		"gender": "all",
 		"students": "only",
-		"location": null,
+		"location": "",
 		"other": "Open to current students and artists who have graduated within the last two years"
 	},
 	"fee": {

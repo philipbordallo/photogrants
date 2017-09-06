@@ -52,7 +52,7 @@ class GrantsDetailsRow extends PureComponent {
 			organization: { url: orgURL, name: orgName },
 			yearsActive,
 			awards,
-			eligibility: { age, gender, students },
+			eligibility: { age, gender, students, other },
 			url,
 			applicationUrl,
 			date: { callToSubmit, deadline }
@@ -102,7 +102,7 @@ class GrantsDetailsRow extends PureComponent {
 				<section className={ Classes.eligibility }>
 					<h3 className={ Classes.sectionTitle }>Eligibility</h3>
 
-					<GrantDetail title="Age" visible={ age.from !== null || age.to !== null }>
+					<GrantDetail title="Age" visible={ !!age.from || !!age.to }>
 						{ ageText }
 					</GrantDetail>
 
@@ -112,6 +112,10 @@ class GrantsDetailsRow extends PureComponent {
 
 					<GrantDetail title="Students">
 						{ ELIGIBILITY_META.students[students] }
+					</GrantDetail>
+
+					<GrantDetail title="Other" visible={ !!other }>
+						{ other }
 					</GrantDetail>
 				</section>
 				<section className={ Classes.links }>

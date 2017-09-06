@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "award",
+	"slug": "artadia-atlanta",
+	"organization": {
+		"name": "Artadia",
+		"nickname": "Artadia",
+		"url": "https://artadia.org"
+	},
+	"name": "Atlanta",
+	"url": "https://artadia.org/city/atlanta/",
+	"applicationUrl": "https://artadia.org/awards/howtoapply/",
+	"yearsActive": [
+		2009, 2011, 2014, 2017
+	],
+	"date": {
+		"callToSubmit": "September 15 2017",
+		"deadline": "October 15 2017"
+	},
+	"description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": "ineligible",
+		"location": "Atlanta, GA, USA",
+		"other": "Residents of Barrow, Bartow, Butts, Carroll, Cherokee, Clayton, Cobb, Coweta, DeKalb, Douglas, Fayette, Forsyth, Fulton, Gwinnett, Hall, Henry, Morgan, Newton, Paulding, Pickens, Rockdale, Spalding, and Walton counties"
+	},
+	"fee": {
+		"amount": 0,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 2,
+			"amount": 10000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		}
+	]
+}

@@ -25,8 +25,8 @@
 		},
 		"gender": "women",
 		"students": "ineligible",
-		"location": null,
-		"other": ""
+		"location": "NY, USA",
+		"other": "Residents of Greene, Columbia, Delaware, Dutchess, Ulster, Sullivan, and Orange counties"
 	},
 	"fee": {
 		"amount": 0,

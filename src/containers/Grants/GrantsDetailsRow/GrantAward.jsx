@@ -11,7 +11,7 @@ class GrantAward extends PureComponent {
 
 	render() {
 		const { given, amount, amountType, currency, mentorship, show, residency } = this.props;
-		const grant = (given > 1) ? 'grants' : 'grant';
+		const grant = (given > 1) ? 'grants each' : 'grant';
 		const upto = (amountType === 'upto') ? `up to` : '';
 		const awardAmount = `${getCurrencySymbol(currency)}${amount.toLocaleString()}`;
 		const additionalList = [];

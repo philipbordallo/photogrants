@@ -59,7 +59,8 @@ const DATA_PROPTYPES = T.shape({
 			'accepted',
 			'all'
 		]),
-		description: T.sting
+		location: T.string,
+		other: T.sting
 	}),
 	fee: T.shape({
 		amount: T.number,
