@@ -11,10 +11,12 @@ class TableDetailsRow extends Component {
 	static propTypes = {
 		data: DATA_PROPTYPES.isRequired,
 		scrollable: T.bool.isRequired,
+		colSpan: T.number,
 		renderer: T.func
 	};
 
 	static defaultProps = {
+		colSpan: 1,
 		renderer: noop
 	};
 
@@ -29,7 +31,7 @@ class TableDetailsRow extends Component {
 			const detailsPosition = this.detailsRef.getBoundingClientRect();
 			const rowPosition = this.detailsRef.previousSibling.getBoundingClientRect();
 
-			const offset = { bottom: 24, top: 44 };
+			const offset = { bottom: 24, top: 42 };
 			const bothHeights = detailsPosition.height + rowPosition.height + offset.top;
 			const fromTop = rowPosition.top - offset.top;
 
@@ -53,13 +55,12 @@ class TableDetailsRow extends Component {
 	}
 
 	render() {
-		const { data, renderer } = this.props;
+		const { data, renderer, colSpan } = this.props;
 		const content = React.createElement(renderer, { data });
 
 		return (
 			<tr className={ Classes.detailsRow } ref={ this.setDetailsRef }>
-				<td className={ Classes.detailsRowCell } colSpan={ 5 }>
-					<hr className={ Classes.detailsLine } />
+				<td className={ Classes.detailsRowCell } colSpan={ colSpan }>
 					{ content }
 				</td>
 			</tr>

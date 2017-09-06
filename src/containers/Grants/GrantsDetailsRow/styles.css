@@ -3,24 +3,50 @@
 .root {
 	display: flex;
 	justify-content: space-between;
+	flex-wrap: wrap;
 }
 
 .information {
-	padding-top: 20px;
-	padding-right: 20px;
 	flex-basis: 75%;
+	padding-right: 20px;
+	border-right: 1px solid var(--offWhite);
+
+	@media (--smallViewport) {
+		flex-basis: 100%;
+		padding: 0;
+		border-color: transparent;
+	}
 }
 
 .eligibility  {
-	padding-top: 20px;
-
-	padding-left: 20px;
 	flex-basis: 25%;
-	border-left: 1px solid var(--offWhite);
+	padding-left: 20px;
+
+	@media (--smallViewport) {
+		flex-basis: 100%;
+		margin-top: 1em;
+		padding: 0;
+		border-color: transparent;
+	}
+}
+
+.links {
+	flex-basis: 75%;
+	padding-right: 20px;
+	border-right: 1px solid var(--offWhite);
+
+	@media (--smallViewport) {
+		flex-basis: 100%;
+		border-color: transparent;
+	}
 }
 
 .sectionTitle {
 	composes: sectionTitle from 'assets/default/styles';
+
+	@nest .detail + & {
+		margin-top: 1em;
+	}
 }
 
 .detail {

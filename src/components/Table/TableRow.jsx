@@ -40,7 +40,7 @@ class TableRow extends PureComponent {
 
 	renderCell(data, index) {
 		const { config } = this.props;
-		let content = (typeof data !== 'object') ? data : '';
+		let content = (typeof data !== 'object') ? data : null;
 
 		if (config[index].renderer) {
 			content = React.createElement(config[index].renderer, data);
@@ -55,12 +55,12 @@ class TableRow extends PureComponent {
 
 	render() {
 		const { expanded, data } = this.props;
-		const title = expanded ? 'Close expanded details' : 'Expand for more information';
+
+		const rowClassName = expanded ? Classes.expandedRow : Classes.row;
 
 		return (
 			<tr
-				className={ Classes.row }
-				title={ title }
+				className={ rowClassName }
 				onClick={ this.handleRowClick }
 			>
 				{ data.map(this.renderCell) }

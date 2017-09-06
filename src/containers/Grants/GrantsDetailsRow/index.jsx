@@ -87,6 +87,8 @@ class GrantsDetailsRow extends PureComponent {
 						<a href={ orgURL } target="_blank" className={ Classes.link }>{ orgName }</a>
 					</GrantDetail>
 
+					<h3 className={ Classes.sectionTitle }>Dates</h3>
+
 					<GrantDetail title="Call To Submit" visible={ !!callToSubmit }>
 						{ callDate }
 					</GrantDetail>
@@ -95,9 +97,6 @@ class GrantsDetailsRow extends PureComponent {
 						{ deadlineDate }
 						{ timeZone && <TimeZoneAbbr { ...timeZone } /> }
 					</GrantDetail>
-
-					<GrantLink href={ url } type="website" />
-					<GrantLink href={ applicationUrl } type="application" />
 				</section>
 
 				<section className={ Classes.eligibility }>
@@ -114,6 +113,10 @@ class GrantsDetailsRow extends PureComponent {
 					<GrantDetail title="Students">
 						{ ELIGIBILITY_META.students[students] }
 					</GrantDetail>
+				</section>
+				<section className={ Classes.links }>
+					<GrantLink href={ url } type="website" />
+					<GrantLink href={ applicationUrl } type="application" />
 				</section>
 			</div>
 		);

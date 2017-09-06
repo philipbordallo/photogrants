@@ -16,6 +16,8 @@
 	font-smoothing: antialiased;
 	font-size: 20px;
 	cursor: pointer;
+	transition-property: background-color, color;
+	transition-duration: 250ms;
 
 	@nest .row + & {
 		border-top: 6px solid var(--offWhite);
@@ -24,6 +26,29 @@
 	@nest .detailsRow + & {
 		border-top: 6px solid var(--offWhite);
 	}
+
+	@media (hover: hover) {
+		&:hover {
+			background-color: var(--lightBlue);
+			color: var(--black);
+		}
+	}
+
+	&:active {
+		background-color: var(--lightBlue);
+	}
+}
+
+.expandedRow {
+	composes: row;
+	color: var(--white);
+	background-color: var(--blue);
+
+	@media (hover: none) {
+		&:active {
+			background-color: var(--blue);
+		}
+	}
 }
 
 .rowCell {
@@ -31,12 +56,6 @@
 
 	&:first-of-type {
 		padding-left: 20px;
-
-		@nest .row:hover & {
-			text-decoration: underline;
-			text-decoration-skip: ink;
-			text-decoration-color: var(--blue);
-		}
 	}
 
 	&:last-of-type {
@@ -50,13 +69,7 @@
 }
 
 .detailsRowCell {
-	padding: 0 20px 20px;
-}
-
-.detailsLine {
-	margin: 0;
-	border: 0;
-	border-top: 1px solid var(--offWhite);
+	padding: 20px;
 }
 
 .header {

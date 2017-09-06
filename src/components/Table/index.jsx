@@ -63,6 +63,7 @@ class Table extends PureComponent {
 		else if (active && show === 'details') {
 			return (
 				<TableDetailsRow
+					colSpan={ config.length }
 					key={ slug }
 					data={ data }
 					scrollable={ scrollable }

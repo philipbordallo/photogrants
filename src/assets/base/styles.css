@@ -16,6 +16,7 @@ html {
 }
 
 body {
+	-webkit-tap-highlight-color: transparent;
 	background-color: var(--offWhite);
 	color: var(--fontColorDark);
 	font-family: var(--sourceSans);

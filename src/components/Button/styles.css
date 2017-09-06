@@ -4,7 +4,7 @@
 	padding: .1875em .75em .3125em;
 	font-family: var(--sourceSans);
 	font-smoothing: antialiased;
-	border: 1px solid var(--blue);
+	border: 1px solid transparent;
 	border-radius: 5px;
 	user-select: none;
 	cursor: pointer;
@@ -23,15 +23,14 @@
 .primary {
 	composes: root;
 	color: var(--white);
-	background-color: var(--blue);
+	background-color: var(--green);
 
 	@nest a& {
 		color: var(--white);
 	}
 
 	&:hover {
-		background-color: var(--darkBlue);
-		border-color: var(--darkBlue);
+		background-color: var(--darkGreen);
 	}
 }
 
@@ -39,6 +38,7 @@
 	composes: root;
 	color: var(--blue);
 	background-color: var(--white);
+	border: 1px solid currentColor;
 
 	@nest a& {
 		color: var(--blue);
@@ -47,6 +47,6 @@
 	&:hover {
 		background-color: var(--lightBlue);
 		color: var(--darkBlue);
-		border-color: var(--darkBlue);
+		border-color: currentColor;
 	}
 }

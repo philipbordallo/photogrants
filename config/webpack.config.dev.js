@@ -1,11 +1,13 @@
 const webpack = require('webpack');
 const path = require('path');
+const os = require('os');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH } = require('./helpers');
 const ENV = process.env.NODE_ENV;
 
 
+const ip = os.networkInterfaces().en0.filter(interface => interface.family === 'IPv4')[0];
 const PORT = 3000;
 
 const RULES = {
@@ -34,13 +36,13 @@ const RULES = {
 };
 
 const DEV_SERVER = {
+	allowedHosts: [
+		ip.address
+	],
 	compress: true,
 	contentBase: DIST_PATH,
-	headers: {
-		'Access-Control-Allow-Origin': '*'
-	},
 	historyApiFallback: true,
-	host: 'localhost',
+	host: '0.0.0.0',
 	hot: true,
 	inline: true,
 	port: PORT,
@@ -60,7 +62,7 @@ module.exports = {
 	output: {
 		path: APP_PATH,
 		filename: 'bundle.js',
-		publicPath: `http://localhost:${PORT}/`
+		publicPath: `/`
 	},
 	devServer: DEV_SERVER,
 	module: {
