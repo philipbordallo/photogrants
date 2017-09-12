@@ -1,14 +1,11 @@
 const webpack = require('webpack');
 const path = require('path');
-const os = require('os');
+const localDomains = require('local-domains');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
 const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH } = require('./helpers');
 const ENV = process.env.NODE_ENV;
 
-
-const ip = os.networkInterfaces().en0.filter(interface => interface.family === 'IPv4')[0];
-const PORT = 3000;
 
 const RULES = {
 	jsx: {
@@ -35,17 +32,21 @@ const RULES = {
 	}
 };
 
+const HOST_LIST = localDomains('photogrants', ['dev', 'www.name.xip']);
+HOST_LIST.forEach(item => {
+	console.log(item)
+});
+console.log('\n');
+
 const DEV_SERVER = {
-	allowedHosts: [
-		ip.address
-	],
+	allowedHosts: HOST_LIST,
 	compress: true,
 	contentBase: DIST_PATH,
 	historyApiFallback: true,
-	host: '0.0.0.0',
+	host: 'localhost',
 	hot: true,
 	inline: true,
-	port: PORT,
+	port: 3000,
 	stats: {
 		assets: true,
 		children: false,
