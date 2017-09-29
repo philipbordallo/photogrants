@@ -40,6 +40,7 @@ export default {
 	amountRange: {
 		type: "string",
 		enum: [
+			"about",
 			"exact",
 			"upto"
 		]

@@ -9,6 +9,7 @@ const AWARD_PROPTYPES = T.shape({
 	given: T.number,
 	amount: T.number,
 	amountType: T.oneOf([
+		'about',
 		'exact',
 		'upto'
 	]),
