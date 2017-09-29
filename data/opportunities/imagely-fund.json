@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "grant",
+	"slug": "imagely-fund",
+	"organization": {
+		"name": "Imagely",
+		"nickname": "Imagely",
+		"url": "https://www.imagely.com/"
+	},
+	"name": "Fund",
+	"url": "https://www.imagely.com/fund/",
+	"applicationUrl": "",
+	"yearsActive": [
+		2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017
+	],
+	"date": {
+		"callToSubmit": "April 15 2017",
+		"deadline": "June 20 2017"
+	},
+	"description": "The Imagely Fund offers a $5000 grant to a photographer to help fund one humanitarian or environmental photography project each grant cycle. The Fund's goal is to provide support for projects that will have a tangible and positive impact on the world.",
+	"eligibility": {
+		"age": {
+			"from": 21,
+			"to": null
+		},
+		"gender": "all",
+		"students": "accepted",
+		"location": "",
+		"other": ""
+	},
+	"fee": {
+		"amount": 0,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 5000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		}
+	]
+}
