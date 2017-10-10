@@ -34,12 +34,6 @@ class GrantsDetailsRow extends PureComponent {
 		data: DATA_PROPTYPES.isRequired
 	};
 
-	constructor() {
-		super();
-
-		this.renderAwards = this.renderAwards.bind(this);
-	}
-
 	renderAwards(data, index) {
 		return (
 			<GrantAward key={ index } { ...data } />
@@ -62,8 +56,8 @@ class GrantsDetailsRow extends PureComponent {
 		const callDate = moment(callToSubmit, 'MMMM D YYYY').format('MMMM D');
 		const deadlineDate = `${getDeadlineDate(deadline)} `;
 		const timeZone = getTimeZone(deadline);
-		let ageText = '';
 
+		let ageText = '';
 		if (age.from && age.to === null) ageText = `${age.from} or older`;
 		else if (age.from === null && age.to) ageText = `${age.to} or younger`;
 		else if (age.from && age.to) ageText = `From ${age.from} to ${age.to}`;
@@ -118,6 +112,7 @@ class GrantsDetailsRow extends PureComponent {
 						{ other }
 					</GrantDetail>
 				</section>
+
 				<section className={ Classes.links }>
 					<GrantLink href={ url } type="website" />
 					<GrantLink href={ applicationUrl } type="application" />

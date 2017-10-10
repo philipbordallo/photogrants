@@ -1,0 +1,73 @@
+{
+	"active": true,
+	"type": "grant",
+	"slug": "phmuseum_women-photographers-grant",
+	"organization": {
+		"name": "Photographic Museum of Humanity",
+		"nickname": "PHmuseum",
+		"url": "https://phmuseum.com/"
+	},
+	"name": "Women Photographers Grant ",
+	"url": "https://phmuseum.com/grant",
+	"applicationUrl": "https://phmuseum.com/submissions/7/new",
+	"yearsActive": [
+		2017
+	],
+	"date": {
+		"callToSubmit": "September 5 2017",
+		"deadline": "October 12 2017 23:59 +0000"
+	},
+	"description": " The PHM Women Photographers Grant aims to empower the work and careers of female and female-identifying professionals of all ages and from all countries working in diverse areas of photography. It further means to facilitate the growth of the new generations and promote stories narrated from a female perspective, while responding to the necessity to fight against gender discrimination within the industry. ",
+	"eligibility": {
+		"age": {
+			"from": 18,
+			"to": null
+		},
+		"gender": "women",
+		"students": "accepted",
+		"location": "",
+		"other": ""
+	},
+	"fee": {
+		"amount": 25,
+		"currency": "GBP"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 5000,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 2000,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 0,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": true,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 0,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		}
+	]
+}

@@ -1,8 +1,24 @@
 import test from 'ava';
 
-import getTimeZone, { TIME_ZONES } from 'utilities/getTimeZone';
+import getTimeZone, { US_TIME_ZONES } from 'utilities/getTimeZone';
 
-TIME_ZONES.forEach((zone) => {
+test('No time zone', t => {
+
+	t.deepEqual(getTimeZone('January 1 2017'), null);
+});
+
+test('Greenwich Mean Time', t => {
+	const greenwichTime = {
+		offset: '+0000',
+		abbr: 'GMT',
+		name: 'Greenwich',
+		type: 'Mean'
+	};
+
+	t.deepEqual(getTimeZone('January 1 2017 23:59 +0000'), greenwichTime);
+});
+
+US_TIME_ZONES.forEach((zone) => {
 	const { name, standard, daylight, abbr } = zone;
 	const standardTime = {
 		...standard,
@@ -69,5 +85,5 @@ TIME_ZONES.forEach((zone) => {
 		t.deepEqual(getTimeZone(`March ${beginDate} ${year} 03:00 ${daylight.offset}`), daylightTime);
 		t.deepEqual(getTimeZone(`November ${endDate} ${year} 01:00 ${daylight.offset}`), daylightTime);
 		t.deepEqual(getTimeZone(`November ${endDate} ${year} 03:00 ${standard.offset}`), standardTime);
-	})
-})
+	});
+});
