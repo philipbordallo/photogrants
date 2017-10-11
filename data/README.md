@@ -5,21 +5,22 @@
 
 #### Aesthetica Magazine
 - [Aesthetica Art Prize](http://www.aestheticamagazine.com/art-prize/)
+- [Aesthetica Emgerging Art Prize](http://www.aestheticamagazine.com/art-prize/)
 
 #### Alexia Foundation
-- [Student Grant](http://www.alexiafoundation.org/grants/student_rules)
 - [Professional Grant](http://www.alexiafoundation.org/grants/professional_rules)
+- [Student Grant](http://www.alexiafoundation.org/grants/student_rules)
 
 #### American Academy in Rome
 - [Rome Prize](http://www.aarome.org/apply)
 
 #### Artadia
+- [Atlanta Award](https://artadia.org/awards/deadlines/)
+- [Chicago Award](https://artadia.org/awards/deadlines/)
+- [Houston Award](https://artadia.org/awards/deadlines/)
 - [Los Angeles Award](https://artadia.org/awards/deadlines/)
 - [New York Award](https://artadia.org/awards/deadlines/)
-- [Houston Award](https://artadia.org/awards/deadlines/)
-- [Chicago Award](https://artadia.org/awards/deadlines/)
 - [San Francisco Award](https://artadia.org/awards/deadlines/)
-- [Atlanta Award](https://artadia.org/awards/deadlines/)
 
 #### Artist Trust
 - [Grant for Artist Projects](http://artisttrust.org/index.php/for-artists/money#grants_for_artist_projects)
@@ -40,6 +41,9 @@
 
 #### Duke Center for Documentary Studies
 - [Dorothea Lange–Paul Taylor Prize](https://documentarystudies.duke.edu/awards/lange-taylor)
+
+### Guggenheim Memorial Foundation
+- [Guggenheim Foundation Fellowship](https://www.gf.org/applicants/)
 
 #### Griffin Museum of Photography
 - [John Chervinsky Emerging Photographer Scholarship](http://griffinmuseum.org/john-chervinsky-emerging-photographer-scholarship/)

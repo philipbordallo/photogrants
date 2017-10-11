@@ -1,0 +1,82 @@
+{
+	"active": true,
+	"type": "grant",
+	"slug": "phmuseum_grant",
+	"organization": {
+		"name": "Photographic Museum of Humanity",
+		"nickname": "PHmuseum",
+		"url": "https://phmuseum.com/"
+	},
+	"name": "Grant",
+	"url": "https://phmuseum.com/grant",
+	"applicationUrl": "https://phmuseum.com/submissions/5/new",
+	"yearsActive": [
+		2017
+	],
+	"date": {
+		"callToSubmit": "December 12 2016",
+		"deadline": "February 15 2017 12:00 +0000"
+	},
+	"description": "The PHmuseum Grant is an annual international initiative organized to support photographers, promote their projects and further their careers. Applicants are invited to submit visual projects centred around a specific theme, narrative or concept.",
+	"eligibility": {
+		"age": {
+			"from": 18,
+			"to": null
+		},
+		"gender": "all",
+		"students": "accepted",
+		"location": "",
+		"other": ""
+	},
+	"fee": {
+		"amount": 30,
+		"currency": "GBP"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 7000,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 3000,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 1000,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 1000,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": true,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 0,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		}
+	]
+}

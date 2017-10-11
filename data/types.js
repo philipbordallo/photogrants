@@ -56,8 +56,9 @@ export default {
 	currency: {
 		type: "string",
 		enum: [
-			"USD",
-			"GBP"
+			"EUR",
+			"GBP",
+			"USD"
 		]
 	}
 };
