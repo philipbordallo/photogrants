@@ -1,8 +1,9 @@
 import T from 'prop-types';
 
 const CURRENCY_PROPTYPES = T.oneOf([
-	'USD',
-	'GBP'
+	'EUR',
+	'GBP',
+	'USD'
 ]);
 
 const AWARD_PROPTYPES = T.shape({

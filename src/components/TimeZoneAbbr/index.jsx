@@ -4,22 +4,25 @@ import T from 'prop-types';
 class TimeZoneAbbr extends PureComponent {
 	static propTypes = {
 		abbr: T.oneOf([
-			'EST',
-			'EDT',
-			'CST',
 			'CDT',
-			'MST',
+			'CST',
+			'EDT',
+			'EST',
+			'GMT',
 			'MDT',
-			'PST',
-			'PDT'
+			'MST',
+			'PDT',
+			'PST'
 		]).isRequired,
 		name: T.oneOf([
-			'Eastern',
 			'Central',
+			'Eastern',
+			'Greenwich',
 			'Mountain',
 			'Pacific'
 		]).isRequired,
 		offset: T.oneOf([
+			'+0000',
 			'-0400',
 			'-0500',
 			'-0600',
@@ -28,6 +31,7 @@ class TimeZoneAbbr extends PureComponent {
 		]).isRequired,
 		type: T.oneOf([
 			'Daylight',
+			'Mean',
 			'Standard'
 		]).isRequired
 	};

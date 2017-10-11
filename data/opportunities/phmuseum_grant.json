@@ -1,41 +1,41 @@
 {
 	"active": true,
 	"type": "grant",
-	"slug": "phmuseum_women-photographers-grant",
+	"slug": "phmuseum_grant",
 	"organization": {
 		"name": "Photographic Museum of Humanity",
 		"nickname": "PHmuseum",
 		"url": "https://phmuseum.com/"
 	},
-	"name": "Women Photographers Grant ",
+	"name": "Grant",
 	"url": "https://phmuseum.com/grant",
-	"applicationUrl": "https://phmuseum.com/submissions/7/new",
+	"applicationUrl": "https://phmuseum.com/submissions/5/new",
 	"yearsActive": [
 		2017
 	],
 	"date": {
-		"callToSubmit": "September 5 2017",
-		"deadline": "October 12 2017 23:59 +0000"
+		"callToSubmit": "December 12 2016",
+		"deadline": "February 15 2017 12:00 +0000"
 	},
-	"description": "The PHM Women Photographers Grant aims to empower the work and careers of female and female-identifying professionals of all ages and from all countries working in diverse areas of photography. It further means to facilitate the growth of the new generations and promote stories narrated from a female perspective, while responding to the necessity to fight against gender discrimination within the industry. ",
+	"description": "The PHmuseum Grant is an annual international initiative organized to support photographers, promote their projects and further their careers. Applicants are invited to submit visual projects centred around a specific theme, narrative or concept.",
 	"eligibility": {
 		"age": {
 			"from": 18,
 			"to": null
 		},
-		"gender": "women",
+		"gender": "all",
 		"students": "accepted",
 		"location": "",
 		"other": ""
 	},
 	"fee": {
-		"amount": 25,
+		"amount": 30,
 		"currency": "GBP"
 	},
 	"awards": [
 		{
 			"given": 1,
-			"amount": 5000,
+			"amount": 7000,
 			"amountType": "exact",
 			"currency": "GBP",
 			"mentorship": false,
@@ -44,7 +44,7 @@
 		},
 		{
 			"given": 1,
-			"amount": 2000,
+			"amount": 3000,
 			"amountType": "exact",
 			"currency": "GBP",
 			"mentorship": false,
@@ -53,7 +53,16 @@
 		},
 		{
 			"given": 1,
-			"amount": 0,
+			"amount": 1000,
+			"amountType": "exact",
+			"currency": "GBP",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		},
+		{
+			"given": 1,
+			"amount": 1000,
 			"amountType": "exact",
 			"currency": "GBP",
 			"mentorship": true,
