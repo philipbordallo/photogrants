@@ -20,7 +20,7 @@ const LOADER = {
 	eslint: {
 		loader: 'eslint-loader',
 		options: {
-			configFile: path.resolve(CONFIG_PATH, 'eslint.json')
+			configFile: path.resolve(CONFIG_PATH, 'eslint.config.js')
 		}
 	},
 	handlebars: {
