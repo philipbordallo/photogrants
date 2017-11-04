@@ -1,5 +1,6 @@
 export default {
 	grants: {
+		FILTER_TABLE: 'grants:filterTable',
 		SORT_TABLE: 'grants:sortTable',
 		TOGGLE_ROW: 'grants:toggleRow',
 		LOAD_DATA: 'grants:loadData',

@@ -1,0 +1,32 @@
+@import 'variables';
+
+.root {
+	& + .root {
+		margin-top: 1.5rem;
+	}
+}
+
+.title {
+	composes: subtitle from 'assets/default/styles';
+	margin: 0 0 .2em 0;
+}
+
+.itemCheckbox {
+	display: inline;
+	cursor: pointer;
+	outline: none;
+	user-select: none;
+}
+
+.label {
+	margin-left: .3em;
+	border-bottom: 2px solid transparent;
+
+	@nest .itemCheckbox:focus & {
+		border-color: var(--darkGray);
+	}
+
+	@nest .itemCheckbox:active & {
+		border-color: transparent;
+	}
+}
