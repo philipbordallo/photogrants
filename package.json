@@ -23,7 +23,7 @@
     "prod": "NODE_ENV=production webpack --config ./config/webpack.config.prod.js",
     "server": "http-server dist/",
     "test": "NODE_ENV=test ava",
-    "test-watch": "npm test -- --watch --verbose spec/"
+    "test-watch": "npm test -- --watch spec/"
   },
   "ava": {
     "require": [
