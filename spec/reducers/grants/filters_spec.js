@@ -102,52 +102,52 @@ test('Filter by students', t => {
 
 test('Filter by age', t => {
 	const data = [
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: 21, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: null, to: 25 } } },
-		{ eligibility: { age: { from: 60, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } }
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '21', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '', to: '25' } } },
+		{ eligibility: { age: { from: '60', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } }
 	];
 
 	const expectedAge16 = [
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: null, to: 25 } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } }
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '', to: '25' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } }
 	];
 
 	const expectedAge28 = [
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: 21, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } }
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '21', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } }
 	];
 
 	const expectedAge65 = [
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: 21, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: 18, to: null } } },
-		{ eligibility: { age: { from: 60, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } },
-		{ eligibility: { age: { from: null, to: null } } }
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '21', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '18', to: '' } } },
+		{ eligibility: { age: { from: '60', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } },
+		{ eligibility: { age: { from: '', to: '' } } }
 	];
 
-	t.deepEqual(filterAge(data, 16), expectedAge16);
-	t.deepEqual(filterAge(data, 28), expectedAge28);
-	t.deepEqual(filterAge(data, 65), expectedAge65);
+	t.deepEqual(filterAge(data, '16'), expectedAge16);
+	t.deepEqual(filterAge(data, '28'), expectedAge28);
+	t.deepEqual(filterAge(data, '65'), expectedAge65);
 });
 
 test('Filter by genders', t => {

@@ -4,6 +4,7 @@ import T from 'prop-types';
 import { FILTERS_PROPTYPES, VALUES_PROPTYPES } from 'containers/Filters/propTypes';
 
 import FilterSelectItem from './FilterSelectItem';
+import FilterInputItem from './FilterInputItem';
 
 import Classes from './styles';
 
@@ -32,28 +33,45 @@ class FilterList extends PureComponent {
 	}
 
 	renderItem({ name, value }, index) {
-		const { onFilterAction, meta, filters, selectedValues } = this.props;
-		const selected = selectedValues.some(selectedValue => selectedValue === value);
+		const { onFilterAction, meta, filters, selectedValues, type } = this.props;
 
-		return (
-			<FilterSelectItem
-				key={ index }
-				maxLength={ filters.length }
-				meta={ meta }
-				onClick={ onFilterAction }
-				selected={ selected }
-				value={ value }
-			>
-				{ name }
-			</FilterSelectItem>
-		);
+		if (type === 'select') {
+			const selected = selectedValues.some(selectedValue => selectedValue === value);
+
+			return (
+				<FilterSelectItem
+					key={ index }
+					maxLength={ filters.length }
+					meta={ meta }
+					onClick={ onFilterAction }
+					selected={ selected }
+					value={ value }
+				>
+					{ name }
+				</FilterSelectItem>
+			);
+		}
+		else if (type === 'input') {
+			return (
+				<FilterInputItem
+					key={ index }
+					inputType="number"
+					meta={ meta }
+					onChange={ onFilterAction }
+					placeholder="All"
+				/>
+			);
+		}
+
+		return null;
 	}
 
 	render() {
-		const { title, filters, type } = this.props;
+		const { title, filters } = this.props;
+
 		return (
 			<div className={ Classes.root }>
-				<h2 className={ Classes.title } data-type={ type }>{ title }</h2>
+				<h2 className={ Classes.title }>{ title }</h2>
 				<ul>
 					{ filters.map(this.renderItem) }
 				</ul>

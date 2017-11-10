@@ -52,6 +52,17 @@ const FILTERS_LIST = [
 				value: 'nonbinary'
 			}
 		]
+	},
+	{
+		title: 'Age',
+		meta: 'age',
+		type: 'input',
+		filters: [
+			{
+				name: 'Age',
+				value: null
+			}
+		]
 	}
 ];
 

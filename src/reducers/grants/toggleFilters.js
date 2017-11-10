@@ -6,16 +6,20 @@ function toggleFilters({ filters }, { update }) {
 		return filters.map((filter) => {
 			// Find the filter to update
 			if (filter.name === update.name) {
-				const containsValue = filter.values.some(value => value === update.value);
+				let newValues = [update.value];
 
-				// Remove the value if it already exists
-				let newValues = filter.values.filter(value => value !== update.value);
+				if (update.maxLength > 1) {
+					const containsValue = filter.values.some(value => value === update.value);
 
-				// Add the value if it does not
-				if (!containsValue) newValues.push(update.value);
+					// Remove the value if it already exists
+					newValues = filter.values.filter(value => value !== update.value);
 
-				if (update.maxLength === newValues.length) {
-					newValues = [];
+					// Add the value if it does not
+					if (!containsValue) newValues.push(update.value);
+
+					if (update.maxLength === newValues.length) {
+						newValues = [];
+					}
 				}
 
 				return {

@@ -30,16 +30,21 @@ function filterStudents(collection, studentsBool) {
 }
 
 // Filter collection by age
-// Takes a `collection ` and a number `age`
+// Takes a `collection ` and a string `value`
 // Returns a filtered `collection`
-function filterAge(collection, age) {
-	return collection.filter((item) => {
-		const { eligibility } = item;
-		const from = Number(eligibility.age.from);
-		const to = eligibility.age.to ? Number(eligibility.age.to) : Infinity;
+function filterAge(collection, value) {
+	const age = Number(value);
+	if (age > 0) {
+		return collection.filter((item) => {
+			const { eligibility } = item;
+			const from = Number(eligibility.age.from);
+			const to = eligibility.age.to ? Number(eligibility.age.to) : Infinity;
 
-		return age >= from && age <= to;
-	});
+			return age >= from && age <= to;
+		});
+	}
+
+	return collection;
 }
 
 // Filter collection by gender
@@ -84,6 +89,9 @@ function filterCollection(collection, filters) {
 		}
 		else if (name === 'gender') {
 			return filterGenders(array, values);
+		}
+		else if (name === 'age') {
+			return filterAge(array, values);
 		}
 
 		return array;
