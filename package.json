@@ -78,6 +78,7 @@
     "http-server": "^0.10.0",
     "jsonschema": "^1.1.1",
     "local-domains": "^1.2.3",
+    "postcss-calc": "^6.0.1",
     "postcss-custom-media": "^6.0.0",
     "postcss-custom-properties": "^6.1.0",
     "postcss-discard-comments": "^2.0.4",

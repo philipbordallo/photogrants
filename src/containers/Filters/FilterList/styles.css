@@ -1,8 +1,16 @@
 @import 'variables';
 
 .root {
+	@media (--largeViewport) {
+		min-width: 100px;
+	}
+
 	& + .root {
 		margin-top: 1.5rem;
+
+		@media (--largeViewport) {
+			margin-top: 0;
+		}
 	}
 }
 
@@ -29,4 +37,12 @@
 	@nest .itemCheckbox:active & {
 		border-color: transparent;
 	}
+}
+
+.input {
+	border: 1px solid var(--offWhite);
+	max-width: 100px;
+	width: 100%;
+	border-radius: 2px;
+	padding: 2px 4px;
 }

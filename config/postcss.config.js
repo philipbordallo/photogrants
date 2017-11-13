@@ -14,6 +14,7 @@ module.exports = {
 		'postcss-pseudoelements': {},
 		'postcss-pxtorem': {},
 		'postcss-hexrgba': {},
+		'postcss-calc': {},
 		'postcss-font-family-system-ui': {},
 		'postcss-font-smoothing': {},
 		'postcss-font-weights': {},

@@ -1,25 +1,6 @@
 /* eslint import/prefer-default-export:0 */
 const FILTERS_LIST = [
 	{
-		title: 'Type',
-		meta: 'type',
-		type: 'select',
-		filters: [
-			{
-				name: 'Grants',
-				value: 'grant'
-			},
-			{
-				name: 'Awards',
-				value: 'award'
-			},
-			{
-				name: 'Residencies',
-				value: 'residency'
-			}
-		]
-	},
-	{
 		title: 'Student',
 		meta: 'student',
 		type: 'select',
@@ -61,6 +42,48 @@ const FILTERS_LIST = [
 			{
 				name: 'Age',
 				value: null
+			}
+		]
+	},
+	{
+		title: 'Type',
+		meta: 'type',
+		type: 'select',
+		filters: [
+			{
+				name: 'Grants',
+				value: 'grant'
+			},
+			{
+				name: 'Awards',
+				value: 'award'
+			},
+			{
+				name: 'Residencies',
+				value: 'residency'
+			}
+		]
+	},
+	{
+		title: 'Awards',
+		meta: 'awards',
+		type: 'select',
+		filters: [
+			{
+				name: 'Money',
+				value: 'amount'
+			},
+			{
+				name: 'Residency',
+				value: 'residency'
+			},
+			{
+				name: 'Mentorship',
+				value: 'mentorship'
+			},
+			{
+				name: 'Show',
+				value: 'show'
 			}
 		]
 	}

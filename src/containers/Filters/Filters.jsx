@@ -8,6 +8,8 @@ import FilterList from './FilterList';
 import { FILTERS_PROPTYPES } from './propTypes';
 import { FILTERS_LIST } from './meta';
 
+import Classes from './styles';
+
 
 class Filters extends Component {
 	static propTypes = {
@@ -40,8 +42,11 @@ class Filters extends Component {
 
 	render() {
 		return (
-			<div>
-				{ FILTERS_LIST.map(this.renderFilterList) }
+			<div className={ Classes.root }>
+				<div className={ Classes.wrapper }>
+					<h2 className={ Classes.title }>Filters</h2>
+					{ FILTERS_LIST.map(this.renderFilterList) }
+				</div>
 			</div>
 		);
 	}

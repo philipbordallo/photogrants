@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
+import Classes from './styles';
+
 
 class FilterInputItem extends PureComponent {
 	static propTypes = {
@@ -63,13 +65,13 @@ class FilterInputItem extends PureComponent {
 	}
 
 	render() {
-		const { placeholder, meta } = this.props;
+		const { placeholder } = this.props;
 		const { value } = this.state;
 		return (
 			<input
+				className={ Classes.input }
 				type="text"
 				placeholder={ placeholder }
-				data-meta={ meta }
 				onChange={ this.handleChange }
 				value={ value }
 			/>

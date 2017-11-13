@@ -74,9 +74,13 @@ function filterOrganizations(collection, organizations) {
 // Takes a `collection` and an array `awards` of strings
 // Returns a filtered `collection`
 function filterAwards(collection, awards) {
-	return collection.filter(item => item.awards.some(
-		itemAward => awards.some(award => itemAward[award]))
-	);
+	if (awards.length > 0) {
+		return collection.filter(item => item.awards.some(
+			itemAward => awards.some(award => itemAward[award]))
+		);
+	}
+
+	return collection;
 }
 
 function filterCollection(collection, filters) {
@@ -92,6 +96,9 @@ function filterCollection(collection, filters) {
 		}
 		else if (name === 'age') {
 			return filterAge(array, values);
+		}
+		else if (name === 'awards') {
+			return filterAwards(array, values);
 		}
 
 		return array;
