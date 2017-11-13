@@ -8,6 +8,16 @@
 
 .contentContainer {
 	width: 100%;
-	max-width: var(--containerWidth);
+	max-width: calc(var(--containerWidth) + 20px);
+	padding: 0 10px;
 	margin: 0 auto;
+}
+
+.content {
+	display: flex;
+	flex-wrap: wrap;
+
+	@media (--largeViewport) {
+		flex-direction: column;
+	}
 }

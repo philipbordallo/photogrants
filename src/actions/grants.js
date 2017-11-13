@@ -49,7 +49,17 @@ const loadData = () =>
 			});
 	};
 
+// Sort Table
+const filterTable = update =>
+	(dispatch) => {
+		dispatch({
+			type: Constants.grants.FILTER_TABLE,
+			update
+		});
+	};
+
 export {
+	filterTable,
 	sortTable,
 	loadData,
 	toggleRow

@@ -1,5 +1,11 @@
 @import 'variables';
 
+.subtitle {
+	font-weight: bold;
+	font-size: 16px;
+	font-smoothing: antialiased;
+}
+
 .sectionTitle {
 	font-smoothing: antialiased;
 	color: var(--lightGray);

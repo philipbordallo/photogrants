@@ -44,10 +44,10 @@ if (ENV === 'test') {
 	plugins.push.apply(plugins, [
 		[pluginModuleResolver, {
 			root: [
-			  APP_PATH
+				APP_PATH
 			],
 			alias: {
-			  data: path.resolve(ROOT_PATH, 'data')
+				data: path.resolve(ROOT_PATH, 'data')
 			}
 		}]
 	]);

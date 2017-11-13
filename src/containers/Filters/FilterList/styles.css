@@ -1,0 +1,48 @@
+@import 'variables';
+
+.root {
+	@media (--largeViewport) {
+		min-width: 100px;
+	}
+
+	& + .root {
+		margin-top: 1.5rem;
+
+		@media (--largeViewport) {
+			margin-top: 0;
+		}
+	}
+}
+
+.title {
+	composes: subtitle from 'assets/default/styles';
+	margin: 0 0 .2em 0;
+}
+
+.itemCheckbox {
+	display: inline;
+	cursor: pointer;
+	outline: none;
+	user-select: none;
+}
+
+.label {
+	margin-left: .3em;
+	border-bottom: 2px solid transparent;
+
+	@nest .itemCheckbox:focus & {
+		border-color: var(--darkGray);
+	}
+
+	@nest .itemCheckbox:active & {
+		border-color: transparent;
+	}
+}
+
+.input {
+	border: 1px solid var(--offWhite);
+	max-width: 100px;
+	width: 100%;
+	border-radius: 2px;
+	padding: 2px 4px;
+}
