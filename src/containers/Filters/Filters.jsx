@@ -14,6 +14,7 @@ import Classes from './styles';
 class Filters extends Component {
 	static propTypes = {
 		filterTable: T.func.isRequired,
+		fireAnalyticsEvent: T.func.isRequired,
 		filters: FILTERS_PROPTYPES.isRequired
 	};
 
@@ -25,6 +26,11 @@ class Filters extends Component {
 	}
 
 	handleFilterAction(filter) {
+		this.props.fireAnalyticsEvent({
+			eventCategory: 'Filter',
+			eventAction: 'filter',
+			eventLabel: `${filter.name}`
+		});
 		this.props.filterTable(filter);
 	}
 
@@ -34,8 +40,8 @@ class Filters extends Component {
 		return (
 			<FilterList
 				key={ index }
-				{ ...filterListProps }
 				onFilterAction={ this.handleFilterAction }
+				{ ...filterListProps }
 			/>
 		);
 	}

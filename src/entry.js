@@ -5,6 +5,7 @@ import 'polyfills';
 
 import 'assets/base/styles';
 
+import Analytics from 'api/Analytics';
 import ProvidedApp from './ProvidedApp';
 
 
@@ -18,5 +19,8 @@ const onDOMReady = () => {
 		ReactDOM.render(component, applicationElement);
 	}
 };
+
+const analytics = new Analytics();
+analytics.init();
 
 document.addEventListener('DOMContentLoaded', onDOMReady);

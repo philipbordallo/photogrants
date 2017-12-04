@@ -9,19 +9,23 @@
 
 	<meta name="format-detection" content="telephone=no">
 
-	{{#stylesheet}}<link rel="stylesheet" type="text/css" media="all" href="/styles.css">{{/stylesheet}}
+	{{#analytics}}
+		<script>window.addEventListener('error', window.__e=function f(e){f.q=f.q||[];f.q.push(e)});</script>
+		<script src="https://www.google-analytics.com/analytics.js" async defer></script>
+	{{/analytics}}
+
+	{{#stylesheet}}
+		<link rel="stylesheet" type="text/css" media="all" href="/styles.css">
+	{{/stylesheet}}
 	<style type="text/css">
 		noscript { font-family: monospace; }
 	</style>
 </head>
 <body>
-	<noscript>
-		This site requires JavaScript
-	</noscript>
+	<noscript>This site requires JavaScript</noscript>
 
 	<div id="application"></div>
 
 	<script src="/bundle.js"></script>
-	{{#analytics}}<script src="https://www.google-analytics.com/analytics.js" async defer></script>{{/analytics}}
 </body>
 </html>

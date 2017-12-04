@@ -23,12 +23,27 @@ class GrantLink extends PureComponent {
 			'application',
 			'website'
 		]).isRequired,
-		href: T.string
+		href: T.string,
+		fireAnalyticsEvent: T.func.isRequired
 	};
 
 	static defaultProps = {
 		href: ''
 	};
+
+	constructor() {
+		super();
+
+		this.handleButtonClick = this.handleButtonClick.bind(this);
+	}
+
+	handleButtonClick(event) {
+		this.props.fireAnalyticsEvent({
+			eventCategory: 'Grant Link',
+			eventAction: 'click',
+			eventLabel: `${event.target.textContent} | ${event.target.href}`
+		});
+	}
 
 	render() {
 		const { type, href } = this.props;
@@ -37,6 +52,7 @@ class GrantLink extends PureComponent {
 			return (
 				<div className={ Classes.buttonWrapper }>
 					<Button
+						onClick={ this.handleButtonClick }
 						type={ LINK_META[type].buttonType }
 						href={ href }
 						target="_blank"

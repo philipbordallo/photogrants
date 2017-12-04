@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react';
+import T from 'prop-types';
 import moment from 'moment';
 
 import getYearsActive from 'utilities/getYearsActive';
@@ -31,7 +32,8 @@ const ELIGIBILITY_META = {
 
 class GrantsDetailsRow extends PureComponent {
 	static propTypes = {
-		data: DATA_PROPTYPES.isRequired
+		data: DATA_PROPTYPES.isRequired,
+		fireAnalyticsEvent: T.func.isRequired
 	};
 
 	renderAwards(data, index) {
@@ -42,15 +44,18 @@ class GrantsDetailsRow extends PureComponent {
 
 	render() {
 		const {
-			description,
-			organization: { url: orgURL, name: orgName },
-			yearsActive,
-			awards,
-			eligibility: { age, gender, students, other },
-			url,
-			applicationUrl,
-			date: { callToSubmit, deadline }
-		} = this.props.data;
+			data: {
+				description,
+				organization: { url: orgURL, name: orgName },
+				yearsActive,
+				awards,
+				eligibility: { age, gender, students, other },
+				url,
+				applicationUrl,
+				date: { callToSubmit, deadline }
+			},
+			fireAnalyticsEvent
+		} = this.props;
 
 		const years = getYearsActive(yearsActive);
 		const callDate = moment(callToSubmit, 'MMMM D YYYY').format('MMMM D');
@@ -114,8 +119,8 @@ class GrantsDetailsRow extends PureComponent {
 				</section>
 
 				<section className={ Classes.links }>
-					<GrantLink href={ url } type="website" />
-					<GrantLink href={ applicationUrl } type="application" />
+					<GrantLink fireAnalyticsEvent={ fireAnalyticsEvent } href={ url } type="website" />
+					<GrantLink fireAnalyticsEvent={ fireAnalyticsEvent } href={ applicationUrl } type="application" />
 				</section>
 			</div>
 		);

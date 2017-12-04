@@ -17,6 +17,7 @@ class Grants extends Component {
 	static propTypes = {
 		collection: COLLECTION_PROPTYPES.isRequired,
 		loadData: T.func.isRequired,
+		fireAnalyticsEvent: T.func.isRequired,
 		sortTable: T.func.isRequired,
 		toggleRow: T.func.isRequired,
 		currentSort: T.string.isRequired,
@@ -35,6 +36,11 @@ class Grants extends Component {
 	}
 
 	handleTableSort(name, direction) {
+		this.props.fireAnalyticsEvent({
+			eventCategory: 'Table Sort',
+			eventAction: 'sort',
+			eventLabel: name
+		});
 		this.props.sortTable(name, direction);
 	}
 
@@ -43,7 +49,7 @@ class Grants extends Component {
 	}
 
 	render() {
-		const { currentSort, sortDirection, collection } = this.props;
+		const { currentSort, sortDirection, collection, fireAnalyticsEvent } = this.props;
 
 		return (
 			<Table
@@ -52,6 +58,7 @@ class Grants extends Component {
 				config={ TABLE_CONFIG }
 				currentSort={ currentSort }
 				detailsRenderer={ GrantsDetailsRow }
+				fireAnalyticsEvent={ fireAnalyticsEvent }
 				onRowClick={ this.handleRowClick }
 				onTableSort={ this.handleTableSort }
 				sortDirection={ sortDirection }

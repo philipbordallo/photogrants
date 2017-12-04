@@ -10,6 +10,7 @@ import Classes from './styles';
 class TableDetailsRow extends Component {
 	static propTypes = {
 		data: DATA_PROPTYPES.isRequired,
+		fireAnalyticsEvent: T.func.isRequired,
 		scrollable: T.bool.isRequired,
 		colSpan: T.number,
 		renderer: T.func
@@ -55,8 +56,8 @@ class TableDetailsRow extends Component {
 	}
 
 	render() {
-		const { data, renderer, colSpan } = this.props;
-		const content = React.createElement(renderer, { data });
+		const { data, renderer, colSpan, fireAnalyticsEvent } = this.props;
+		const content = React.createElement(renderer, { data, fireAnalyticsEvent });
 
 		return (
 			<tr className={ Classes.detailsRow } ref={ this.setDetailsRef }>
