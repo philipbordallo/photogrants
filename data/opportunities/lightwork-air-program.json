@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "residency",
+	"slug": "lightwork-air-program",
+	"organization": {
+		"name": "LightWork",
+		"nickname": "LightWork",
+		"url": "http://www.lightwork.org/"
+	},
+	"name": "Artist-in-Residence Program",
+	"url": "http://www.lightwork.org/air/",
+	"applicationUrl": "http://www.lightwork.org/air/apply/",
+	"yearsActive": [
+		2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999
+	],
+	"date": {
+		"callToSubmit": "",
+		"deadline": "July 1 2018 23:59 -0400"
+	},
+	"description": "Every year Light Work invites between twelve and fifteen artists to come to Syracuse to devote one month to creative projects. Over 400 artists have participated in Light Work’s Artist-in-Residence Program, and many of them have gone on to achieve international acclaim.",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": "accepted",
+		"location": "",
+		"other": ""
+	},
+	"fee": {
+		"amount": 10,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 12,
+			"amount": 5000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": true,
+			"show": false,
+			"residency": true
+		}
+	]
+}
