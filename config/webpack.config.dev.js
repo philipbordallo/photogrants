@@ -3,8 +3,7 @@ const path = require('path');
 const localDomains = require('local-domains');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH } = require('./helpers');
-const ENV = process.env.NODE_ENV;
+const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH, DEFINE_ENV } = require('./helpers');
 
 
 const RULES = {
@@ -75,9 +74,7 @@ module.exports = {
 	},
 	resolve: RESOLVER,
 	plugins: [
-		new webpack.DefinePlugin({
-			'process.env.NODE_ENV': JSON.stringify(ENV)
-		}),
+		new webpack.DefinePlugin(DEFINE_ENV),
 		new webpack.SourceMapDevToolPlugin({
 			test: /\.(js|jsx)$/,
 			filename: '[file].map'

@@ -1,4 +1,4 @@
-const TRACKING_ID = '105354292-2';
+const TRACKING_ID = process.env.GA_ID;
 
 class Analytics {
 	constructor() {
@@ -30,7 +30,7 @@ class Analytics {
 	}
 
 	createTracker() {
-		window.ga('create', `UA-${TRACKING_ID}`, 'auto');
+		window.ga('create', TRACKING_ID, 'auto');
 		window.ga('set', 'transport', 'beacon');
 	}
 
