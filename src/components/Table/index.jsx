@@ -1,6 +1,8 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
+import noop from 'utilities/noop';
+
 import { COLLECTION_PROPTYPES } from 'containers/Grants/propTypes';
 import {
 	CONFIG_PROPTYPES,
@@ -23,11 +25,13 @@ class Table extends PureComponent {
 		onTableSort: T.func.isRequired,
 		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
 		className: T.string,
+		fireAnalyticsEvent: T.func,
 		detailsRenderer: T.func
 	};
 
 	static defaultProps = {
 		className: '',
+		fireAnalyticsEvent: noop,
 		detailsRenderer: null
 	};
 
@@ -46,7 +50,7 @@ class Table extends PureComponent {
 
 	renderRow(data) {
 		const { active, slug, row, expanded, show, scrollable } = data;
-		const { onRowClick, config, detailsRenderer } = this.props;
+		const { onRowClick, config, detailsRenderer, fireAnalyticsEvent } = this.props;
 
 		if (active && show === 'overview') {
 			return (
@@ -67,6 +71,7 @@ class Table extends PureComponent {
 					key={ slug }
 					data={ data }
 					scrollable={ scrollable }
+					fireAnalyticsEvent={ fireAnalyticsEvent }
 					renderer={ detailsRenderer }
 				/>
 			);

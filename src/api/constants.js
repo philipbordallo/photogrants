@@ -6,5 +6,9 @@ export default {
 		LOAD_DATA: 'grants:loadData',
 		LOAD_DATA_SUCCESS: 'grants:loadData:success',
 		LOAD_DATA_FAILURE: 'grants:loadData:failure'
+	},
+
+	analytics: {
+		TRACK_EVENT: 'analytics:trackEvent'
 	}
 };

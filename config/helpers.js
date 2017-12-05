@@ -44,7 +44,13 @@ const RESOLVER = {
 	modules: [APP_PATH, 'node_modules']
 };
 
+const DEFINE_ENV = {
+	'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV),
+	'process.env.GA_ID': JSON.stringify(process.env.GA_ID)
+};
+
 module.exports = {
+	DEFINE_ENV,
 	ROOT_PATH,
 	CONFIG_PATH,
 	APP_PATH,

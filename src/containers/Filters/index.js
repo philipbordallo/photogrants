@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
 
 import { filterTable } from 'actions/grants';
+import { fireAnalyticsEvent } from 'actions/analytics';
 import Filters from './Filters';
 
 const mapStateToProps = ({ grants }) => ({
@@ -8,7 +9,8 @@ const mapStateToProps = ({ grants }) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-	filterTable: (update) => { dispatch(filterTable(update)); }
+	filterTable: (update) => { dispatch(filterTable(update)); },
+	fireAnalyticsEvent: (update) => { dispatch(fireAnalyticsEvent(update)); }
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Filters);
