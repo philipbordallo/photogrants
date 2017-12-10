@@ -83,3 +83,20 @@
 	}
 }
 
+.mentorshipSymbol {
+	composes: mentorshipSymbol from 'assets/default/styles';
+	font-size: 1.25rem;
+	margin: 0 .2em 0 .1em;
+}
+
+.showSymbol {
+	composes: showSymbol from 'assets/default/styles';
+	font-size: 1.25rem;
+	margin: 0 .2em 0 .1em;
+}
+
+.residencySymbol {
+	composes: residencySymbol from 'assets/default/styles';
+	font-size: 1.25rem;
+	margin: 0 .2em 1px .1em;
+}

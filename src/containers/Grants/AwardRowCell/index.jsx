@@ -25,9 +25,9 @@ class AwardRowCell extends PureComponent {
 		return (
 			<div className={ Classes.root }>
 				{ amount }
-				{ show ? (<div title="Shows" className={ Classes.showSymbol } />) : null }
-				{ mentorship ? (<div title="Mentorships" className={ Classes.mentorshipSymbol } />) : null }
-				{ residency ? (<div title="Residencies" className={ Classes.residencySymbol } />) : null }
+				{ show ? (<div title="Show" className={ Classes.showSymbol } />) : null }
+				{ mentorship ? (<div title="Mentorship" className={ Classes.mentorshipSymbol } />) : null }
+				{ residency ? (<div title="Residency" className={ Classes.residencySymbol } />) : null }
 			</div>
 		);
 	}

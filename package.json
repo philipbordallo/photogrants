@@ -102,7 +102,6 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "currency-symbol-map": "^4.0.3",
-    "listify": "^1.0.0",
     "moment": "^2.19.2",
     "normalize.css": "^7.0.0",
     "prop-types": "^15.6.0",

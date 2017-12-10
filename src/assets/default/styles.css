@@ -24,19 +24,21 @@
 
 .showSymbol {
 	composes: symbol;
+	font-size: 1em;
 	background-color: var(--yellow);
 }
 
 .mentorshipSymbol {
 	composes: symbol;
+	font-size: 1em;
 	background-color: var(--purple);
 	border-radius: 50%;
 }
 
 .residencySymbol {
 	composes: symbol;
-	width: .35em;
-	height: .35em;
+	width: .4em;
+	height: .4em;
 	background-color: var(--pink);
 	transform: rotate(45deg);
 }
