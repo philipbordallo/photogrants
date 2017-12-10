@@ -11,6 +11,10 @@
 	max-width: calc(var(--containerWidth) + 20px);
 	padding: 0 10px;
 	margin: 0 auto;
+
+	@media (--largeViewport) {
+		padding: 0;
+	}
 }
 
 .content {
