@@ -34,6 +34,19 @@ const TABLE_CONFIG = [
 	}
 ];
 
+const OPPORTUNITY_TYPE = {
+	show: 'Show',
+	mentorship: 'Mentorship',
+	residency: 'Residency'
+};
+
+const AMOUNT_TYPE = {
+	upto: 'up to',
+	about: 'about'
+};
+
 export {
-	TABLE_CONFIG
+	TABLE_CONFIG,
+	OPPORTUNITY_TYPE,
+	AMOUNT_TYPE
 };

@@ -1,5 +1,5 @@
 {
-	"active": true,
+	"active": false,
 	"type": "grant",
 	"slug": "phmuseum_women-photographers-grant",
 	"organization": {
@@ -7,7 +7,7 @@
 		"nickname": "PHmuseum",
 		"url": "https://phmuseum.com/"
 	},
-	"name": "Women Photographers Grant ",
+	"name": "Women Photographers Grant",
 	"url": "https://phmuseum.com/grant",
 	"applicationUrl": "https://phmuseum.com/submissions/7/new",
 	"yearsActive": [

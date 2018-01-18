@@ -3,33 +3,37 @@ function toggleFilters({ filters }, { update }) {
 	const hasFilter = filters.some(filter => filter.name === update.name);
 
 	if (hasFilter) {
-		return filters.map((filter) => {
-			// Find the filter to update
-			if (filter.name === update.name) {
-				let newValues = [update.value];
-
-				if (update.maxLength > 1) {
-					const containsValue = filter.values.some(value => value === update.value);
-
-					// Remove the value if it already exists
-					newValues = filter.values.filter(value => value !== update.value);
-
-					// Add the value if it does not
-					if (!containsValue) newValues.push(update.value);
-
-					if (update.maxLength === newValues.length) {
-						newValues = [];
-					}
-				}
-
-				return {
-					name: filter.name,
-					values: newValues
-				};
+		return filters.reduce((collection, filter) => {
+			// Filter is new
+			if (filter.name !== update.name) {
+				return collection.concat([filter]);
 			}
 
-			return filter;
-		});
+			let newValues = [update.value];
+
+			if (update.maxLength > 1) {
+				const containsValue = filter.values.some(value => value === update.value);
+
+				// Remove the value if it already exists
+				newValues = filter.values.filter(value => value !== update.value);
+
+				// Add the value if it isn't already part of the collection
+				if (!containsValue) newValues.push(update.value);
+
+				if (update.maxLength === newValues.length) {
+					return collection;
+				}
+			}
+
+			if (update.value === '' || newValues.length === 0) {
+				return collection;
+			}
+
+			return collection.concat([{
+				name: filter.name,
+				values: newValues
+			}]);
+		}, []);
 	}
 
 	return filters.concat([{
