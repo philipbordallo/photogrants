@@ -11,11 +11,11 @@
 	"url": "https://documentarystudies.duke.edu/awards/lange-taylor",
 	"applicationUrl": "https://dukearts.slideroom.com/",
 	"yearsActive": [
-		2004, 2005, 2006, 2007, 2008, 2009, 2010, 2013, 2014, 2015, 2016, 2017
+		2004, 2005, 2006, 2007, 2008, 2009, 2010, 2013, 2014, 2015, 2016, 2017, 2018
 	],
 	"date": {
-		"callToSubmit": "February 1 2017",
-		"deadline": "May 22 2017"
+		"callToSubmit": "February 1 2018",
+		"deadline": "May 15 2018 23:59 -0500"
 	},
 	"description": "First announced in 1990, the Dorothea Lange–Paul Taylor Prize was created by the Center for Documentary Studies at Duke University to encourage collaboration between documentary writers and photographers in the tradition of the acclaimed photographer Dorothea Lange and writer and social scientist Paul Taylor. In 1941 Lange and Taylor published An American Exodus, a book that renders human experience eloquently in text and images and remains a seminal work in documentary studies.",
 	"eligibility": {
@@ -29,7 +29,7 @@
 		"other": ""
 	},
 	"fee": {
-		"amount": 65,
+		"amount": 70,
 		"currency": "USD"
 	},
 	"awards": [

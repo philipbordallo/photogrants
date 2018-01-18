@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "award",
+	"slug": "duke-cdsdocumentaryessayprize",
+	"organization": {
+		"name": "Center for Documentary Studies At Duke University",
+		"nickname": "CDS",
+		"url": "https://documentarystudies.duke.edu/"
+	},
+	"name": "Documentary Essay Prize",
+	"url": "https://documentarystudies.duke.edu/awards/documentary-essay-prize",
+	"applicationUrl": "https://dukearts.slideroom.com/",
+	"yearsActive": [
+		2016, 2018
+	],
+	"date": {
+		"callToSubmit": "December 1 2017",
+		"deadline": "March 1 2018"
+	},
+	"description": "The CDS Documentary Essay Prize honors the best in short-form documentary photography and writing in alternating years: one year, photos; one year, writing. The focus is on current or recently completed work (within the last two years) from a long-term project—fifteen images; fifteen to twenty pages of writing.  ",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": "accepted",
+		"location": "",
+		"other": ""
+	},
+	"fee": {
+		"amount": 40,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 3000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		}
+	]
+}
