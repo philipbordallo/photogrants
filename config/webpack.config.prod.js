@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const path = require('path');
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -29,6 +30,12 @@ const RULES = {
 		use: [
 			LOADER.handlebars
 		]
+	},
+	images: {
+		test: /\.(png|jpeg|svg)$/,
+		use: [
+			LOADER.images
+		]
 	}
 };
 
@@ -44,7 +51,8 @@ module.exports = {
 		rules: [
 			RULES.jsx,
 			RULES.css,
-			RULES.html
+			RULES.html,
+			RULES.images
 		]
 	},
 	resolve: RESOLVER,
@@ -56,6 +64,9 @@ module.exports = {
 	},
 	plugins: [
 		new webpack.DefinePlugin(DEFINE_ENV),
+		new CopyWebpackPlugin([
+			'src/assets/favicons/favicon.ico'
+		]),
 		new HTMLWebpackPlugin({
 			template: path.resolve(APP_PATH, 'entry.html.js'),
 			inject: false,

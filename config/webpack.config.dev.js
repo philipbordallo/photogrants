@@ -28,6 +28,12 @@ const RULES = {
 		use: [
 			LOADER.handlebars
 		]
+	},
+	images: {
+		test: /\.(png|jpeg|svg)$/,
+		use: [
+			LOADER.images
+		]
 	}
 };
 
@@ -69,7 +75,8 @@ module.exports = {
 		rules: [
 			RULES.jsx,
 			RULES.css,
-			RULES.html
+			RULES.html,
+			RULES.images
 		]
 	},
 	resolve: RESOLVER,
