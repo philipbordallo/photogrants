@@ -1,0 +1,55 @@
+{
+	"active": true,
+	"type": "award",
+	"slug": "mocp-snider-price",
+	"organization": {
+		"name": "Museum of Contemporary Photography",
+		"nickname": "MoCP",
+		"url": "http://www.mocp.org/"
+	},
+	"name": "Snider Prize",
+	"url": "http://www.mocp.org/about/snider-prize.php",
+	"applicationUrl": "http://www.mocp.org/about/snider-prize-application.php",
+	"yearsActive": [
+		2018, 2017, 2016, 2015, 2014, 2013
+	],
+	"date": {
+		"callToSubmit": "January 29 2018",
+		"deadline": "April 1 2018"
+	},
+	"description": "The Snider Prize is a purchase award given to emerging artists in their final year of graduate study. Sponsored by Lawrence K. and Maxine Snider, the Snider Prize forms a part of the museum's ongoing commitment to support new talent in the field of contemporary photography.",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": "only",
+		"location": "",
+		"other": ""
+	},
+	"fee": {
+		"amount": 0,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 1,
+			"amount": 2000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		},
+		{
+			"given": 2,
+			"amount": 500,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": false,
+			"residency": false
+		}
+	]
+}
