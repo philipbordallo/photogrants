@@ -1,0 +1,46 @@
+{
+	"active": true,
+	"type": "award",
+	"slug": "ppac-annual-competition",
+	"organization": {
+		"name": " Philadelphia Photo Arts Center",
+		"nickname": "PPAC",
+		"url": "https://www.philaphotoarts.org"
+	},
+	"name": "Annual Contemporary Photography Competition",
+	"url": "https://www.philaphotoarts.org/event/annual-competition/",
+	"applicationUrl": "https://philadelphiaphotoartscenter.submittable.com/submit",
+	"yearsActive": [
+		2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010
+	],
+	"date": {
+		"callToSubmit": "February 1 2018",
+		"deadline": "June 1 2018"
+	},
+	"description": "PPAC understand’s that contemporary photography takes many forms, we are open to all photography, digital imaging, film/video, and lens-based installation work.",
+	"eligibility": {
+		"age": {
+			"from": null,
+			"to": null
+		},
+		"gender": "all",
+		"students": "accepted",
+		"location": "",
+		"other": ""
+	},
+	"fee": {
+		"amount": 30,
+		"currency": "USD"
+	},
+	"awards": [
+		{
+			"given": 2,
+			"amount": 5000,
+			"amountType": "exact",
+			"currency": "USD",
+			"mentorship": false,
+			"show": true,
+			"residency": false
+		}
+	]
+}

@@ -7,6 +7,12 @@
 
 	<title>{{ title }}</title>
 
+	<link rel="icon" type="image/png" sizes="16x16" href="{{ favicon.sixteen }}">
+	<link rel="icon" type="image/png" sizes="32x32" href="{{ favicon.thirtyTwo }}">
+	<link rel="icon" type="image/png" sizes="96x96" href="{{ favicon.ninetySix }}">
+
+	<link rel="mask-icon" href="{{ maskIcon.svg }}" color="{{ maskIcon.color }}">
+
 	<meta name="format-detection" content="telephone=no">
 
 	{{#analytics}}
@@ -25,7 +31,6 @@
 	<noscript>This site requires JavaScript</noscript>
 
 	<div id="application"></div>
-
 	<script src="/bundle.js"></script>
 </body>
 </html>

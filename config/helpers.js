@@ -26,6 +26,12 @@ const LOADER = {
 	handlebars: {
 		loader: 'handlebars-loader'
 	},
+	images: {
+		loader: 'file-loader',
+		options: {
+			name: '[name].[ext]'
+		}
+	},
 	postcss: {
 		loader: 'postcss-loader',
 		options: {
