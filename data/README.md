@@ -50,6 +50,10 @@
 - [Documentary Essay Prize](https://documentarystudies.duke.edu/awards/documentary-essay-prize)
 - [Dorothea Lange–Paul Taylor Prize](https://documentarystudies.duke.edu/awards/lange-taylor)
 
+#### Firecracker
+
+- [Photographic Grant](https://www.fire-cracker.org/grant/)
+
 #### Griffin Museum of Photography
 
 - [John Chervinsky Emerging Photographer Scholarship](http://griffinmuseum.org/john-chervinsky-emerging-photographer-scholarship/)
@@ -74,6 +78,7 @@
 #### LightWork
 
 - [Artist-in-Residence Program](http://www.lightwork.org/air/)
+- [Grants in Photography](http://www.lightwork.org/grants/)
 
 #### Manuel Rivera-Ortiz Foundation for Documentary Photography & Film
 
