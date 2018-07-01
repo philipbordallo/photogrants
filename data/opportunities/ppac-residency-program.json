@@ -3,7 +3,7 @@
 	"type": "residency",
 	"slug": "ppac-residency-program",
 	"organization": {
-		"name": " Philadelphia Photo Arts Center",
+		"name": "Philadelphia Photo Arts Center",
 		"nickname": "PPAC",
 		"url": "https://www.philaphotoarts.org"
 	},
@@ -11,7 +11,7 @@
 	"url": "https://www.philaphotoarts.org/artist-lab/residency-program/",
 	"applicationUrl": "https://philadelphiaphotoartscenter.submittable.com/submit",
 	"yearsActive": [
-		2018, 2017, 2016, 2015, 2014, 2013
+		2013, 2014, 2015, 2016, 2017, 2018
 	],
 	"date": {
 		"callToSubmit": "",

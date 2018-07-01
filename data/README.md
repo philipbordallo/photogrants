@@ -1,107 +1,114 @@
 # Grants
 
+
 #### Aaron Siskind Foundation
+
 - [Individual Photographer's Fellowship](http://www.aaronsiskind.org/grant.html)
 
 #### Aesthetica Magazine
-- [Aesthetica Art Prize](http://www.aestheticamagazine.com/art-prize/)
-- [Aesthetica Emgerging Art Prize](http://www.aestheticamagazine.com/art-prize/)
+
+- [Art Prize](http://www.aestheticamagazine.com/art-prize/)
+- [Emerging Art Prize](http://www.aestheticamagazine.com/art-prize/)
 
 #### Alexia Foundation
+
 - [Professional Grant](http://www.alexiafoundation.org/grants/professional_rules)
 - [Student Grant](http://www.alexiafoundation.org/grants/student_rules)
 
 #### American Academy in Rome
+
 - [Rome Prize](http://www.aarome.org/apply)
 
 #### Artadia
-- [Atlanta Award](https://artadia.org/awards/deadlines/)
-- [Chicago Award](https://artadia.org/awards/deadlines/)
-- [Houston Award](https://artadia.org/awards/deadlines/)
-- [Los Angeles Award](https://artadia.org/awards/deadlines/)
-- [New York Award](https://artadia.org/awards/deadlines/)
-- [San Francisco Award](https://artadia.org/awards/deadlines/)
+
+- [Atlanta](https://artadia.org/city/atlanta/)
+- [Chicago](https://artadia.org/city/chicago/)
+- [Houston](https://artadia.org/city/houston/)
+- [Los Angeles](https://artadia.org/city/los-angeles/)
+- [New York](https://artadia.org/city/new-york/)
+- [San Francisco](https://artadia.org/city/san-francisco/)
 
 #### Artist Trust
-- [Grant for Artist Projects](http://artisttrust.org/index.php/for-artists/money#grants_for_artist_projects)
+
+- [Arts Innovator Awards](http://artisttrust.org/index.php/for-artists/money#arts_innovator_awards)
+- [Grants for Artist Projects](http://artisttrust.org/index.php/for-artists/money#grants_for_artist_projects)
 - [Conductive Garboil Grant](http://artisttrust.org/index.php/for-artists/money#conductive_garboil_grant)
 - [Twining Humber Award](http://artisttrust.org/index.php/for-artists/money#twining_humber_award)
-- [Arts Innovator Award](http://artisttrust.org/index.php/for-artists/money#arts_innovator_awards)
 
 #### Burn Magazine
-- [Emerging Photographer Fund](http://www.burnmagazine.org/epf/)
-- [Young Talent EPF/Fujifilm Award](http://www.burnmagazine.org/epf/)
 
-#### CENTER
+- [Emerging Photographer Fund](http://www.burnmagazine.org/epf/)
+- [Young Talent Emerging Photographer Fund](http://www.burnmagazine.org/epf/)
+
+#### Center
+
 - [Project Development](http://visitcenter.org/project-development/)
 - [Project Launch](http://visitcenter.org/project-launch/)
 
-#### Crusade for Art
-- [Crusade Engagement Grant](http://www.crusadeforart.org/grant-guidelines)
+#### Center for Documentary Studies At Duke University
 
-#### Duke Center for Documentary Studies
+- [Documentary Essay Prize](https://documentarystudies.duke.edu/awards/documentary-essay-prize)
 - [Dorothea Lange–Paul Taylor Prize](https://documentarystudies.duke.edu/awards/lange-taylor)
 
-### Guggenheim Memorial Foundation
-- [Guggenheim Foundation Fellowship](https://www.gf.org/applicants/)
+#### Firecracker
+
+- [Photographic Grant](https://www.fire-cracker.org/grant/)
 
 #### Griffin Museum of Photography
+
 - [John Chervinsky Emerging Photographer Scholarship](http://griffinmuseum.org/john-chervinsky-emerging-photographer-scholarship/)
 
+#### Guggenheim Foundation
+
+- [Fellowship](https://www.gf.org/applicants/)
+
 #### Harpo Foundation
+
 - [Grants for Visual Artists](http://www.harpofoundation.org/apply/grants-for-visual-artists/)
 
 #### Imagely
-- [Imagely Fund](https://www.imagely.com/fund/)
 
-#### Images Vevey
-- [Grand Prix](http://www.images.ch/grand-prix-images/presentation/le-grand-prix-images-vevey/)
-- [Prix de Livre (Book Award)](http://www.images.ch/grand-prix-images/presentation/prix-livre-images-vevey/)
+- [Fund](https://www.imagely.com/fund/)
 
-#### John Simon Guggenheim Memorial Foundation
-- [Guggenheim Fellowship](https://www.gf.org/applicants/)
+#### Leica
 
-#### The Leeway Foundation
-- [Art and Change Grant](http://www.leeway.org/grants/art_and_change_grants/)
-- [Transformation Award](http://www.leeway.org/grants/leeway_transformation_award/)
+- [Oskar Barnack Award](http://www.leica-oskar-barnack-award.com/)
+- [Oskar Barnack Award Newcomer](http://www.leica-oskar-barnack-award.com/)
+
+#### LightWork
+
+- [Artist-in-Residence Program](http://www.lightwork.org/air/)
+- [Grants in Photography](http://www.lightwork.org/grants/)
 
 #### Manuel Rivera-Ortiz Foundation for Documentary Photography & Film
+
 - [Call for Documentary Photography](http://mrofoundation.org/programs/photography-grants/)
 
-#### Museum of Contemporary Photography (MoCP)
+#### Museum of Contemporary Photography
+
 - [Snider Prize](http://www.mocp.org/about/snider-prize.php)
 
-#### Photo+
-- [Exposure Award](https://www.exposureaward.com/)
+#### Philadelphia Photo Arts Center
+
+- [Annual Contemporary Photography Competition](https://www.philaphotoarts.org/event/annual-competition/)
+- [Artist Residency](https://www.philaphotoarts.org/artist-lab/residency-program/)
 
 #### Photographic Museum of Humanity
-- [PHmuseum Grant](https://phmuseum.com/grant)
 
-#### Santo Foundation
-- [Individual Artist Award](https://santofoundation.org/current-opportunities/)
+- [Grant](https://phmuseum.com/grant)
+- [Women Photographers Grant](https://phmuseum.com/grant)
 
-#### Seattle Art Museum
-- [Betty Bowen Award](http://www.seattleartmuseum.org/about-sam/art-submissions#bet)
+#### The Center for Photography at Woodstock
 
-#### Society for Photographic Education
-- [Student Awards for Innovations in Imaging](https://www.spenational.org/resources/spe-awards-grants)
-- [Honored Educator Award](https://www.spenational.org/resources/spe-awards-grants)
-- [Insight Award](https://www.spenational.org/resources/spe-awards-grants)
-- [Imagemaker Award](https://www.spenational.org/resources/spe-awards-grants)
-- [International Conference Grant](https://www.spenational.org/resources/spe-awards-grants)
+- [Woodstock AIR Program](https://www.cpw.org/create/artist-residencies/)
 
-#### W. Eugene Smith Memorial Fund
-- [W. Eugene Smith Grant in Humanistic Photography](http://smithfund.org/eugene-smith-grant)
+#### Women in Photography
 
-#### Women in Photography (WIPNYC)
-- [Women in Photography Grant & Mentor Program](https://www.wipnyc.org/grant/)
+- [Grant & Mentor Program](https://www.wipnyc.org/grant/)
 
 #### Women's Studio Workshop
+
 - [Art-in-Ed Artist’s Book Residency Grant](http://www.wsworkshop.org/residencies/art-in-ed-artists-book-residency-grant/)
 - [Artist’s Book Residency Grant](http://www.wsworkshop.org/residencies/artists-book-residency-grant/)
 - [Legacy Studio Residency Grant](http://www.wsworkshop.org/residencies/legacy-studio-residency-grant/)
 - [Ora Schneider Regional Residency Grant](http://www.wsworkshop.org/residencies/ora-schneider-regional-residency-grant/)
-
-#### Working Artist Org.
-- [Photography Award](http://www.workingartist.org/photography-award-submission-guidelines.html)
-- [Grant/Art Purchase Award](http://www.workingartist.org/submission-guidelines.html)

@@ -53,7 +53,7 @@ const finder = {
 
 	write(data, file) {
 		return new Promise((resolve, reject) => {
-			fs.writeFile(file, JSON.stringify(data), (error) => {
+			fs.writeFile(file, data, (error) => {
 				if (error) reject(error);
 
 				resolve(`  Finished => ${file}`);
@@ -62,4 +62,4 @@ const finder = {
 	}
 };
 
-module.exports = finder;
+export default finder;
