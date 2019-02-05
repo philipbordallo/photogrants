@@ -13,47 +13,47 @@ const { ROOT_PATH, APP_PATH } = require('./helpers');
 const ENV = process.env.NODE_ENV;
 
 if (ENV !== 'development' && ENV !== 'production' && ENV !== 'test' && ENV !== 'data') {
-	throw new Error('Please set the correct NODE_ENV');
+  throw new Error('Please set the correct NODE_ENV');
 }
 
 const getPresetENVOptions = () => {
-	if (ENV === 'development' || ENV === 'production') {
-		return {
-			'useBuiltIns': true,
-			'modules': false
-		};
-	}
+  if (ENV === 'development' || ENV === 'production') {
+    return {
+      'useBuiltIns': true,
+      'modules': false
+    };
+  }
 
-	return {};
+  return {};
 };
 
 const presets = [
-	[presetENV, getPresetENVOptions()],
-	presetStage2,
-	presetReact
+  [presetENV, getPresetENVOptions()],
+  presetStage2,
+  presetReact
 ];
 const plugins = [];
 
 if (ENV === 'development') {
-	plugins.push.apply(plugins, [
-		reactHotLoader
-	]);
+  plugins.push.apply(plugins, [
+    reactHotLoader
+  ]);
 }
 
 if (ENV === 'test') {
-	plugins.push.apply(plugins, [
-		[pluginModuleResolver, {
-			root: [
-				APP_PATH
-			],
-			alias: {
-				data: path.resolve(ROOT_PATH, 'data')
-			}
-		}]
-	]);
+  plugins.push.apply(plugins, [
+    [pluginModuleResolver, {
+      root: [
+        APP_PATH
+      ],
+      alias: {
+        data: path.resolve(ROOT_PATH, 'data')
+      }
+    }]
+  ]);
 }
 
 module.exports = {
-	presets,
-	plugins
+  presets,
+  plugins
 };
