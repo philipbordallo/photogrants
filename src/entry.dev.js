@@ -11,19 +11,18 @@ import ProvidedApp from './ProvidedApp';
 
 
 const renderApp = () => {
-	const applicationElement = document.getElementById('application');
-	if (applicationElement) {
-		const App = React.createElement(ProvidedApp);
-		const Container = React.createElement(AppContainer, {}, App);
-		ReactDOM.render(Container, applicationElement);
-	}
+  const applicationElement = document.getElementById('application');
+  if (applicationElement) {
+    const App = React.createElement(ProvidedApp);
+    const Container = React.createElement(AppContainer, {}, App);
+    ReactDOM.render(Container, applicationElement);
+  }
 };
 
 const onDOMReady = () => {
-	renderApp();
+  renderApp();
 
-	if (module.hot) module.hot.accept('./ProvidedApp', renderApp);
+  if (module.hot) module.hot.accept('./ProvidedApp', renderApp);
 };
 
 document.addEventListener('DOMContentLoaded', onDOMReady);
-

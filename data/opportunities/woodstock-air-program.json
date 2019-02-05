@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "residency",
-	"slug": "woodstock-air-program",
-	"organization": {
-		"name": "The Center for Photography at Woodstock",
-		"nickname": "",
-		"url": "https://www.cpw.org/"
-	},
-	"name": "Woodstock AIR Program",
-	"url": "https://www.cpw.org/create/artist-residencies/",
-	"applicationUrl": "https://www.callforentry.org/festivals_unique_info.php?ID=4904",
-	"yearsActive": [
-		2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999
-	],
-	"date": {
-		"callToSubmit": "December 1 2017",
-		"deadline": "January 29 2018"
-	},
-	"description": "The Center for Photography at Woodstock’s photography-based Artist-In-Residence Program was created to expand the dialogue around diversity, race, identity and beyond, and to provide concrete opportunities for US-based artists, scholars and curators of color, who have often been under-represented in general programs. Artists-in-Residence (AIRs) are given access to facilities and financial, critical, and technical support. Woodstock AIR encourages participants to pursue creative risk-taking in an environment rich in cultural resources. Working without distraction or interruption, participants focus intensely on their own work, continue works in progress, set goals for the future, and break new ground. Each year CPW offers seven studio residencies and one residency for a critic/scholar/curator.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "ineligible",
-		"location": "",
-		"other": ""
-	},
-	"fee": {
-		"amount": 15,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 1,
-			"amount": 0,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": true,
-			"show": false,
-			"residency": true
-		}
-	]
+  "active": true,
+  "type": "residency",
+  "slug": "woodstock-air-program",
+  "organization": {
+    "name": "The Center for Photography at Woodstock",
+    "nickname": "",
+    "url": "https://www.cpw.org/"
+  },
+  "name": "Woodstock AIR Program",
+  "url": "https://www.cpw.org/create/artist-residencies/",
+  "applicationUrl": "https://www.callforentry.org/festivals_unique_info.php?ID=4904",
+  "yearsActive": [
+    2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 2009, 2008, 2007, 2006, 2005, 2004, 2003, 2002, 2001, 2000, 1999
+  ],
+  "date": {
+    "callToSubmit": "December 1 2017",
+    "deadline": "January 29 2018"
+  },
+  "description": "The Center for Photography at Woodstock’s photography-based Artist-In-Residence Program was created to expand the dialogue around diversity, race, identity and beyond, and to provide concrete opportunities for US-based artists, scholars and curators of color, who have often been under-represented in general programs. Artists-in-Residence (AIRs) are given access to facilities and financial, critical, and technical support. Woodstock AIR encourages participants to pursue creative risk-taking in an environment rich in cultural resources. Working without distraction or interruption, participants focus intensely on their own work, continue works in progress, set goals for the future, and break new ground. Each year CPW offers seven studio residencies and one residency for a critic/scholar/curator.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "ineligible",
+    "location": "",
+    "other": ""
+  },
+  "fee": {
+    "amount": 15,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 1,
+      "amount": 0,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": true,
+      "show": false,
+      "residency": true
+    }
+  ]
 }

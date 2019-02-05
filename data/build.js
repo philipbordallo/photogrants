@@ -12,27 +12,27 @@ const DIST_DATA_FILE = path.resolve(DIST_DATA_PATH, 'all.json');
 const DATA_MD_FILE = path.resolve(DATA_PATH, 'README.md');
 
 (async function() {
-	const data = await finder.read(OPP_PATH);
-	const sortedData = await finder.sort(data);
+  const data = await finder.read(OPP_PATH);
+  const sortedData = await finder.sort(data);
 
-	await finder.mkdir(DIST_PATH);
-	await finder.mkdir(DIST_DATA_PATH);
+  await finder.mkdir(DIST_PATH);
+  await finder.mkdir(DIST_DATA_PATH);
 
-	const stringifiedData = JSON.stringify(sortedData);
-	finder.write(stringifiedData, DIST_DATA_FILE)
-		.then(results => {
-			console.log(results);
-		})
-		.catch((error) => {
-			console.error('Error!', error);
-		});
+  const stringifiedData = JSON.stringify(sortedData);
+  finder.write(stringifiedData, DIST_DATA_FILE)
+    .then(results => {
+      console.log(results);
+    })
+    .catch((error) => {
+      console.error('Error!', error);
+    });
 
-	const markdownData = await createMarkdownOrgList('Grants', sortedData);
-	finder.write(markdownData, DATA_MD_FILE)
-		.then(results => {
-			console.log(results);
-		})
-		.catch((error) => {
-			console.error('Error!', error);
-		});
+  const markdownData = await createMarkdownOrgList('Grants', sortedData);
+  finder.write(markdownData, DATA_MD_FILE)
+    .then(results => {
+      console.log(results);
+    })
+    .catch((error) => {
+      console.error('Error!', error);
+    });
 })();

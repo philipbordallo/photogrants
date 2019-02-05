@@ -7,15 +7,15 @@ import ConnectedGrants from 'containers/Grants';
 import Classes from './styles';
 
 class GrantsPage extends Component {
-	render() {
-		return (
-			<main className={ Classes.content }>
-				<ApplicationHeader />
-				<ConnectedFilters />
-				<ConnectedGrants />
-			</main>
-		);
-	}
+  render() {
+    return (
+      <main className={ Classes.content }>
+        <ApplicationHeader />
+        <ConnectedFilters />
+        <ConnectedGrants />
+      </main>
+    );
+  }
 }
 
 export default GrantsPage;

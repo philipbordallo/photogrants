@@ -5,78 +5,78 @@ import Classes from './styles';
 
 
 class FilterInputItem extends PureComponent {
-	static propTypes = {
-		meta: T.string.isRequired,
-		onChange: T.func.isRequired,
-		placeholder: T.string,
-		inputType: T.oneOf([
-			'text',
-			'number'
-		])
-	};
+  static propTypes = {
+    meta: T.string.isRequired,
+    onChange: T.func.isRequired,
+    placeholder: T.string,
+    inputType: T.oneOf([
+      'text',
+      'number'
+    ])
+  };
 
-	static defaultProps = {
-		placeholder: null,
-		inputType: 'text'
-	};
+  static defaultProps = {
+    placeholder: null,
+    inputType: 'text'
+  };
 
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.state = {
-			value: ''
-		};
+    this.state = {
+      value: ''
+    };
 
-		this.handleChange = this.handleChange.bind(this);
-	}
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-	componentDidUpdate(prevProps, prevState) {
-		if (prevState !== this.state) {
-			this.filterAction();
-		}
-	}
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState !== this.state) {
+      this.filterAction();
+    }
+  }
 
-	filterAction() {
-		const { onChange, meta } = this.props;
-		const { value } = this.state;
+  filterAction() {
+    const { onChange, meta } = this.props;
+    const { value } = this.state;
 
-		onChange({
-			maxLength: 1,
-			name: meta,
-			value
-		});
-	}
+    onChange({
+      maxLength: 1,
+      name: meta,
+      value
+    });
+  }
 
-	handleChange(event) {
-		const { inputType } = this.props;
-		const { value } = event.target;
+  handleChange(event) {
+    const { inputType } = this.props;
+    const { value } = event.target;
 
-		if (inputType === 'number') {
-			const isLessThan4Numbers = /\d/.test(value) && value.length < 4;
-			const isInsideNumberConstraints = Number(value) >= 1 && Number(value) <= 150;
+    if (inputType === 'number') {
+      const isLessThan4Numbers = /\d/.test(value) && value.length < 4;
+      const isInsideNumberConstraints = Number(value) >= 1 && Number(value) <= 150;
 
-			if ((isLessThan4Numbers && isInsideNumberConstraints) || value === '') {
-				this.setState({ value });
-			}
-		}
-		else {
-			this.setState({ value });
-		}
-	}
+      if ((isLessThan4Numbers && isInsideNumberConstraints) || value === '') {
+        this.setState({ value });
+      }
+    }
+    else {
+      this.setState({ value });
+    }
+  }
 
-	render() {
-		const { placeholder } = this.props;
-		const { value } = this.state;
-		return (
-			<input
-				className={ Classes.input }
-				type="text"
-				placeholder={ placeholder }
-				onChange={ this.handleChange }
-				value={ value }
-			/>
-		);
-	}
+  render() {
+    const { placeholder } = this.props;
+    const { value } = this.state;
+    return (
+      <input
+        className={ Classes.input }
+        type="text"
+        placeholder={ placeholder }
+        onChange={ this.handleChange }
+        value={ value }
+      />
+    );
+  }
 }
 
 export default FilterInputItem;

@@ -9,64 +9,64 @@ import Classes from './styles';
 
 
 class TableRow extends PureComponent {
-	static propTypes = {
-		data: T.arrayOf(
-			T.oneOfType([
-				T.string,
-				T.object
-			])
-		).isRequired,
-		slug: T.string.isRequired,
-		config: CONFIG_PROPTYPES.isRequired,
-		onRowClick: T.func,
-		expanded: T.bool
-	};
+  static propTypes = {
+    data: T.arrayOf(
+      T.oneOfType([
+        T.string,
+        T.object
+      ])
+    ).isRequired,
+    slug: T.string.isRequired,
+    config: CONFIG_PROPTYPES.isRequired,
+    onRowClick: T.func,
+    expanded: T.bool
+  };
 
-	static defaultProps ={
-		expanded: false,
-		onRowClick: noop
-	};
+  static defaultProps ={
+    expanded: false,
+    onRowClick: noop
+  };
 
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.handleRowClick = this.handleRowClick.bind(this);
-		this.renderCell = this.renderCell.bind(this);
-	}
+    this.handleRowClick = this.handleRowClick.bind(this);
+    this.renderCell = this.renderCell.bind(this);
+  }
 
-	handleRowClick() {
-		this.props.onRowClick(this.props.slug);
-	}
+  handleRowClick() {
+    this.props.onRowClick(this.props.slug);
+  }
 
-	renderCell(data, index) {
-		const { config } = this.props;
-		let content = (typeof data !== 'object') ? data : null;
+  renderCell(data, index) {
+    const { config } = this.props;
+    let content = (typeof data !== 'object') ? data : null;
 
-		if (config[index].renderer) {
-			content = React.createElement(config[index].renderer, data);
-		}
+    if (config[index].renderer) {
+      content = React.createElement(config[index].renderer, data);
+    }
 
-		return (
-			<td className={ Classes.rowCell } key={ index }>
-				{ content }
-			</td>
-		);
-	}
+    return (
+      <td className={ Classes.rowCell } key={ index }>
+        { content }
+      </td>
+    );
+  }
 
-	render() {
-		const { expanded, data } = this.props;
+  render() {
+    const { expanded, data } = this.props;
 
-		const rowClassName = expanded ? Classes.expandedRow : Classes.row;
+    const rowClassName = expanded ? Classes.expandedRow : Classes.row;
 
-		return (
-			<tr
-				className={ rowClassName }
-				onClick={ this.handleRowClick }
-			>
-				{ data.map(this.renderCell) }
-			</tr>
-		);
-	}
+    return (
+      <tr
+        className={ rowClassName }
+        onClick={ this.handleRowClick }
+      >
+        { data.map(this.renderCell) }
+      </tr>
+    );
+  }
 }
 
 export default TableRow;

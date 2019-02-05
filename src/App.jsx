@@ -8,15 +8,15 @@ import Classes from 'layout/styles';
 
 
 class App extends PureComponent {
-	render() {
-		return (
-			<div className={ Classes.root } onTouchStart={ noop }>
-				<div className={ Classes.contentContainer }>
-					<GrantsPage />
-				</div>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className={ Classes.root } onTouchStart={ noop }>
+        <div className={ Classes.contentContainer }>
+          <GrantsPage />
+        </div>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "award",
-	"slug": "artisttrust-artsinnovatorawards",
-	"organization": {
-		"name": "Artist Trust",
-		"nickname": "Artist Trust",
-		"url": "http://artisttrust.org/"
-	},
-	"name": "Arts Innovator Awards",
-	"url": "http://artisttrust.org/index.php/for-artists/money#arts_innovator_awards",
-	"applicationUrl": "https://artisttrust.submittable.com/submit",
-	"yearsActive": [
-		2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-	],
-	"date": {
-		"callToSubmit": "October 1 2018",
-		"deadline": "November 12 2018"
-	},
-	"description": "The Arts Innovator Award, funded by the Dale and Leslie Chihuly Foundation, is given annually to two Washington State artists of any discipline. The award recognizes artists who demonstrate innovation in their art practice. Examples would be artists who are originating new work, experimenting with new ideas, taking risks, and pushing the boundaries in their respective fields.",
-	"eligibility": {
-		"age": {
-			"from": 18,
-			"to": null
-		},
-		"gender": "all",
-		"students": "accepted",
-		"location": "WA, USA",
-		"other": "Residents of Washington"
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 2,
-			"amount": 25000,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "award",
+  "slug": "artisttrust-artsinnovatorawards",
+  "organization": {
+    "name": "Artist Trust",
+    "nickname": "Artist Trust",
+    "url": "http://artisttrust.org/"
+  },
+  "name": "Arts Innovator Awards",
+  "url": "http://artisttrust.org/index.php/for-artists/money#arts_innovator_awards",
+  "applicationUrl": "https://artisttrust.submittable.com/submit",
+  "yearsActive": [
+    2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+  ],
+  "date": {
+    "callToSubmit": "October 1 2018",
+    "deadline": "November 12 2018"
+  },
+  "description": "The Arts Innovator Award, funded by the Dale and Leslie Chihuly Foundation, is given annually to two Washington State artists of any discipline. The award recognizes artists who demonstrate innovation in their art practice. Examples would be artists who are originating new work, experimenting with new ideas, taking risks, and pushing the boundaries in their respective fields.",
+  "eligibility": {
+    "age": {
+      "from": 18,
+      "to": null
+    },
+    "gender": "all",
+    "students": "accepted",
+    "location": "WA, USA",
+    "other": "Residents of Washington"
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 2,
+      "amount": 25000,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

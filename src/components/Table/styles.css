@@ -1,82 +1,82 @@
 @import 'variables';
 
 .root {
-	width: 85%;
-	border-spacing: 0;
-	border-collapse: collapse;
-	margin-bottom: 48px;
+  width: 85%;
+  border-spacing: 0;
+  border-collapse: collapse;
+  margin-bottom: 48px;
 
-	@media (--largeViewport) {
-		width: 100%;
-	}
+  @media (--largeViewport) {
+    width: 100%;
+  }
 
-	& td {
-		vertical-align: top;
-	}
+  & td {
+    vertical-align: top;
+  }
 }
 
 .row {
-	background-color: var(--white);
-	font-smoothing: antialiased;
-	font-size: 20px;
-	cursor: pointer;
-	transition-property: background-color, color;
-	transition-duration: 250ms;
+  background-color: var(--white);
+  font-smoothing: antialiased;
+  font-size: 20px;
+  cursor: pointer;
+  transition-property: background-color, color;
+  transition-duration: 250ms;
 
-	@nest .row + & {
-		border-top: 6px solid var(--offWhite);
-	}
+  @nest .row + & {
+    border-top: 6px solid var(--offWhite);
+  }
 
-	@nest .detailsRow + & {
-		border-top: 6px solid var(--offWhite);
-	}
+  @nest .detailsRow + & {
+    border-top: 6px solid var(--offWhite);
+  }
 
-	@media (hover: hover) {
-		&:hover {
-			background-color: var(--lightBlue);
-			color: var(--black);
-		}
-	}
+  @media (hover: hover) {
+    &:hover {
+      background-color: var(--lightBlue);
+      color: var(--black);
+    }
+  }
 
-	&:active {
-		background-color: var(--lightBlue);
-	}
+  &:active {
+    background-color: var(--lightBlue);
+  }
 }
 
 .expandedRow {
-	composes: row;
-	color: var(--white);
-	background-color: var(--blue);
+  composes: row;
+  color: var(--white);
+  background-color: var(--blue);
 
-	@media (hover: none) {
-		&:active {
-			background-color: var(--blue);
-		}
-	}
+  @media (hover: none) {
+    &:active {
+      background-color: var(--blue);
+    }
+  }
 }
 
 .rowCell {
-	padding: 20px 10px;
+  padding: 20px 10px;
 
-	&:first-of-type {
-		padding-left: 20px;
-	}
+  &:first-of-type {
+    padding-left: 20px;
+  }
 
-	&:last-of-type {
-		padding-right: 20px;
-	}
+  &:last-of-type {
+    padding-right: 20px;
+  }
 }
 
 .detailsRow {
-	background-color: var(--white);
-	font-size: 16px;
+  background-color: var(--white);
+  font-size: 16px;
 }
 
 .detailsRowCell {
-	padding: 20px;
+  padding: 20px;
 }
 
 .header {
-	composes: sectionTitle from 'assets/default/styles';
-	user-select: none;
+  composes: sectionTitle from 'assets/default/styles';
+  user-select: none;
 }

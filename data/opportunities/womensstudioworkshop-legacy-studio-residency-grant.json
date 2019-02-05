@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "residency",
-	"slug": "womensstudioworkshop-legacy-studio-residency-grant",
-	"organization": {
-		"name": "Women's Studio Workshop",
-		"nickname": "WSW",
-		"url": "http://www.wsworkshop.org/"
-	},
-	"name": "Legacy Studio Residency Grant",
-	"url": "http://www.wsworkshop.org/residencies/legacy-studio-residency-grant/",
-	"applicationUrl": "",
-	"yearsActive": [
-		1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-	],
-	"date": {
-		"callToSubmit": "",
-		"deadline": "January 31 2018 23:59 -0500"
-	},
-	"description": "The Legacy Grant is a special six-week residency offered to an outstanding woman artist who wants to work in any of our studio disciplines. WSW’s most recent Gala honoree selects a Legacy resident from the Studio Grant application pool.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "women",
-		"students": "ineligible",
-		"location": "",
-		"other": ""
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 1,
-			"amount": 2850,
-			"amountType": "upto",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": true
-		}
-	]
+  "active": true,
+  "type": "residency",
+  "slug": "womensstudioworkshop-legacy-studio-residency-grant",
+  "organization": {
+    "name": "Women's Studio Workshop",
+    "nickname": "WSW",
+    "url": "http://www.wsworkshop.org/"
+  },
+  "name": "Legacy Studio Residency Grant",
+  "url": "http://www.wsworkshop.org/residencies/legacy-studio-residency-grant/",
+  "applicationUrl": "",
+  "yearsActive": [
+    1982, 1983, 1984, 1985, 1986, 1987, 1988, 1989, 1990, 1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+  ],
+  "date": {
+    "callToSubmit": "",
+    "deadline": "January 31 2018 23:59 -0500"
+  },
+  "description": "The Legacy Grant is a special six-week residency offered to an outstanding woman artist who wants to work in any of our studio disciplines. WSW’s most recent Gala honoree selects a Legacy resident from the Studio Grant application pool.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "women",
+    "students": "ineligible",
+    "location": "",
+    "other": ""
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 1,
+      "amount": 2850,
+      "amountType": "upto",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": true
+    }
+  ]
 }

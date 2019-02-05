@@ -5,9 +5,9 @@ import store from 'reducers/createStore';
 import App from './App';
 
 const ProvidedApp = () => (
-	<Provider store={ store }>
-		<App />
-	</Provider>
+  <Provider store={ store }>
+    <App />
+  </Provider>
 );
 
 export default ProvidedApp;

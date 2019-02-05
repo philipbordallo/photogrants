@@ -13,18 +13,18 @@ const OPP_PATH = path.resolve(ROOT_PATH, 'data', 'opportunities');
 const jsonSchema = new Validator();
 
 finder.read(OPP_PATH)
-	.then(data => {
-		data.forEach(item => {
-			const name = `${item.organization.nickname} ${item.name}`.trim();
+  .then(data => {
+    data.forEach(item => {
+      const name = `${item.organization.nickname} ${item.name}`.trim();
 
-			test(name, t => {
-				const schemaCheck = jsonSchema.validate(item, schema);
-				const message = schemaCheck.errors.map((error, index) => `${index + 1}. ${error.stack}`).join('\n');
+      test(name, t => {
+        const schemaCheck = jsonSchema.validate(item, schema);
+        const message = schemaCheck.errors.map((error, index) => `${index + 1}. ${error.stack}`).join('\n');
 
-				t.true(schemaCheck.valid, message);
-			})
-		});
-	})
-	.catch(error => {
-		console.error(error)
-	});
+        t.true(schemaCheck.valid, message);
+      })
+    });
+  })
+  .catch(error => {
+    console.error(error)
+  });

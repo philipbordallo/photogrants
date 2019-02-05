@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "residency",
-	"slug": "ppac-residency-program",
-	"organization": {
-		"name": "Philadelphia Photo Arts Center",
-		"nickname": "PPAC",
-		"url": "https://www.philaphotoarts.org"
-	},
-	"name": "Artist Residency",
-	"url": "https://www.philaphotoarts.org/artist-lab/residency-program/",
-	"applicationUrl": "https://philadelphiaphotoartscenter.submittable.com/submit",
-	"yearsActive": [
-		2013, 2014, 2015, 2016, 2017, 2018
-	],
-	"date": {
-		"callToSubmit": "",
-		"deadline": "April 22 2018 23:59 -0400"
-	},
-	"description": "The intentions of the program are to assist talented, self-directed and committed artists in the creation of work by providing necessary financial support, access to high-end facilities and proper technical assistance and education. Our hope is to create a transformative experience that enriches the individual artist and the community of PPAC.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "accepted",
-		"location": "",
-		"other": ""
-	},
-	"fee": {
-		"amount": 25,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 2,
-			"amount": 5500,
-			"amountType": "upto",
-			"currency": "USD",
-			"mentorship": true,
-			"show": false,
-			"residency": true
-		}
-	]
+  "active": true,
+  "type": "residency",
+  "slug": "ppac-residency-program",
+  "organization": {
+    "name": "Philadelphia Photo Arts Center",
+    "nickname": "PPAC",
+    "url": "https://www.philaphotoarts.org"
+  },
+  "name": "Artist Residency",
+  "url": "https://www.philaphotoarts.org/artist-lab/residency-program/",
+  "applicationUrl": "https://philadelphiaphotoartscenter.submittable.com/submit",
+  "yearsActive": [
+    2013, 2014, 2015, 2016, 2017, 2018
+  ],
+  "date": {
+    "callToSubmit": "",
+    "deadline": "April 22 2018 23:59 -0400"
+  },
+  "description": "The intentions of the program are to assist talented, self-directed and committed artists in the creation of work by providing necessary financial support, access to high-end facilities and proper technical assistance and education. Our hope is to create a transformative experience that enriches the individual artist and the community of PPAC.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "accepted",
+    "location": "",
+    "other": ""
+  },
+  "fee": {
+    "amount": 25,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 2,
+      "amount": 5500,
+      "amountType": "upto",
+      "currency": "USD",
+      "mentorship": true,
+      "show": false,
+      "residency": true
+    }
+  ]
 }

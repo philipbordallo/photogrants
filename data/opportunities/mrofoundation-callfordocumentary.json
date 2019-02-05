@@ -1,46 +1,46 @@
 {
-	"active": false,
-	"type": "grant",
-	"slug": "mrofoundation-callfordocumentary",
-	"organization": {
-		"name": "Manuel Rivera-Ortiz Foundation for Documentary Photography & Film",
-		"nickname": "Manuel Rivera-Ortiz Foundation",
-		"url": "http://mrofoundation.org/"
-	},
-	"name": "Call for Documentary Photography",
-	"url": "http://mrofoundation.org/programs/photography-grants/",
-	"applicationUrl": "",
-	"yearsActive": [
-		2011, 2012, 2013, 2014, 2015, 2016, 2017
-	],
-	"date": {
-		"callToSubmit": "November 1 2017",
-		"deadline": "March 31 2018 23:59 -0400"
-	},
-	"description": "The Call for Documentary Photography grant was created to encourage the betterment of humanity through the presentation of editorially based imagery representing humanistic themes including human unrest, famine, disease, national and international politics, war, uprisings, injustice and triumph. As well, this grant was set up to lend credence to the photographers themselves who give so much of their time, energy, enthusiasm, money, and, at times, their lives to create images that bear witness and are sometimes shockingly brutal. Purpose of the grant is to support completion of proposed projects, either completely new or in progress. This category is for non-fiction humanistic photographic work only. Proposals and work submitted for this grant must be of human interest, resonating globally due in no small part to its potential impact on humanity.",
-	"eligibility": {
-		"age": {
-			"from": 18,
-			"to": null
-		},
-		"gender": "all",
-		"students": "accepted",
-		"location": "",
-		"other": ""
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 1,
-			"amount": 5000,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": false,
+  "type": "grant",
+  "slug": "mrofoundation-callfordocumentary",
+  "organization": {
+    "name": "Manuel Rivera-Ortiz Foundation for Documentary Photography & Film",
+    "nickname": "Manuel Rivera-Ortiz Foundation",
+    "url": "http://mrofoundation.org/"
+  },
+  "name": "Call for Documentary Photography",
+  "url": "http://mrofoundation.org/programs/photography-grants/",
+  "applicationUrl": "",
+  "yearsActive": [
+    2011, 2012, 2013, 2014, 2015, 2016, 2017
+  ],
+  "date": {
+    "callToSubmit": "November 1 2017",
+    "deadline": "March 31 2018 23:59 -0400"
+  },
+  "description": "The Call for Documentary Photography grant was created to encourage the betterment of humanity through the presentation of editorially based imagery representing humanistic themes including human unrest, famine, disease, national and international politics, war, uprisings, injustice and triumph. As well, this grant was set up to lend credence to the photographers themselves who give so much of their time, energy, enthusiasm, money, and, at times, their lives to create images that bear witness and are sometimes shockingly brutal. Purpose of the grant is to support completion of proposed projects, either completely new or in progress. This category is for non-fiction humanistic photographic work only. Proposals and work submitted for this grant must be of human interest, resonating globally due in no small part to its potential impact on humanity.",
+  "eligibility": {
+    "age": {
+      "from": 18,
+      "to": null
+    },
+    "gender": "all",
+    "students": "accepted",
+    "location": "",
+    "other": ""
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 1,
+      "amount": 5000,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

@@ -1,19 +1,19 @@
 @import 'variables';
 
 .root {
-	width: 15%;
-	margin: 10px 0 45px;
+  width: 15%;
+  margin: 10px 0 45px;
 
-	@media (--largeViewport) {
-		display: none;
-	}
+  @media (--largeViewport) {
+    display: none;
+  }
 }
 
 .wrapper {
-	position: sticky;
-	top: 10px;
+  position: sticky;
+  top: 10px;
 }
 
 .title {
-	composes: sectionTitle from 'assets/default/styles';
+  composes: sectionTitle from 'assets/default/styles';
 }

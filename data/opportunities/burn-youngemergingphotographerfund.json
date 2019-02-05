@@ -1,46 +1,46 @@
 {
-	"active": false,
-	"type": "grant",
-	"slug": "burn-youngemergingphotographerfund",
-	"organization": {
-		"name": "Burn Magazine",
-		"nickname": "Burn",
-		"url": "http://www.burnmagazine.org/"
-	},
-	"name": "Young Talent Emerging Photographer Fund",
-	"url": "http://www.burnmagazine.org/epf/",
-	"applicationUrl": "https://burn.slideroom.com/",
-	"yearsActive": [
-		2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017
-	],
-	"date": {
-		"callToSubmit": "",
-		"deadline": "September 30 2017 18:00 -0700"
-	},
-	"description": "Burn Magazine revolves around the Emerging Photographer Fund. It is Burn's most important curatorial contribution to the oftentimes chaotic landscape of photography today. By choosing a jury whose lifetimes have been spent looking at photographs and making photographs, Burn try to give their readers a distilled version of the best work of all that flows before their eyes everyday. Most importantly Burn's mission is to give recognition to the finest emerging authors out there and to provide some funding to at least a few to keep going and to continue making a mark.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": 25
-		},
-		"gender": "all",
-		"students": "accepted",
-		"location": "",
-		"other": ""
-	},
-	"fee": {
-		"amount": 25,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 1,
-			"amount": 5000,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": false,
+  "type": "grant",
+  "slug": "burn-youngemergingphotographerfund",
+  "organization": {
+    "name": "Burn Magazine",
+    "nickname": "Burn",
+    "url": "http://www.burnmagazine.org/"
+  },
+  "name": "Young Talent Emerging Photographer Fund",
+  "url": "http://www.burnmagazine.org/epf/",
+  "applicationUrl": "https://burn.slideroom.com/",
+  "yearsActive": [
+    2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017
+  ],
+  "date": {
+    "callToSubmit": "",
+    "deadline": "September 30 2017 18:00 -0700"
+  },
+  "description": "Burn Magazine revolves around the Emerging Photographer Fund. It is Burn's most important curatorial contribution to the oftentimes chaotic landscape of photography today. By choosing a jury whose lifetimes have been spent looking at photographs and making photographs, Burn try to give their readers a distilled version of the best work of all that flows before their eyes everyday. Most importantly Burn's mission is to give recognition to the finest emerging authors out there and to provide some funding to at least a few to keep going and to continue making a mark.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": 25
+    },
+    "gender": "all",
+    "students": "accepted",
+    "location": "",
+    "other": ""
+  },
+  "fee": {
+    "amount": 25,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 1,
+      "amount": 5000,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "grant",
-	"slug": "artisttrust-grantsforartistprojects",
-	"organization": {
-		"name": "Artist Trust",
-		"nickname": "Artist Trust",
-		"url": "http://artisttrust.org/"
-	},
-	"name": "Grants for Artist Projects",
-	"url": "http://artisttrust.org/index.php/for-artists/money#grants_for_artist_projects",
-	"applicationUrl": "https://artisttrust.submittable.com/submit",
-	"yearsActive": [
-		2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-	],
-	"date": {
-		"callToSubmit": "May 21 2018",
-		"deadline": "June 25 2018"
-	},
-	"description": "Grants for Artist Projects (GAP) provide support for artist-generated projects, which can include (but are not limited to) the development, completion or presentation of new work in any discipline.",
-	"eligibility": {
-		"age": {
-			"from": 18,
-			"to": null
-		},
-		"gender": "all",
-		"students": "ineligible",
-		"location": "WA, USA",
-		"other": "Residents of Washington"
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 61,
-			"amount": 1500,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "grant",
+  "slug": "artisttrust-grantsforartistprojects",
+  "organization": {
+    "name": "Artist Trust",
+    "nickname": "Artist Trust",
+    "url": "http://artisttrust.org/"
+  },
+  "name": "Grants for Artist Projects",
+  "url": "http://artisttrust.org/index.php/for-artists/money#grants_for_artist_projects",
+  "applicationUrl": "https://artisttrust.submittable.com/submit",
+  "yearsActive": [
+    2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+  ],
+  "date": {
+    "callToSubmit": "May 21 2018",
+    "deadline": "June 25 2018"
+  },
+  "description": "Grants for Artist Projects (GAP) provide support for artist-generated projects, which can include (but are not limited to) the development, completion or presentation of new work in any discipline.",
+  "eligibility": {
+    "age": {
+      "from": 18,
+      "to": null
+    },
+    "gender": "all",
+    "students": "ineligible",
+    "location": "WA, USA",
+    "other": "Residents of Washington"
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 61,
+      "amount": 1500,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

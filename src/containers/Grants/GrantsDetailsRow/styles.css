@@ -1,102 +1,102 @@
 @import 'variables';
 
 .root {
-	display: flex;
-	justify-content: space-between;
-	flex-wrap: wrap;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 .information {
-	flex-basis: 75%;
-	padding-right: 20px;
-	border-right: 1px solid var(--offWhite);
+  flex-basis: 75%;
+  padding-right: 20px;
+  border-right: 1px solid var(--offWhite);
 
-	@media (--smallViewport) {
-		flex-basis: 100%;
-		padding: 0;
-		border-color: transparent;
-	}
+  @media (--smallViewport) {
+    flex-basis: 100%;
+    padding: 0;
+    border-color: transparent;
+  }
 }
 
 .eligibility  {
-	flex-basis: 25%;
-	padding-left: 20px;
+  flex-basis: 25%;
+  padding-left: 20px;
 
-	@media (--smallViewport) {
-		flex-basis: 100%;
-		margin-top: 1em;
-		padding: 0;
-		border-color: transparent;
-	}
+  @media (--smallViewport) {
+    flex-basis: 100%;
+    margin-top: 1em;
+    padding: 0;
+    border-color: transparent;
+  }
 }
 
 .links {
-	flex-basis: 75%;
-	padding-right: 20px;
-	border-right: 1px solid var(--offWhite);
+  flex-basis: 75%;
+  padding-right: 20px;
+  border-right: 1px solid var(--offWhite);
 
-	@media (--smallViewport) {
-		flex-basis: 100%;
-		border-color: transparent;
-	}
+  @media (--smallViewport) {
+    flex-basis: 100%;
+    border-color: transparent;
+  }
 }
 
 .sectionTitle {
-	composes: sectionTitle from 'assets/default/styles';
+  composes: sectionTitle from 'assets/default/styles';
 
-	@nest .detail + & {
-		margin-top: 1em;
-	}
+  @nest .detail + & {
+    margin-top: 1em;
+  }
 }
 
 .detail {
-	& + .detail {
-		margin-top: 1em;
-	}
+  & + .detail {
+    margin-top: 1em;
+  }
 }
 
 .list li {
-	position: relative;
-	margin-left: 1rem;
+  position: relative;
+  margin-left: 1rem;
 
-	&::before {
-		content: '– ';
-		position: absolute;
-		left: -.875rem;
-	}
+  &::before {
+    content: '– ';
+    position: absolute;
+    left: -.875rem;
+  }
 }
 
 .title {
-	composes: subtitle from 'assets/default/styles';
-	margin: 0 0 .2em 0;
+  composes: subtitle from 'assets/default/styles';
+  margin: 0 0 .2em 0;
 }
 
 .text {
-	margin: 0;
+  margin: 0;
 }
 
 .buttonWrapper {
-	margin-top: 1.75em;
+  margin-top: 1.75em;
 
-	& + .buttonWrapper {
-		margin-top: .625em;
-	}
+  & + .buttonWrapper {
+    margin-top: .625em;
+  }
 }
 
 .mentorshipSymbol {
-	composes: mentorshipSymbol from 'assets/default/styles';
-	font-size: 1.25rem;
-	margin: 0 .2em 0 .1em;
+  composes: mentorshipSymbol from 'assets/default/styles';
+  font-size: 1.25rem;
+  margin: 0 .2em 0 .1em;
 }
 
 .showSymbol {
-	composes: showSymbol from 'assets/default/styles';
-	font-size: 1.25rem;
-	margin: 0 .2em 0 .1em;
+  composes: showSymbol from 'assets/default/styles';
+  font-size: 1.25rem;
+  margin: 0 .2em 0 .1em;
 }
 
 .residencySymbol {
-	composes: residencySymbol from 'assets/default/styles';
-	font-size: 1.25rem;
-	margin: 0 .2em 1px .1em;
+  composes: residencySymbol from 'assets/default/styles';
+  font-size: 1.25rem;
+  margin: 0 .2em 1px .1em;
 }

@@ -10,14 +10,14 @@ import ProvidedApp from './ProvidedApp';
 
 
 const onDOMReady = () => {
-	const applicationElement = document.getElementById('application');
+  const applicationElement = document.getElementById('application');
 
-	document.removeEventListener('DOMContentLoaded', onDOMReady);
+  document.removeEventListener('DOMContentLoaded', onDOMReady);
 
-	if (applicationElement) {
-		const component = React.createElement(ProvidedApp);
-		ReactDOM.render(component, applicationElement);
-	}
+  if (applicationElement) {
+    const component = React.createElement(ProvidedApp);
+    ReactDOM.render(component, applicationElement);
+  }
 };
 
 const analytics = new Analytics();

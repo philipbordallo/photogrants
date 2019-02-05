@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "award",
-	"slug": "aesthetica-emerging-art-prize",
-	"organization": {
-		"name": "Aesthetica Magazine",
-		"nickname": "Aesthetica",
-		"url": "http://www.aestheticamagazine.com/"
-	},
-	"name": "Emerging Art Prize",
-	"url": "http://www.aestheticamagazine.com/art-prize/",
-	"applicationUrl": "http://www.aestheticamagazine.com/art-prize/enter/",
-	"yearsActive": [
-		2013, 2014, 2015, 2016, 2017, 2018
-	],
-	"date": {
-		"callToSubmit": "January 1 2018",
-		"deadline": "August 31 2018"
-	},
-	"description": "The Aesthetica Emerging Art Prize is a celebration of excellence in art from across the world. It offers both emerging and established artists the opportunity to showcase their work to a wider audience, and further their engagement with the international art world.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "only",
-		"location": "",
-		"other": "Open to current students and artists who have graduated within the last two years"
-	},
-	"fee": {
-		"amount": 24,
-		"currency": "GBP"
-	},
-	"awards": [
-		{
-			"given": 1,
-			"amount": 1000,
-			"amountType": "exact",
-			"currency": "GBP",
-			"mentorship": false,
-			"show": true,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "award",
+  "slug": "aesthetica-emerging-art-prize",
+  "organization": {
+    "name": "Aesthetica Magazine",
+    "nickname": "Aesthetica",
+    "url": "http://www.aestheticamagazine.com/"
+  },
+  "name": "Emerging Art Prize",
+  "url": "http://www.aestheticamagazine.com/art-prize/",
+  "applicationUrl": "http://www.aestheticamagazine.com/art-prize/enter/",
+  "yearsActive": [
+    2013, 2014, 2015, 2016, 2017, 2018
+  ],
+  "date": {
+    "callToSubmit": "January 1 2018",
+    "deadline": "August 31 2018"
+  },
+  "description": "The Aesthetica Emerging Art Prize is a celebration of excellence in art from across the world. It offers both emerging and established artists the opportunity to showcase their work to a wider audience, and further their engagement with the international art world.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "only",
+    "location": "",
+    "other": "Open to current students and artists who have graduated within the last two years"
+  },
+  "fee": {
+    "amount": 24,
+    "currency": "GBP"
+  },
+  "awards": [
+    {
+      "given": 1,
+      "amount": 1000,
+      "amountType": "exact",
+      "currency": "GBP",
+      "mentorship": false,
+      "show": true,
+      "residency": false
+    }
+  ]
 }

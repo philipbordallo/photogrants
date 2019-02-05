@@ -12,50 +12,50 @@ import Classes from './styles';
 
 
 class Filters extends Component {
-	static propTypes = {
-		filterTable: T.func.isRequired,
-		fireAnalyticsEvent: T.func.isRequired,
-		filters: FILTERS_PROPTYPES.isRequired
-	};
+  static propTypes = {
+    filterTable: T.func.isRequired,
+    fireAnalyticsEvent: T.func.isRequired,
+    filters: FILTERS_PROPTYPES.isRequired
+  };
 
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.handleFilterAction = this.handleFilterAction.bind(this);
-		this.renderFilterList = this.renderFilterList.bind(this);
-	}
+    this.handleFilterAction = this.handleFilterAction.bind(this);
+    this.renderFilterList = this.renderFilterList.bind(this);
+  }
 
-	handleFilterAction(filter) {
-		this.props.fireAnalyticsEvent({
-			eventCategory: 'Filter',
-			eventAction: 'filter',
-			eventLabel: `${filter.name}`
-		});
-		this.props.filterTable(filter);
-	}
+  handleFilterAction(filter) {
+    this.props.fireAnalyticsEvent({
+      eventCategory: 'Filter',
+      eventAction: 'filter',
+      eventLabel: `${filter.name}`
+    });
+    this.props.filterTable(filter);
+  }
 
-	renderFilterList(data, index) {
-		const filterListProps = setFilterData(data, this.props.filters);
+  renderFilterList(data, index) {
+    const filterListProps = setFilterData(data, this.props.filters);
 
-		return (
-			<FilterList
-				key={ index }
-				onFilterAction={ this.handleFilterAction }
-				{ ...filterListProps }
-			/>
-		);
-	}
+    return (
+      <FilterList
+        key={ index }
+        onFilterAction={ this.handleFilterAction }
+        { ...filterListProps }
+      />
+    );
+  }
 
-	render() {
-		return (
-			<div className={ Classes.root }>
-				<div className={ Classes.wrapper }>
-					<h2 className={ Classes.title }>Filters</h2>
-					{ FILTERS_LIST.map(this.renderFilterList) }
-				</div>
-			</div>
-		);
-	}
+  render() {
+    return (
+      <div className={ Classes.root }>
+        <div className={ Classes.wrapper }>
+          <h2 className={ Classes.title }>Filters</h2>
+          { FILTERS_LIST.map(this.renderFilterList) }
+        </div>
+      </div>
+    );
+  }
 }
 
 export default Filters;
