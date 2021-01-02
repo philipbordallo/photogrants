@@ -6,7 +6,8 @@ const GREENWICH_TIME = {
   name: 'Greenwich',
   type: 'Mean',
 };
-const US_TIME_ZONES = [
+
+export const US_TIME_ZONES = [
   {
     name: 'Eastern',
     standard: { offset: '-0500', abbr: 'EST' },
@@ -58,6 +59,3 @@ function getTimeZone(date) {
 }
 
 export default getTimeZone;
-export {
-  US_TIME_ZONES,
-};

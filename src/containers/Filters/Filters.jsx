@@ -8,14 +8,14 @@ import FilterList from './FilterList';
 import { FILTERS_PROPTYPES } from './propTypes';
 import { FILTERS_LIST } from './meta';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class Filters extends Component {
   static propTypes = {
     filterTable: T.func.isRequired,
     fireAnalyticsEvent: T.func.isRequired,
-    filters: FILTERS_PROPTYPES.isRequired
+    filters: FILTERS_PROPTYPES.isRequired,
   };
 
   constructor() {
@@ -26,16 +26,19 @@ class Filters extends Component {
   }
 
   handleFilterAction(filter) {
-    this.props.fireAnalyticsEvent({
+    const { fireAnalyticsEvent, filterTable } = this.props;
+
+    fireAnalyticsEvent({
       eventCategory: 'Filter',
       eventAction: 'filter',
-      eventLabel: `${filter.name}`
+      eventLabel: `${filter.name}`,
     });
-    this.props.filterTable(filter);
+    filterTable(filter);
   }
 
   renderFilterList(data, index) {
-    const filterListProps = setFilterData(data, this.props.filters);
+    const { filters } = this.props;
+    const filterListProps = setFilterData(data, filters);
 
     return (
       <FilterList

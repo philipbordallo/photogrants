@@ -3,7 +3,7 @@ import T from 'prop-types';
 
 import Checkbox from 'components/Checkbox';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class FilterItem extends PureComponent {
@@ -15,12 +15,12 @@ class FilterItem extends PureComponent {
     onClick: T.func.isRequired,
     value: T.oneOfType([
       T.bool,
-      T.string
-    ]).isRequired
+      T.string,
+    ]).isRequired,
   };
 
   static defaultProps = {
-    selected: false
+    selected: false,
   };
 
   constructor() {
@@ -28,16 +28,6 @@ class FilterItem extends PureComponent {
 
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
-
-  filterAction() {
-    const { maxLength, meta, onClick, value } = this.props;
-
-    onClick({
-      maxLength,
-      name: meta,
-      value
-    });
   }
 
   handleKeyDown(event) {
@@ -49,6 +39,18 @@ class FilterItem extends PureComponent {
   handleClick(event) {
     event.currentTarget.blur();
     this.filterAction();
+  }
+
+  filterAction() {
+    const {
+      maxLength, meta, onClick, value,
+    } = this.props;
+
+    onClick({
+      maxLength,
+      name: meta,
+      value,
+    });
   }
 
   render() {

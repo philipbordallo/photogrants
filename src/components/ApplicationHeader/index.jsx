@@ -1,15 +1,13 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
-class ApplicationHeader extends PureComponent {
-  render() {
-    return (
-      <header className={ Classes.root }>
-        <h1 className={ Classes.title }>photogrants</h1>
-      </header>
-    );
-  }
+function ApplicationHeader() {
+  return (
+    <header className={ Classes.root }>
+      <h1 className={ Classes.title }>photogrants</h1>
+    </header>
+  );
 }
 
 export default ApplicationHeader;

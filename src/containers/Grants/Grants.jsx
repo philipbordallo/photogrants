@@ -10,7 +10,7 @@ import { TABLE_CONFIG } from './meta';
 
 import GrantsDetailsRow from './GrantsDetailsRow';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class Grants extends Component {
@@ -21,7 +21,7 @@ class Grants extends Component {
     sortTable: T.func.isRequired,
     toggleRow: T.func.isRequired,
     currentSort: T.string.isRequired,
-    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
+    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
   };
 
   constructor(props) {
@@ -32,24 +32,33 @@ class Grants extends Component {
   }
 
   componentWillMount() {
-    this.props.loadData();
+    const { loadData } = this.props;
+
+    loadData();
   }
 
   handleTableSort(name, direction) {
-    this.props.fireAnalyticsEvent({
+    const { fireAnalyticsEvent, sortTable } = this.props;
+
+    fireAnalyticsEvent({
       eventCategory: 'Table Sort',
       eventAction: 'sort',
-      eventLabel: name
+      eventLabel: name,
     });
-    this.props.sortTable(name, direction);
+
+    sortTable(name, direction);
   }
 
   handleRowClick(slug) {
-    this.props.toggleRow(slug);
+    const { toggleRow } = this.props;
+
+    toggleRow(slug);
   }
 
   render() {
-    const { currentSort, sortDirection, collection, fireAnalyticsEvent } = this.props;
+    const {
+      currentSort, sortDirection, collection, fireAnalyticsEvent,
+    } = this.props;
 
     return (
       <Table

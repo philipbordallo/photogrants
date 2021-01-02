@@ -6,10 +6,10 @@ import {
   filterAge,
   filterGenders,
   filterOrganizations,
-  filterAwards
+  filterAwards,
 } from 'reducers/grants/filters';
 
-test('Filter by types', t => {
+test('Filter by types', (t) => {
   const data = [
     { type: 'award' },
     { type: 'residency' },
@@ -27,19 +27,19 @@ test('Filter by types', t => {
     { type: 'award' },
     { type: 'award' },
     { type: 'award' },
-    { type: 'award' }
+    { type: 'award' },
   ];
 
   const expectedResidencies = [
     { type: 'residency' },
     { type: 'residency' },
     { type: 'residency' },
-    { type: 'residency' }
+    { type: 'residency' },
   ];
 
   const expectedGrants = [
     { type: 'grant' },
-    { type: 'grant' }
+    { type: 'grant' },
   ];
 
   const expectedAwardsResidencies = [
@@ -50,7 +50,7 @@ test('Filter by types', t => {
     { type: 'residency' },
     { type: 'residency' },
     { type: 'award' },
-    { type: 'residency' }
+    { type: 'residency' },
   ];
 
   const expectedNoFilters = [...data];
@@ -62,7 +62,7 @@ test('Filter by types', t => {
   t.deepEqual(filterTypes(data, []), expectedNoFilters);
 });
 
-test('Filter by students', t => {
+test('Filter by students', (t) => {
   const data = [
     { eligibility: { students: 'ineligible' } },
     { eligibility: { students: 'accepted' } },
@@ -73,7 +73,7 @@ test('Filter by students', t => {
     { eligibility: { students: 'ineligible' } },
     { eligibility: { students: 'accepted' } },
     { eligibility: { students: 'ineligible' } },
-    { eligibility: { students: 'only' } }
+    { eligibility: { students: 'only' } },
   ];
 
   const expectedStudentsTrue = [
@@ -82,7 +82,7 @@ test('Filter by students', t => {
     { eligibility: { students: 'accepted' } },
     { eligibility: { students: 'accepted' } },
     { eligibility: { students: 'accepted' } },
-    { eligibility: { students: 'only' } }
+    { eligibility: { students: 'only' } },
   ];
 
   const expectedStudentsFalse = [
@@ -93,14 +93,14 @@ test('Filter by students', t => {
     { eligibility: { students: 'ineligible' } },
     { eligibility: { students: 'ineligible' } },
     { eligibility: { students: 'accepted' } },
-    { eligibility: { students: 'ineligible' } }
+    { eligibility: { students: 'ineligible' } },
   ];
 
   t.deepEqual(filterStudents(data, [true]), expectedStudentsTrue);
   t.deepEqual(filterStudents(data, [false]), expectedStudentsFalse);
 });
 
-test('Filter by age', t => {
+test('Filter by age', (t) => {
   const data = [
     { eligibility: { age: { from: '', to: '' } } },
     { eligibility: { age: { from: '18', to: '' } } },
@@ -111,7 +111,7 @@ test('Filter by age', t => {
     { eligibility: { age: { from: '', to: '25' } } },
     { eligibility: { age: { from: '60', to: '' } } },
     { eligibility: { age: { from: '', to: '' } } },
-    { eligibility: { age: { from: '', to: '' } } }
+    { eligibility: { age: { from: '', to: '' } } },
   ];
 
   const expectedAge16 = [
@@ -119,7 +119,7 @@ test('Filter by age', t => {
     { eligibility: { age: { from: '', to: '' } } },
     { eligibility: { age: { from: '', to: '25' } } },
     { eligibility: { age: { from: '', to: '' } } },
-    { eligibility: { age: { from: '', to: '' } } }
+    { eligibility: { age: { from: '', to: '' } } },
   ];
 
   const expectedAge28 = [
@@ -130,7 +130,7 @@ test('Filter by age', t => {
     { eligibility: { age: { from: '18', to: '' } } },
     { eligibility: { age: { from: '18', to: '' } } },
     { eligibility: { age: { from: '', to: '' } } },
-    { eligibility: { age: { from: '', to: '' } } }
+    { eligibility: { age: { from: '', to: '' } } },
   ];
 
   const expectedAge65 = [
@@ -142,7 +142,7 @@ test('Filter by age', t => {
     { eligibility: { age: { from: '18', to: '' } } },
     { eligibility: { age: { from: '60', to: '' } } },
     { eligibility: { age: { from: '', to: '' } } },
-    { eligibility: { age: { from: '', to: '' } } }
+    { eligibility: { age: { from: '', to: '' } } },
   ];
 
   t.deepEqual(filterAge(data, '16'), expectedAge16);
@@ -150,7 +150,7 @@ test('Filter by age', t => {
   t.deepEqual(filterAge(data, '65'), expectedAge65);
 });
 
-test('Filter by genders', t => {
+test('Filter by genders', (t) => {
   const data = [
     { eligibility: { gender: 'all' } },
     { eligibility: { gender: 'women' } },
@@ -161,7 +161,7 @@ test('Filter by genders', t => {
     { eligibility: { gender: 'all' } },
     { eligibility: { gender: 'men' } },
     { eligibility: { gender: 'all' } },
-    { eligibility: { gender: 'nonbinary' } }
+    { eligibility: { gender: 'nonbinary' } },
   ];
 
   const expectedMen = [
@@ -181,7 +181,7 @@ test('Filter by genders', t => {
     { eligibility: { gender: 'women' } },
     { eligibility: { gender: 'all' } },
     { eligibility: { gender: 'all' } },
-    { eligibility: { gender: 'all' } }
+    { eligibility: { gender: 'all' } },
   ];
 
   const expectedNonbinary = [
@@ -190,7 +190,7 @@ test('Filter by genders', t => {
     { eligibility: { gender: 'all' } },
     { eligibility: { gender: 'all' } },
     { eligibility: { gender: 'all' } },
-    { eligibility: { gender: 'nonbinary' } }
+    { eligibility: { gender: 'nonbinary' } },
   ];
 
   t.deepEqual(filterGenders(data, ['men']), expectedMen);
@@ -198,127 +198,225 @@ test('Filter by genders', t => {
   t.deepEqual(filterGenders(data, ['nonbinary']), expectedNonbinary);
 });
 
-test('Filter by organizations', t => {
+test('Filter by organizations', (t) => {
   const data = [
     { organization: { name: 'Artadia' } },
-    { organization: { name: `Women's Studio Workshop` } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
     { organization: { name: 'Artadia' } },
-    { organization: { name: `Women's Studio Workshop` } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
     { organization: { name: 'American Academy in Rome' } },
     { organization: { name: 'Artadia' } },
     { organization: { name: 'Artist Trust' } },
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: 'Alexia Foundation' } }
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Alexia Foundation' } },
   ];
 
   const expectedArtadia = [
     { organization: { name: 'Artadia' } },
     { organization: { name: 'Artadia' } },
-    { organization: { name: 'Artadia' } }
+    { organization: { name: 'Artadia' } },
   ];
 
   const expectedWSW = [
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: `Women's Studio Workshop` } }
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
   ];
 
   const expectedWSWAlexia = [
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: `Women's Studio Workshop` } },
-    { organization: { name: 'Alexia Foundation' } }
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Women\'s Studio Workshop' } },
+    { organization: { name: 'Alexia Foundation' } },
   ];
 
   t.deepEqual(filterOrganizations(data, ['Artadia']), expectedArtadia);
-  t.deepEqual(filterOrganizations(data, [`Women's Studio Workshop`]), expectedWSW);
-  t.deepEqual(filterOrganizations(data, [`Women's Studio Workshop`, 'Alexia Foundation']), expectedWSWAlexia);
+  t.deepEqual(filterOrganizations(data, ['Women\'s Studio Workshop']), expectedWSW);
+  t.deepEqual(filterOrganizations(data, ['Women\'s Studio Workshop', 'Alexia Foundation']), expectedWSWAlexia);
 });
 
-test('Filter by awards', t => {
+test('Filter by awards', (t) => {
   const data = [
-    { awards: [
-      { amount: 0, mentorship: false, show: true, residency: false },
-      { amount: 2000, mentorship: true, show: false, residency: true }
-    ]},
-    { awards: [
-      { amount: 2000, mentorship: false, show: true, residency: false },
-      { amount: 500, mentorship: false, show: true, residency: false }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: true, show: true, residency: true },
-      { amount: 0, mentorship: true, show: true, residency: true }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: false, show: false, residency: true }
-    ]},
-    { awards: [
-      { amount: 0, mentorship: false, show: false, residency: true }
-    ]}
+    {
+      awards: [
+        {
+          amount: 0, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 2000, mentorship: true, show: false, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 2000, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 500, mentorship: false, show: true, residency: false,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: true, show: true, residency: true,
+        },
+        {
+          amount: 0, mentorship: true, show: true, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: false, show: false, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 0, mentorship: false, show: false, residency: true,
+        },
+      ],
+    },
   ];
 
   const expectedAmounts = [
-    { awards: [
-      { amount: 0, mentorship: false, show: true, residency: false },
-      { amount: 2000, mentorship: true, show: false, residency: true }
-    ]},
-    { awards: [
-      { amount: 2000, mentorship: false, show: true, residency: false },
-      { amount: 500, mentorship: false, show: true, residency: false }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: true, show: true, residency: true },
-      { amount: 0, mentorship: true, show: true, residency: true }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: false, show: false, residency: true }
-    ]}
+    {
+      awards: [
+        {
+          amount: 0, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 2000, mentorship: true, show: false, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 2000, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 500, mentorship: false, show: true, residency: false,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: true, show: true, residency: true,
+        },
+        {
+          amount: 0, mentorship: true, show: true, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: false, show: false, residency: true,
+        },
+      ],
+    },
   ];
 
   const expectedResidencies = [
-    { awards: [
-      { amount: 0, mentorship: false, show: true, residency: false },
-      { amount: 2000, mentorship: true, show: false, residency: true }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: true, show: true, residency: true },
-      { amount: 0, mentorship: true, show: true, residency: true }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: false, show: false, residency: true }
-    ]},
-    { awards: [
-      { amount: 0, mentorship: false, show: false, residency: true }
-    ]}
+    {
+      awards: [
+        {
+          amount: 0, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 2000, mentorship: true, show: false, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: true, show: true, residency: true,
+        },
+        {
+          amount: 0, mentorship: true, show: true, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: false, show: false, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 0, mentorship: false, show: false, residency: true,
+        },
+      ],
+    },
   ];
 
   const expectedMentorships = [
-    { awards: [
-      { amount: 0, mentorship: false, show: true, residency: false },
-      { amount: 2000, mentorship: true, show: false, residency: true }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: true, show: true, residency: true },
-      { amount: 0, mentorship: true, show: true, residency: true }
-    ]}
+    {
+      awards: [
+        {
+          amount: 0, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 2000, mentorship: true, show: false, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: true, show: true, residency: true,
+        },
+        {
+          amount: 0, mentorship: true, show: true, residency: true,
+        },
+      ],
+    },
   ];
 
   const expectedShows = [
-    { awards: [
-      { amount: 0, mentorship: false, show: true, residency: false },
-      { amount: 2000, mentorship: true, show: false, residency: true }
-    ]},
-    { awards: [
-      { amount: 2000, mentorship: false, show: true, residency: false },
-      { amount: 500, mentorship: false, show: true, residency: false }
-    ]},
-    { awards: [
-      { amount: 1000, mentorship: true, show: true, residency: true },
-      { amount: 0, mentorship: true, show: true, residency: true }
-    ]}
+    {
+      awards: [
+        {
+          amount: 0, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 2000, mentorship: true, show: false, residency: true,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 2000, mentorship: false, show: true, residency: false,
+        },
+        {
+          amount: 500, mentorship: false, show: true, residency: false,
+        },
+      ],
+    },
+    {
+      awards: [
+        {
+          amount: 1000, mentorship: true, show: true, residency: true,
+        },
+        {
+          amount: 0, mentorship: true, show: true, residency: true,
+        },
+      ],
+    },
   ];
 
   t.deepEqual(filterAwards(data, ['amount']), expectedAmounts);

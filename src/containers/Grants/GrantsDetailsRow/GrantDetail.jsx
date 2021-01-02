@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class GrantDetail extends PureComponent {
@@ -10,15 +10,15 @@ class GrantDetail extends PureComponent {
     children: T.node,
     type: T.oneOf([
       'list',
-      'text'
+      'text',
     ]),
-    visible: T.bool
+    visible: T.bool,
   };
 
   static defaultProps = {
     children: '',
     type: 'text',
-    visible: true
+    visible: true,
   };
 
   renderContent() {
@@ -31,14 +31,14 @@ class GrantDetail extends PureComponent {
         </p>
       );
     }
-    else if (type === 'list') {
+
+    if (type === 'list') {
       return (
         <ul className={ Classes.list }>
           { children }
         </ul>
       );
     }
-
 
     return null;
   }

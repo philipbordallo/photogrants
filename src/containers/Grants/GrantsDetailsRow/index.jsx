@@ -14,29 +14,29 @@ import GrantAward from './GrantAward';
 import GrantDetail from './GrantDetail';
 import GrantLink from './GrantLink';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 const ELIGIBILITY_META = {
   gender: {
     women: 'Women Only',
     men: 'Men Only',
-    all: 'Everyone'
+    all: 'Everyone',
   },
   students: {
     accepted: 'Accepted',
     ineligible: 'Ineligible',
-    only: 'Only'
-  }
+    only: 'Only',
+  },
 };
 
 class GrantsDetailsRow extends PureComponent {
   static propTypes = {
     data: DATA_PROPTYPES.isRequired,
-    fireAnalyticsEvent: T.func.isRequired
+    fireAnalyticsEvent: T.func.isRequired,
   };
 
-  renderAwards(data, index) {
+  static renderAwards(data, index) {
     return (
       <GrantAward key={ index } { ...data } />
     );
@@ -49,12 +49,14 @@ class GrantsDetailsRow extends PureComponent {
         organization: { url: orgURL, name: orgName },
         yearsActive,
         awards,
-        eligibility: { age, gender, students, other },
+        eligibility: {
+          age, gender, students, other,
+        },
         url,
         applicationUrl,
-        date: { callToSubmit, deadline }
+        date: { callToSubmit, deadline },
       },
-      fireAnalyticsEvent
+      fireAnalyticsEvent,
     } = this.props;
 
     const years = getYearsActive(yearsActive);
@@ -79,16 +81,23 @@ class GrantsDetailsRow extends PureComponent {
           </GrantDetail>
 
           <GrantDetail title="Awards List" type="list">
-            { awards.map(this.renderAwards) }
+            { awards.map(GrantsDetailsRow.renderAwards) }
           </GrantDetail>
 
           <GrantDetail title="Organization">
-            <a href={ orgURL } target="_blank" className={ Classes.link }>{ orgName }</a>
+            <a
+              href={ orgURL }
+              target="_blank"
+              className={ Classes.link }
+              rel="noreferrer"
+            >
+              { orgName }
+            </a>
           </GrantDetail>
 
           <h3 className={ Classes.sectionTitle }>Dates</h3>
 
-          <GrantDetail title="Call To Submit" visible={ !!callToSubmit }>
+          <GrantDetail title="Call To Submit" visible={ Boolean(callToSubmit) }>
             { callDate }
           </GrantDetail>
 
@@ -101,7 +110,7 @@ class GrantsDetailsRow extends PureComponent {
         <section className={ Classes.eligibility }>
           <h3 className={ Classes.sectionTitle }>Eligibility</h3>
 
-          <GrantDetail title="Age" visible={ !!age.from || !!age.to }>
+          <GrantDetail title="Age" visible={ Boolean(age.from) || Boolean(age.to) }>
             { ageText }
           </GrantDetail>
 
@@ -113,7 +122,7 @@ class GrantsDetailsRow extends PureComponent {
             { ELIGIBILITY_META.students[students] }
           </GrantDetail>
 
-          <GrantDetail title="Other" visible={ !!other }>
+          <GrantDetail title="Other" visible={ Boolean(other) }>
             { other }
           </GrantDetail>
         </section>

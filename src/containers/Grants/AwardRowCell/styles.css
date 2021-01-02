@@ -1,18 +1,16 @@
-@import 'variables';
-
 .root {
   display: flex;
   align-items: center;
 }
 
 .showSymbol {
-  composes: showSymbol from 'assets/default/styles';
+  composes: showSymbol from 'assets/default/styles.css';
 }
 
 .mentorshipSymbol {
-  composes: mentorshipSymbol from 'assets/default/styles';
+  composes: mentorshipSymbol from 'assets/default/styles.css';
 }
 
 .residencySymbol {
-  composes: residencySymbol from 'assets/default/styles';
+  composes: residencySymbol from 'assets/default/styles.css';
 }

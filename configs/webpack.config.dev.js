@@ -1,9 +1,10 @@
 const webpack = require('webpack');
 const path = require('path');
-const localDomains = require('local-domains');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 
-const { LOADER, RESOLVER, ROOT_PATH, APP_PATH, DIST_PATH, DEFINE_ENV } = require('./helpers');
+const {
+  LOADER, RESOLVER, APP_PATH, DIST_PATH, DEFINE_ENV,
+} = require('./helpers');
 
 
 const RULES = {
@@ -12,39 +13,30 @@ const RULES = {
     exclude: /node_modules/,
     use: [
       LOADER.babel,
-      LOADER.eslint
-    ]
+      LOADER.eslint,
+    ],
   },
   css: {
     test: /\.css$/,
     use: [
       LOADER.style,
       LOADER.css,
-      LOADER.postcss
-    ]
+      LOADER.postcss,
+    ],
   },
   html: {
     test: /\.html$/,
     use: [
-      LOADER.handlebars
-    ]
+      LOADER.handlebars,
+    ],
   },
   images: {
     test: /\.(png|jpeg|svg)$/,
-    use: [
-      LOADER.images
-    ]
-  }
+    type: 'asset/resource',
+  },
 };
 
-const HOST_LIST = localDomains('photogrants', ['dev', 'www.name.xip']);
-HOST_LIST.forEach(item => {
-  console.log(item)
-});
-console.log('\n');
-
 const DEV_SERVER = {
-  allowedHosts: HOST_LIST,
   compress: true,
   contentBase: DIST_PATH,
   historyApiFallback: true,
@@ -57,18 +49,18 @@ const DEV_SERVER = {
     children: false,
     chunks: false,
     modules: false,
-    timings: true
-  }
+    timings: true,
+  },
 };
 
 module.exports = {
   entry: {
-    app: path.resolve(APP_PATH, 'entry.dev.js')
+    app: path.resolve(APP_PATH, 'entry.dev.js'),
   },
   output: {
     path: APP_PATH,
     filename: 'bundle.js',
-    publicPath: `/`
+    publicPath: '/',
   },
   devServer: DEV_SERVER,
   module: {
@@ -76,22 +68,21 @@ module.exports = {
       RULES.jsx,
       RULES.css,
       RULES.html,
-      RULES.images
-    ]
+      RULES.images,
+    ],
   },
   resolve: RESOLVER,
   plugins: [
     new webpack.DefinePlugin(DEFINE_ENV),
     new webpack.SourceMapDevToolPlugin({
       test: /\.(js|jsx)$/,
-      filename: '[file].map'
+      filename: '[file].map',
     }),
     new HTMLWebpackPlugin({
       template: path.resolve(APP_PATH, 'entry.html.js'),
       inject: false,
-      minify: false
+      minify: false,
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
-  ]
+  ],
 };

@@ -1,15 +1,20 @@
 module.exports = {
   extends: '@philipbordallo/react',
+  parser: 'babel-eslint',
+  plugins: [
+    'eslint-plugin-import',
+    'eslint-plugin-jsx-a11y',
+    'eslint-plugin-react',
+  ],
   settings: {
-    'import/resolver':{
+    'import/resolver': {
       webpack: {
-        config: 'config/webpack.config.dev.js'
-      }
+        config: 'configs/webpack.config.dev.js',
+      },
     },
-    'import/extensions': [
-      '.js',
-      '.jsx',
-      '.css'
-    ]
+    'import/extensions': ['.js', '.jsx', '.css'],
   },
-}
+  rules: {
+    'react/forbid-elements': 0,
+  },
+};

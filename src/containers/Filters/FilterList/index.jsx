@@ -6,7 +6,7 @@ import { FILTERS_PROPTYPES, VALUES_PROPTYPES } from 'containers/Filters/propType
 import FilterSelectItem from './FilterSelectItem';
 import FilterInputItem from './FilterInputItem';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class FilterList extends PureComponent {
@@ -18,12 +18,12 @@ class FilterList extends PureComponent {
     selectedValues: VALUES_PROPTYPES.isRequired,
     type: T.oneOf([
       'select',
-      'input'
-    ])
+      'input',
+    ]),
   };
 
   static defaultProps = {
-    type: 'select'
+    type: 'select',
   };
 
   constructor() {
@@ -33,7 +33,9 @@ class FilterList extends PureComponent {
   }
 
   renderItem({ name, value }, index) {
-    const { onFilterAction, meta, filters, selectedValues, type } = this.props;
+    const {
+      onFilterAction, meta, filters, selectedValues, type,
+    } = this.props;
 
     if (type === 'select') {
       const selected = selectedValues.some(selectedValue => selectedValue === value);
@@ -51,7 +53,7 @@ class FilterList extends PureComponent {
         </FilterSelectItem>
       );
     }
-    else if (type === 'input') {
+    if (type === 'input') {
       return (
         <FilterInputItem
           key={ index }

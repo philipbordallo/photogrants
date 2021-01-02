@@ -2,10 +2,10 @@ module.exports = {
   map: true,
   plugins: {
     'postcss-import': {
-      path: ['src/assets/']
+      path: ['src/assets/'],
     },
     'autoprefixer': {
-      cascade: false
+      cascade: false,
     },
     'postcss-nesting': {},
     'postcss-custom-properties': {},
@@ -18,8 +18,6 @@ module.exports = {
     'postcss-font-family-system-ui': {},
     'postcss-font-smoothing': {},
     'postcss-font-weights': {},
-    'csswring': {
-      removeAllComments: true
-    }
-  }
+    'cssnano': {},
+  },
 };

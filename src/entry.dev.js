@@ -6,6 +6,7 @@ import 'polyfills';
 import 'react-hot-loader/patch';
 
 import 'assets/base/styles';
+import 'assets/variables';
 
 import ProvidedApp from './ProvidedApp';
 
@@ -19,10 +20,10 @@ const renderApp = () => {
   }
 };
 
-const onDOMReady = () => {
+const handleDOMReady = () => {
   renderApp();
 
   if (module.hot) module.hot.accept('./ProvidedApp', renderApp);
 };
 
-document.addEventListener('DOMContentLoaded', onDOMReady);
+document.addEventListener('DOMContentLoaded', handleDOMReady);

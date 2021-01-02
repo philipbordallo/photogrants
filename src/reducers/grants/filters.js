@@ -1,7 +1,7 @@
 // Filter collection by types
 // Takes a `collection` and an array `types` of strings
 // Returns a filtered `collection`
-function filterTypes(collection, types) {
+export function filterTypes(collection, types) {
   if (types.length > 0) {
     return collection.filter(item => types.some(type => item.type === type));
   }
@@ -12,7 +12,7 @@ function filterTypes(collection, types) {
 // Filter collection by student yes ['accepted', 'only'] or no ['accepted', 'ineligible']
 // Takes a `collection` and a boolean `studentsBool`
 // Returns a filtered `collection`
-function filterStudents(collection, studentsBool) {
+export function filterStudents(collection, studentsBool) {
   if (studentsBool.length > 0) {
     return collection.filter((item) => {
       const { eligibility: { students } } = item;
@@ -30,7 +30,7 @@ function filterStudents(collection, studentsBool) {
 // Filter collection by age
 // Takes a `collection ` and a string `value`
 // Returns a filtered `collection`
-function filterAge(collection, value) {
+export function filterAge(collection, value) {
   const age = Number(value);
   if (age > 0) {
     return collection.filter((item) => {
@@ -48,7 +48,7 @@ function filterAge(collection, value) {
 // Filter collection by gender
 // Takes a `collection` and an array `genders` of strings
 // Returns a filtered `collection`
-function filterGenders(collection, genders) {
+export function filterGenders(collection, genders) {
   if (genders.length > 0) {
     const genderList = ['all'].concat(genders);
     return collection.filter(item => genderList.some(gender => item.eligibility.gender === gender));
@@ -60,14 +60,16 @@ function filterGenders(collection, genders) {
 // Filter collection by organizations
 // Takes a `collection` and an array `organizations` of strings
 // Returns a filtered `collection`
-function filterOrganizations(collection, organizations) {
-  return collection.filter(item => organizations.some(organzation => item.organization.name === organzation));
+export function filterOrganizations(collection, organizations) {
+  return collection.filter(
+    item => organizations.some(organzation => item.organization.name === organzation),
+  );
 }
 
 // Filter collection by awards
 // Takes a `collection` and an array `awards` of strings
 // Returns a filtered `collection`
-function filterAwards(collection, awards) {
+export function filterAwards(collection, awards) {
   if (awards.length > 0) {
     return collection.filter(item => item.awards.some(
       itemAward => awards.some(award => itemAward[award]),
@@ -77,7 +79,7 @@ function filterAwards(collection, awards) {
   return collection;
 }
 
-function filterCollection(collection, filters) {
+export function filterCollection(collection, filters) {
   return filters.reduce((array, { name, values }) => {
     if (name === 'type') {
       return filterTypes(array, values);
@@ -98,13 +100,3 @@ function filterCollection(collection, filters) {
     return array;
   }, collection);
 }
-
-export default filterCollection;
-export {
-  filterAge,
-  filterAwards,
-  filterGenders,
-  filterOrganizations,
-  filterStudents,
-  filterTypes,
-};

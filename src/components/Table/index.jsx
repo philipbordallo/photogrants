@@ -6,14 +6,14 @@ import noop from 'utilities/noop';
 import { COLLECTION_PROPTYPES } from 'containers/Grants/propTypes';
 import {
   CONFIG_PROPTYPES,
-  SORT_DIRECTION_PROPTYPES
+  SORT_DIRECTION_PROPTYPES,
 } from './propTypes';
 
 import TableHeader from './TableHeader';
 import TableRow from './TableRow';
 import TableDetailsRow from './TableDetailsRow';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class Table extends PureComponent {
@@ -26,31 +26,33 @@ class Table extends PureComponent {
     sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
     className: T.string,
     fireAnalyticsEvent: T.func,
-    detailsRenderer: T.func
+    detailsRenderer: T.func,
   };
 
   static defaultProps = {
     className: '',
     fireAnalyticsEvent: noop,
-    detailsRenderer: null
+    detailsRenderer: null,
   };
 
   constructor(props) {
     super(props);
-
-    this.renderCol = this.renderCol.bind(this);
     this.renderRow = this.renderRow.bind(this);
   }
 
-  renderCol({ width }, index) {
+  static renderCol({ width }, index) {
     return (
       <col width={ `${width}%` } key={ index } />
     );
   }
 
   renderRow(data) {
-    const { active, slug, row, expanded, show, scrollable } = data;
-    const { onRowClick, config, detailsRenderer, fireAnalyticsEvent } = this.props;
+    const {
+      active, slug, row, expanded, show, scrollable,
+    } = data;
+    const {
+      onRowClick, config, detailsRenderer, fireAnalyticsEvent,
+    } = this.props;
 
     if (active && show === 'overview') {
       return (
@@ -64,7 +66,7 @@ class Table extends PureComponent {
         />
       );
     }
-    else if (active && show === 'details') {
+    if (active && show === 'details') {
       return (
         <TableDetailsRow
           colSpan={ config.length }
@@ -81,7 +83,9 @@ class Table extends PureComponent {
   }
 
   render() {
-    const { collection, config, onTableSort, currentSort, sortDirection, className } = this.props;
+    const {
+      collection, config, onTableSort, currentSort, sortDirection, className,
+    } = this.props;
 
     let tableClasses = Classes.root;
     if (className) tableClasses += ` ${className}`;
@@ -89,7 +93,7 @@ class Table extends PureComponent {
     return (
       <table className={ tableClasses }>
         <colgroup>
-          { config.map(this.renderCol) }
+          { config.map(Table.renderCol) }
         </colgroup>
         <TableHeader
           config={ config }

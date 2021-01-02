@@ -3,7 +3,7 @@ import T from 'prop-types';
 
 import { SHAPE_CONFIG_PROPTYPES, SORT_DIRECTION_PROPTYPES } from '../propTypes';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class TableHeaderCell extends Component {
@@ -11,7 +11,7 @@ class TableHeaderCell extends Component {
     ...SHAPE_CONFIG_PROPTYPES,
     onTableSort: T.func.isRequired,
     currentSort: T.string.isRequired,
-    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
+    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
   };
 
   constructor() {
@@ -22,26 +22,11 @@ class TableHeaderCell extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    const wasPreviousCurrentSort = (this.props.name === this.props.currentSort);
-    const isNextCurrentSort = (nextProps.name === nextProps.currentSort);
+    const { name, currentSort } = this.props;
+    const wasPreviousCurrentSort = name === currentSort;
+    const isNextCurrentSort = nextProps.name === nextProps.currentSort;
 
-    return (wasPreviousCurrentSort || isNextCurrentSort);
-  }
-
-  sortTable() {
-    const { name, currentSort, sortDirection, sortable } = this.props;
-
-    const isSorted = (currentSort === name);
-    const descOnly = sortable.every(sort => sort === 'desc');
-
-    let direction = 'desc';
-
-    if (isSorted && !descOnly) {
-      direction = (sortDirection === 'asc') ? 'desc' : 'asc';
-    }
-
-    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-    this.props.onTableSort(name, direction);
+    return wasPreviousCurrentSort || isNextCurrentSort;
   }
 
   handleClick(event) {
@@ -55,12 +40,33 @@ class TableHeaderCell extends Component {
     }
   }
 
-  render() {
-    const { currentSort, sortDirection, title, name } = this.props;
+  sortTable() {
+    const {
+      name, currentSort, sortDirection, sortable, onTableSort,
+    } = this.props;
 
-    const isSorted = (currentSort === name);
-    const isAscending = (sortDirection === 'asc');
-    const isDescending = (sortDirection === 'desc');
+    const isSorted = currentSort === name;
+    const descOnly = sortable.every(sort => sort === 'desc');
+
+    let direction = 'desc';
+
+    if (isSorted && !descOnly) {
+      direction = sortDirection === 'asc' ? 'desc' : 'asc';
+    }
+
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    onTableSort(name, direction);
+  }
+
+
+  render() {
+    const {
+      currentSort, sortDirection, title, name,
+    } = this.props;
+
+    const isSorted = currentSort === name;
+    const isAscending = sortDirection === 'asc';
+    const isDescending = sortDirection === 'desc';
 
     let contentClassName = Classes.content;
 

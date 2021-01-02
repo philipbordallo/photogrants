@@ -5,7 +5,7 @@ import noop from 'utilities/noop';
 
 import { DATA_PROPTYPES } from 'containers/Grants/propTypes';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 class TableDetailsRow extends Component {
   static propTypes = {
@@ -13,12 +13,12 @@ class TableDetailsRow extends Component {
     fireAnalyticsEvent: T.func.isRequired,
     scrollable: T.bool.isRequired,
     colSpan: T.number,
-    renderer: T.func
+    renderer: T.func,
   };
 
   static defaultProps = {
     colSpan: 1,
-    renderer: noop
+    renderer: noop,
   };
 
   constructor() {
@@ -28,7 +28,8 @@ class TableDetailsRow extends Component {
   }
 
   componentDidMount() {
-    if (this.props.scrollable) {
+    const { scrollable } = this.props;
+    if (scrollable) {
       const detailsPosition = this.detailsRef.getBoundingClientRect();
       const rowPosition = this.detailsRef.previousSibling.getBoundingClientRect();
 
@@ -36,8 +37,8 @@ class TableDetailsRow extends Component {
       const bothHeights = detailsPosition.height + rowPosition.height + offset.top;
       const fromTop = rowPosition.top - offset.top;
 
-      const shouldScrollBottom = (detailsPosition.bottom > window.innerHeight);
-      const shouldScrollTop = (fromTop < 0 || bothHeights > window.innerHeight);
+      const shouldScrollBottom = detailsPosition.bottom > window.innerHeight;
+      const shouldScrollTop = fromTop < 0 || bothHeights > window.innerHeight;
 
       let top = 0;
       if (shouldScrollBottom) top = (detailsPosition.bottom + offset.bottom) - window.innerHeight;
@@ -48,7 +49,8 @@ class TableDetailsRow extends Component {
   }
 
   shouldComponentUpdate(nextProps) {
-    return this.props.data.show !== nextProps.data.show;
+    const { data } = this.props;
+    return data.show !== nextProps.data.show;
   }
 
   setDetailsRef(ref) {
@@ -56,7 +58,9 @@ class TableDetailsRow extends Component {
   }
 
   render() {
-    const { data, renderer, colSpan, fireAnalyticsEvent } = this.props;
+    const {
+      data, renderer, colSpan, fireAnalyticsEvent,
+    } = this.props;
     const content = React.createElement(renderer, { data, fireAnalyticsEvent });
 
     return (

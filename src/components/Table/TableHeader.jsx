@@ -5,7 +5,7 @@ import { CONFIG_PROPTYPES, SORT_DIRECTION_PROPTYPES } from './propTypes';
 
 import TableHeaderCell from './TableHeaderCell';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class TableHeader extends PureComponent {
@@ -13,7 +13,7 @@ class TableHeader extends PureComponent {
     config: CONFIG_PROPTYPES.isRequired,
     onTableSort: T.func.isRequired,
     currentSort: T.string.isRequired,
-    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
+    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
   };
 
   constructor(props) {

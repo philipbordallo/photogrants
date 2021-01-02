@@ -6,7 +6,7 @@ const CURRENCY_PROPTYPES = T.oneOf([
   'USD',
 ]);
 
-const AWARD_PROPTYPES = T.shape({
+export const AWARD_PROPTYPES = T.shape({
   given: T.number,
   amount: T.number,
   amountType: T.oneOf([
@@ -20,7 +20,7 @@ const AWARD_PROPTYPES = T.shape({
   residency: T.bool,
 });
 
-const DATA_PROPTYPES = T.shape({
+export const DATA_PROPTYPES = T.shape({
   active: T.bool,
   type: T.oneOf([
     'grant',
@@ -78,12 +78,6 @@ const DATA_PROPTYPES = T.shape({
   ]),
 });
 
-const COLLECTION_PROPTYPES = T.arrayOf(
+export const COLLECTION_PROPTYPES = T.arrayOf(
   DATA_PROPTYPES,
 );
-
-export {
-  AWARD_PROPTYPES,
-  DATA_PROPTYPES,
-  COLLECTION_PROPTYPES,
-};

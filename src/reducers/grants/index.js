@@ -5,7 +5,7 @@ import setCollection from './setCollection';
 import sortCollection from './sortCollection';
 import toggleCollection from './toggleCollection';
 
-import filterCollection from './filters';
+import { filterCollection } from './filters';
 import toggleFilters from './toggleFilters';
 
 

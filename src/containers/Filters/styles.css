@@ -1,5 +1,3 @@
-@import 'variables';
-
 .root {
   width: 15%;
   margin: 10px 0 45px;
@@ -15,5 +13,5 @@
 }
 
 .title {
-  composes: sectionTitle from 'assets/default/styles';
+  composes: sectionTitle from 'assets/default/styles.css';
 }

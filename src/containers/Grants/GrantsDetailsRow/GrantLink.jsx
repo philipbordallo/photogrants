@@ -3,32 +3,32 @@ import T from 'prop-types';
 
 import Button from 'components/Button';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 const LINK_META = {
   application: {
     buttonType: 'primary',
-    copy: 'Submit Application'
+    copy: 'Submit Application',
   },
   website: {
     buttonType: 'secondary',
-    copy: 'Visit Website'
-  }
+    copy: 'Visit Website',
+  },
 };
 
 class GrantLink extends PureComponent {
   static propTypes = {
     type: T.oneOf([
       'application',
-      'website'
+      'website',
     ]).isRequired,
     href: T.string,
-    fireAnalyticsEvent: T.func.isRequired
+    fireAnalyticsEvent: T.func.isRequired,
   };
 
   static defaultProps = {
-    href: ''
+    href: '',
   };
 
   constructor() {
@@ -38,10 +38,12 @@ class GrantLink extends PureComponent {
   }
 
   handleButtonClick(event) {
-    this.props.fireAnalyticsEvent({
+    const { fireAnalyticsEvent } = this.props;
+
+    fireAnalyticsEvent({
       eventCategory: 'Grant Link',
       eventAction: 'click',
-      eventLabel: `${event.target.textContent} | ${event.target.href}`
+      eventLabel: `${event.target.textContent} | ${event.target.href}`,
     });
   }
 

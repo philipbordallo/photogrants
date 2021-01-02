@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import T from 'prop-types';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class FilterInputItem extends PureComponent {
@@ -11,20 +11,20 @@ class FilterInputItem extends PureComponent {
     placeholder: T.string,
     inputType: T.oneOf([
       'text',
-      'number'
-    ])
+      'number',
+    ]),
   };
 
   static defaultProps = {
     placeholder: null,
-    inputType: 'text'
+    inputType: 'text',
   };
 
   constructor() {
     super();
 
     this.state = {
-      value: ''
+      value: '',
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -34,17 +34,6 @@ class FilterInputItem extends PureComponent {
     if (prevState !== this.state) {
       this.filterAction();
     }
-  }
-
-  filterAction() {
-    const { onChange, meta } = this.props;
-    const { value } = this.state;
-
-    onChange({
-      maxLength: 1,
-      name: meta,
-      value
-    });
   }
 
   handleChange(event) {
@@ -62,6 +51,17 @@ class FilterInputItem extends PureComponent {
     else {
       this.setState({ value });
     }
+  }
+
+  filterAction() {
+    const { onChange, meta } = this.props;
+    const { value } = this.state;
+
+    onChange({
+      maxLength: 1,
+      name: meta,
+      value,
+    });
   }
 
   render() {
