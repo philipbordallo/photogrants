@@ -3,85 +3,91 @@ import T from 'prop-types';
 
 import { SHAPE_CONFIG_PROPTYPES, SORT_DIRECTION_PROPTYPES } from '../propTypes';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class TableHeaderCell extends Component {
-	static propTypes = {
-		...SHAPE_CONFIG_PROPTYPES,
-		onTableSort: T.func.isRequired,
-		currentSort: T.string.isRequired,
-		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
-	};
+  static propTypes = {
+    ...SHAPE_CONFIG_PROPTYPES,
+    onTableSort: T.func.isRequired,
+    currentSort: T.string.isRequired,
+    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
+  };
 
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.handleClick = this.handleClick.bind(this);
-		this.handleKeyPress = this.handleKeyPress.bind(this);
-	}
+    this.handleClick = this.handleClick.bind(this);
+    this.handleKeyPress = this.handleKeyPress.bind(this);
+  }
 
-	shouldComponentUpdate(nextProps) {
-		const wasPreviousCurrentSort = (this.props.name === this.props.currentSort);
-		const isNextCurrentSort = (nextProps.name === nextProps.currentSort);
+  shouldComponentUpdate(nextProps) {
+    const { name, currentSort } = this.props;
+    const wasPreviousCurrentSort = name === currentSort;
+    const isNextCurrentSort = nextProps.name === nextProps.currentSort;
 
-		return (wasPreviousCurrentSort || isNextCurrentSort);
-	}
+    return wasPreviousCurrentSort || isNextCurrentSort;
+  }
 
-	sortTable() {
-		const { name, currentSort, sortDirection, sortable } = this.props;
+  handleClick(event) {
+    event.target.blur(); // Prevents :focus from being shown onClick
+    this.sortTable();
+  }
 
-		const isSorted = (currentSort === name);
-		const descOnly = sortable.every(sort => sort === 'desc');
+  handleKeyPress(event) {
+    if (event.key === 'Enter') {
+      this.sortTable();
+    }
+  }
 
-		let direction = 'desc';
+  sortTable() {
+    const {
+      name, currentSort, sortDirection, sortable, onTableSort,
+    } = this.props;
 
-		if (isSorted && !descOnly) {
-			direction = (sortDirection === 'asc') ? 'desc' : 'asc';
-		}
+    const isSorted = currentSort === name;
+    const descOnly = sortable.every(sort => sort === 'desc');
 
-		window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-		this.props.onTableSort(name, direction);
-	}
+    let direction = 'desc';
 
-	handleClick(event) {
-		event.target.blur(); // Prevents :focus from being shown onClick
-		this.sortTable();
-	}
+    if (isSorted && !descOnly) {
+      direction = sortDirection === 'asc' ? 'desc' : 'asc';
+    }
 
-	handleKeyPress(event) {
-		if (event.key === 'Enter') {
-			this.sortTable();
-		}
-	}
+    window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+    onTableSort(name, direction);
+  }
 
-	render() {
-		const { currentSort, sortDirection, title, name } = this.props;
 
-		const isSorted = (currentSort === name);
-		const isAscending = (sortDirection === 'asc');
-		const isDescending = (sortDirection === 'desc');
+  render() {
+    const {
+      currentSort, sortDirection, title, name,
+    } = this.props;
 
-		let contentClassName = Classes.content;
+    const isSorted = currentSort === name;
+    const isAscending = sortDirection === 'asc';
+    const isDescending = sortDirection === 'desc';
 
-		if (isSorted && isAscending) contentClassName = Classes.contentAsc;
-		else if (isSorted && isDescending) contentClassName = Classes.contentDesc;
+    let contentClassName = Classes.content;
 
-		return (
-			<th className={ Classes.root }>
-				<div
-					className={ contentClassName }
-					onClick={ this.handleClick }
-					onKeyPress={ this.handleKeyPress }
-					title={ `Sort by ${title}` }
-					tabIndex={ 0 }
-					role="columnheader"
-				>
-					{ title }
-				</div>
-			</th>
-		);
-	}
+    if (isSorted && isAscending) contentClassName = Classes.contentAsc;
+    else if (isSorted && isDescending) contentClassName = Classes.contentDesc;
+
+    return (
+      <th className={ Classes.root }>
+        <div
+          className={ contentClassName }
+          onClick={ this.handleClick }
+          onKeyPress={ this.handleKeyPress }
+          title={ `Sort by ${title}` }
+          tabIndex={ 0 }
+          role="columnheader"
+        >
+          { title }
+        </div>
+      </th>
+    );
+  }
 }
 
 export default TableHeaderCell;

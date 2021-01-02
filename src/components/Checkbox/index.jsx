@@ -1,25 +1,23 @@
-import React, { PureComponent } from 'react';
+import React from 'react';
 import T from 'prop-types';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
-class Checkbox extends PureComponent {
-	static propTypes = {
-		checked: T.bool
-	};
+function Checkbox(props) {
+  const { checked } = props;
+  const rootClassName = checked ? Classes.rootChecked : Classes.root;
 
-	static defaultProps = {
-		checked: false
-	};
-
-	render() {
-		const { checked } = this.props;
-		const rootClassName = checked ? Classes.rootChecked : Classes.root;
-
-		return (
-			<span className={ rootClassName } />
-		);
-	}
+  return (
+    <span className={ rootClassName } />
+  );
 }
+
+Checkbox.propTypes = {
+  checked: T.bool,
+};
+
+Checkbox.defaultProps = {
+  checked: false,
+};
 
 export default Checkbox;

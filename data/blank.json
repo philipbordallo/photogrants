@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "",
-	"slug": "",
-	"organization": {
-		"name": "",
-		"nickname": "",
-		"url": ""
-	},
-	"name": "",
-	"url": "",
-	"applicationUrl": "",
-	"yearsActive": [
-		2017
-	],
-	"date": {
-		"callToSubmit": "",
-		"deadline": ""
-	},
-	"description": "",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "accepted",
-		"location": "",
-		"other": ""
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 1,
-			"amount": 0,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "",
+  "slug": "",
+  "organization": {
+    "name": "",
+    "nickname": "",
+    "url": ""
+  },
+  "name": "",
+  "url": "",
+  "applicationUrl": "",
+  "yearsActive": [
+    2017
+  ],
+  "date": {
+    "callToSubmit": "",
+    "deadline": ""
+  },
+  "description": "",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "accepted",
+    "location": "",
+    "other": ""
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 1,
+      "amount": 0,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

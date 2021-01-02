@@ -3,68 +3,70 @@ import T from 'prop-types';
 
 import Button from 'components/Button';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 const LINK_META = {
-	application: {
-		buttonType: 'primary',
-		copy: 'Submit Application'
-	},
-	website: {
-		buttonType: 'secondary',
-		copy: 'Visit Website'
-	}
+  application: {
+    buttonType: 'primary',
+    copy: 'Submit Application',
+  },
+  website: {
+    buttonType: 'secondary',
+    copy: 'Visit Website',
+  },
 };
 
 class GrantLink extends PureComponent {
-	static propTypes = {
-		type: T.oneOf([
-			'application',
-			'website'
-		]).isRequired,
-		href: T.string,
-		fireAnalyticsEvent: T.func.isRequired
-	};
+  static propTypes = {
+    type: T.oneOf([
+      'application',
+      'website',
+    ]).isRequired,
+    href: T.string,
+    fireAnalyticsEvent: T.func.isRequired,
+  };
 
-	static defaultProps = {
-		href: ''
-	};
+  static defaultProps = {
+    href: '',
+  };
 
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.handleButtonClick = this.handleButtonClick.bind(this);
-	}
+    this.handleButtonClick = this.handleButtonClick.bind(this);
+  }
 
-	handleButtonClick(event) {
-		this.props.fireAnalyticsEvent({
-			eventCategory: 'Grant Link',
-			eventAction: 'click',
-			eventLabel: `${event.target.textContent} | ${event.target.href}`
-		});
-	}
+  handleButtonClick(event) {
+    const { fireAnalyticsEvent } = this.props;
 
-	render() {
-		const { type, href } = this.props;
+    fireAnalyticsEvent({
+      eventCategory: 'Grant Link',
+      eventAction: 'click',
+      eventLabel: `${event.target.textContent} | ${event.target.href}`,
+    });
+  }
 
-		if (href) {
-			return (
-				<div className={ Classes.buttonWrapper }>
-					<Button
-						onClick={ this.handleButtonClick }
-						type={ LINK_META[type].buttonType }
-						href={ href }
-						target="_blank"
-					>
-						{ LINK_META[type].copy }
-					</Button>
-				</div>
-			);
-		}
+  render() {
+    const { type, href } = this.props;
 
-		return null;
-	}
+    if (href) {
+      return (
+        <div className={ Classes.buttonWrapper }>
+          <Button
+            onClick={ this.handleButtonClick }
+            type={ LINK_META[type].buttonType }
+            href={ href }
+            target="_blank"
+          >
+            { LINK_META[type].copy }
+          </Button>
+        </div>
+      );
+    }
+
+    return null;
+  }
 }
 
 export default GrantLink;

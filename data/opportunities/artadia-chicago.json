@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "award",
-	"slug": "artadia-chicago",
-	"organization": {
-		"name": "Artadia",
-		"nickname": "Artadia",
-		"url": "https://artadia.org"
-	},
-	"name": "Chicago",
-	"url": "https://artadia.org/city/chicago/",
-	"applicationUrl": "https://artadia.org/awards/howtoapply/",
-	"yearsActive": [
-		2001, 2002, 2004, 2006, 2008, 2011, 2012, 2013, 2015, 2017
-	],
-	"date": {
-		"callToSubmit": "May 1 2017",
-		"deadline": "June 1 2017"
-	},
-	"description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "ineligible",
-		"location": "Chicago, IL, USA",
-		"other": "Residents of Chicago, Cook County"
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 2,
-			"amount": 10000,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "award",
+  "slug": "artadia-chicago",
+  "organization": {
+    "name": "Artadia",
+    "nickname": "Artadia",
+    "url": "https://artadia.org"
+  },
+  "name": "Chicago",
+  "url": "https://artadia.org/city/chicago/",
+  "applicationUrl": "https://artadia.org/awards/howtoapply/",
+  "yearsActive": [
+    2001, 2002, 2004, 2006, 2008, 2011, 2012, 2013, 2015, 2017
+  ],
+  "date": {
+    "callToSubmit": "May 1 2017",
+    "deadline": "June 1 2017"
+  },
+  "description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "ineligible",
+    "location": "Chicago, IL, USA",
+    "other": "Residents of Chicago, Cook County"
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 2,
+      "amount": 10000,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

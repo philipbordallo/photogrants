@@ -1,27 +1,25 @@
-@import 'variables';
-
 .root {
-	display: flex;
-	flex-direction: column;
-	min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 .contentContainer {
-	width: 100%;
-	max-width: calc(var(--containerWidth) + 20px);
-	padding: 0 10px;
-	margin: 0 auto;
+  width: 100%;
+  max-width: calc(var(--containerWidth) + 20px);
+  padding: 0 10px;
+  margin: 0 auto;
 
-	@media (--largeViewport) {
-		padding: 0;
-	}
+  @media (--largeViewport) {
+    padding: 0;
+  }
 }
 
 .content {
-	display: flex;
-	flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 
-	@media (--largeViewport) {
-		flex-direction: column;
-	}
+  @media (--largeViewport) {
+    flex-direction: column;
+  }
 }

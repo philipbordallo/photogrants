@@ -1,44 +1,42 @@
-@import 'variables';
-
 .subtitle {
-	font-weight: bold;
-	font-size: 16px;
-	font-smoothing: antialiased;
+  font-weight: bold;
+  font-size: 16px;
+  font-smoothing: antialiased;
 }
 
 .sectionTitle {
-	font-smoothing: antialiased;
-	color: var(--lightGray);
-	font-family: var(--rubik);
-	font-size: 14px;
-	letter-spacing: .05em;
-	text-transform: uppercase;
+  font-smoothing: antialiased;
+  color: var(--lightGray);
+  font-family: var(--rubik);
+  font-size: 14px;
+  letter-spacing: .05em;
+  text-transform: uppercase;
 }
 
 .symbol {
-	display: inline-block;
-	width: .5em;
-	height: .5em;
-	margin-left: .3em;
+  display: inline-block;
+  width: .5em;
+  height: .5em;
+  margin-left: .3em;
 }
 
 .showSymbol {
-	composes: symbol;
-	font-size: 1em;
-	background-color: var(--yellow);
+  composes: symbol;
+  font-size: 1em;
+  background-color: var(--yellow);
 }
 
 .mentorshipSymbol {
-	composes: symbol;
-	font-size: 1em;
-	background-color: var(--purple);
-	border-radius: 50%;
+  composes: symbol;
+  font-size: 1em;
+  background-color: var(--purple);
+  border-radius: 50%;
 }
 
 .residencySymbol {
-	composes: symbol;
-	width: .4em;
-	height: .4em;
-	background-color: var(--pink);
-	transform: rotate(45deg);
+  composes: symbol;
+  width: .4em;
+  height: .4em;
+  background-color: var(--pink);
+  transform: rotate(45deg);
 }

@@ -1,52 +1,50 @@
-@import 'variables';
-
 .root {
-	padding: .1875em .75em .3125em;
-	font-family: var(--sourceSans);
-	font-smoothing: antialiased;
-	border: 1px solid transparent;
-	border-radius: 5px;
-	user-select: none;
-	cursor: pointer;
-	transition-property: background-color, border-color, color;
-	transition-duration: 250ms;
+  padding: .1875em .75em .3125em;
+  font-family: var(--sourceSans);
+  font-smoothing: antialiased;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  user-select: none;
+  cursor: pointer;
+  transition-property: background-color, border-color, color;
+  transition-duration: 250ms;
 
-	@nest a& {
-		display: inline-block;
-	}
+  @nest a& {
+    display: inline-block;
+  }
 
-	&:hover {
-		text-decoration: none;
-	}
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 .primary {
-	composes: root;
-	color: var(--white);
-	background-color: var(--green);
+  composes: root;
+  color: var(--white);
+  background-color: var(--green);
 
-	@nest a& {
-		color: var(--white);
-	}
+  @nest a& {
+    color: var(--white);
+  }
 
-	&:hover {
-		background-color: var(--darkGreen);
-	}
+  &:hover {
+    background-color: var(--darkGreen);
+  }
 }
 
 .secondary {
-	composes: root;
-	color: var(--blue);
-	background-color: var(--white);
-	border: 1px solid currentColor;
+  composes: root;
+  color: var(--blue);
+  background-color: var(--white);
+  border: 1px solid currentColor;
 
-	@nest a& {
-		color: var(--blue);
-	}
+  @nest a& {
+    color: var(--blue);
+  }
 
-	&:hover {
-		background-color: var(--lightBlue);
-		color: var(--darkBlue);
-		border-color: currentColor;
-	}
+  &:hover {
+    background-color: var(--lightBlue);
+    color: var(--darkBlue);
+    border-color: currentColor;
+  }
 }

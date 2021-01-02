@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "award",
-	"slug": "artadia-new-york",
-	"organization": {
-		"name": "Artadia",
-		"nickname": "Artadia",
-		"url": "https://artadia.org"
-	},
-	"name": "New York",
-	"url": "https://artadia.org/city/new-york/",
-	"applicationUrl": "https://artadia.org/awards/howtoapply/",
-	"yearsActive": [
-		2013, 2014, 2015, 2016, 2017, 2018
-	],
-	"date": {
-		"callToSubmit": "March 1 2018",
-		"deadline": "April 1 2018 23:59 -0400"
-	},
-	"description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "ineligible",
-		"location": "New York, NY, USA",
-		"other": "Residents of Brooklyn, Bronx, Manhattan, Staten Island, and Queens boroughs"
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 2,
-			"amount": 10000,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "award",
+  "slug": "artadia-new-york",
+  "organization": {
+    "name": "Artadia",
+    "nickname": "Artadia",
+    "url": "https://artadia.org"
+  },
+  "name": "New York",
+  "url": "https://artadia.org/city/new-york/",
+  "applicationUrl": "https://artadia.org/awards/howtoapply/",
+  "yearsActive": [
+    2013, 2014, 2015, 2016, 2017, 2018
+  ],
+  "date": {
+    "callToSubmit": "March 1 2018",
+    "deadline": "April 1 2018 23:59 -0400"
+  },
+  "description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "ineligible",
+    "location": "New York, NY, USA",
+    "other": "Residents of Brooklyn, Bronx, Manhattan, Staten Island, and Queens boroughs"
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 2,
+      "amount": 10000,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

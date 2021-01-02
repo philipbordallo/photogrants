@@ -1,9 +1,7 @@
-@import 'variables';
-
 .orgName {
-	font-weight: bold;
+  font-weight: bold;
 
-	&::after {
-		content: '\00a0'
-	}
+  &::after {
+    content: '\00a0'
+  }
 }

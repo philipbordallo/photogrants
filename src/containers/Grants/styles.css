@@ -1,43 +1,41 @@
-@import 'variables';
-
 .table {
-	& col:nth-of-type(1),
-	& th:nth-of-type(1),
-	& td:nth-of-type(1),
-	& td:nth-of-type(1) > div {
-		text-align: left;
-		justify-content: left;
-	}
+  & col:nth-of-type(1),
+  & th:nth-of-type(1),
+  & td:nth-of-type(1),
+  & td:nth-of-type(1) > div {
+    text-align: left;
+    justify-content: left;
+  }
 
-	& col:nth-of-type(2),
-	& th:nth-of-type(2),
-	& td:nth-of-type(2),
-	& td:nth-of-type(2) > div {
-		text-align: left;
-		justify-content: left;
+  & col:nth-of-type(2),
+  & th:nth-of-type(2),
+  & td:nth-of-type(2),
+  & td:nth-of-type(2) > div {
+    text-align: left;
+    justify-content: left;
 
-		@media (--smallViewport) {
-			display: none;
-		}
-	}
+    @media (--smallViewport) {
+      display: none;
+    }
+  }
 
-	& col:nth-of-type(3),
-	& th:nth-of-type(3),
-	& td:nth-of-type(3),
-	& td:nth-of-type(3) > div {
-		text-align: left;
-		justify-content: left;
+  & col:nth-of-type(3),
+  & th:nth-of-type(3),
+  & td:nth-of-type(3),
+  & td:nth-of-type(3) > div {
+    text-align: left;
+    justify-content: left;
 
-		@media (--smallViewport) {
-			display: none;
-		}
-	}
+    @media (--smallViewport) {
+      display: none;
+    }
+  }
 
-	& col:nth-of-type(4),
-	& th:nth-of-type(4),
-	& td:nth-of-type(4),
-	& td:nth-of-type(4) > div {
-		text-align: center;
-		justify-content: center;
-	}
+  & col:nth-of-type(4),
+  & th:nth-of-type(4),
+  & td:nth-of-type(4),
+  & td:nth-of-type(4) > div {
+    text-align: center;
+    justify-content: center;
+  }
 }

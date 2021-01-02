@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "award",
-	"slug": "artadia-san-francisco",
-	"organization": {
-		"name": "Artadia",
-		"nickname": "Artadia",
-		"url": "https://artadia.org"
-	},
-	"name": "San Francisco",
-	"url": "https://artadia.org/city/san-francisco/",
-	"applicationUrl": "https://artadia.org/awards/howtoapply/",
-	"yearsActive": [
-		1999, 2000, 2001, 2002, 2005, 2007, 2009, 2013, 2016, 2017
-	],
-	"date": {
-		"callToSubmit": "July 1 2017",
-		"deadline": "August 1 2017"
-	},
-	"description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "ineligible",
-		"location": "San Francisco, CA, USA",
-		"other": "Residents of Alameda, Contra Costa, Marin, San Francisco, and San Mateo counties"
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 2,
-			"amount": 10000,
-			"amountType": "exact",
-			"currency": "USD",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "award",
+  "slug": "artadia-san-francisco",
+  "organization": {
+    "name": "Artadia",
+    "nickname": "Artadia",
+    "url": "https://artadia.org"
+  },
+  "name": "San Francisco",
+  "url": "https://artadia.org/city/san-francisco/",
+  "applicationUrl": "https://artadia.org/awards/howtoapply/",
+  "yearsActive": [
+    1999, 2000, 2001, 2002, 2005, 2007, 2009, 2013, 2016, 2017
+  ],
+  "date": {
+    "callToSubmit": "July 1 2017",
+    "deadline": "August 1 2017"
+  },
+  "description": "Artadia Awards are open to all visual artists living and working throughout one of Artadia’s Award Cities. Individual artists and collaboratives working in all visual media and at any stage in their career are strongly encouraged to apply.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "ineligible",
+    "location": "San Francisco, CA, USA",
+    "other": "Residents of Alameda, Contra Costa, Marin, San Francisco, and San Mateo counties"
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 2,
+      "amount": 10000,
+      "amountType": "exact",
+      "currency": "USD",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

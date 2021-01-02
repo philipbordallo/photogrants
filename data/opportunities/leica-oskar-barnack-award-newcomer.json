@@ -1,46 +1,46 @@
 {
-	"active": true,
-	"type": "award",
-	"slug": "leica-oskar-barnack-award-newcomer",
-	"organization": {
-		"name": "Leica",
-		"nickname": "Leica",
-		"url": "https://leica-camera.com/"
-	},
-	"name": "Oskar Barnack Award Newcomer",
-	"url": "http://www.leica-oskar-barnack-award.com/",
-	"applicationUrl": "",
-	"yearsActive": [
-		2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
-	],
-	"date": {
-		"callToSubmit": "March 1 2018",
-		"deadline": "April 5 2018"
-	},
-	"description": "An international jury awards the Leica Oskar Barnack Award to professional photographers whose unerring powers of observation capture and express the relationship between man and the environment in the most graphic form in a sequence of a minimum of 10 up to a maximum of 12 images.",
-	"eligibility": {
-		"age": {
-			"from": null,
-			"to": null
-		},
-		"gender": "all",
-		"students": "accepted",
-		"location": "",
-		"other": ""
-	},
-	"fee": {
-		"amount": 0,
-		"currency": "USD"
-	},
-	"awards": [
-		{
-			"given": 1,
-			"amount": 20000,
-			"amountType": "upto",
-			"currency": "EUR",
-			"mentorship": false,
-			"show": false,
-			"residency": false
-		}
-	]
+  "active": true,
+  "type": "award",
+  "slug": "leica-oskar-barnack-award-newcomer",
+  "organization": {
+    "name": "Leica",
+    "nickname": "Leica",
+    "url": "https://leica-camera.com/"
+  },
+  "name": "Oskar Barnack Award Newcomer",
+  "url": "http://www.leica-oskar-barnack-award.com/",
+  "applicationUrl": "",
+  "yearsActive": [
+    2009, 2010, 2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018
+  ],
+  "date": {
+    "callToSubmit": "March 1 2018",
+    "deadline": "April 5 2018"
+  },
+  "description": "An international jury awards the Leica Oskar Barnack Award to professional photographers whose unerring powers of observation capture and express the relationship between man and the environment in the most graphic form in a sequence of a minimum of 10 up to a maximum of 12 images.",
+  "eligibility": {
+    "age": {
+      "from": null,
+      "to": null
+    },
+    "gender": "all",
+    "students": "accepted",
+    "location": "",
+    "other": ""
+  },
+  "fee": {
+    "amount": 0,
+    "currency": "USD"
+  },
+  "awards": [
+    {
+      "given": 1,
+      "amount": 20000,
+      "amountType": "upto",
+      "currency": "EUR",
+      "mentorship": false,
+      "show": false,
+      "residency": false
+    }
+  ]
 }

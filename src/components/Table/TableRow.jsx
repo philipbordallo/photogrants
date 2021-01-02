@@ -5,68 +5,70 @@ import noop from 'utilities/noop';
 
 import { CONFIG_PROPTYPES } from './propTypes';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class TableRow extends PureComponent {
-	static propTypes = {
-		data: T.arrayOf(
-			T.oneOfType([
-				T.string,
-				T.object
-			])
-		).isRequired,
-		slug: T.string.isRequired,
-		config: CONFIG_PROPTYPES.isRequired,
-		onRowClick: T.func,
-		expanded: T.bool
-	};
+  static propTypes = {
+    data: T.arrayOf(
+      T.oneOfType([
+        T.string,
+        T.object,
+      ]),
+    ).isRequired,
+    slug: T.string.isRequired,
+    config: CONFIG_PROPTYPES.isRequired,
+    onRowClick: T.func,
+    expanded: T.bool,
+  };
 
-	static defaultProps ={
-		expanded: false,
-		onRowClick: noop
-	};
+  static defaultProps ={
+    expanded: false,
+    onRowClick: noop,
+  };
 
-	constructor() {
-		super();
+  constructor() {
+    super();
 
-		this.handleRowClick = this.handleRowClick.bind(this);
-		this.renderCell = this.renderCell.bind(this);
-	}
+    this.handleRowClick = this.handleRowClick.bind(this);
+    this.renderCell = this.renderCell.bind(this);
+  }
 
-	handleRowClick() {
-		this.props.onRowClick(this.props.slug);
-	}
+  handleRowClick() {
+    const { onRowClick, slug } = this.props;
 
-	renderCell(data, index) {
-		const { config } = this.props;
-		let content = (typeof data !== 'object') ? data : null;
+    onRowClick(slug);
+  }
 
-		if (config[index].renderer) {
-			content = React.createElement(config[index].renderer, data);
-		}
+  renderCell(data, index) {
+    const { config } = this.props;
+    let content = typeof data !== 'object' ? data : null;
 
-		return (
-			<td className={ Classes.rowCell } key={ index }>
-				{ content }
-			</td>
-		);
-	}
+    if (config[index].renderer) {
+      content = React.createElement(config[index].renderer, data);
+    }
 
-	render() {
-		const { expanded, data } = this.props;
+    return (
+      <td className={ Classes.rowCell } key={ index }>
+        { content }
+      </td>
+    );
+  }
 
-		const rowClassName = expanded ? Classes.expandedRow : Classes.row;
+  render() {
+    const { expanded, data } = this.props;
 
-		return (
-			<tr
-				className={ rowClassName }
-				onClick={ this.handleRowClick }
-			>
-				{ data.map(this.renderCell) }
-			</tr>
-		);
-	}
+    const rowClassName = expanded ? Classes.expandedRow : Classes.row;
+
+    return (
+      <tr
+        className={ rowClassName }
+        onClick={ this.handleRowClick }
+      >
+        { data.map(this.renderCell) }
+      </tr>
+    );
+  }
 }
 
 export default TableRow;

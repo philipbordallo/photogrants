@@ -1,37 +1,37 @@
 :root {
-	/* COLORS  */
-	--white: #FFFFFF;
-	--offWhite: #F5F5F5;
-	--lightGray: #BFBFBF;
-	--darkGray: #8F8F8F;
-	--black: #222222;
+  /* COLORS  */
+  --white: #FFFFFF;
+  --offWhite: #F5F5F5;
+  --lightGray: #BFBFBF;
+  --darkGray: #8F8F8F;
+  --black: #222222;
 
-	--green: #03CB69;
-	--darkGreen: #1FBE70;
+  --green: #03CB69;
+  --darkGreen: #1FBE70;
 
-	--yellow: #FDD835;
+  --yellow: #FDD835;
 
-	--lightBlue: #E3F2FD;
-	--blue: #2196F3;
-	--darkBlue: #1976D2;
+  --lightBlue: #E3F2FD;
+  --blue: #2196F3;
+  --darkBlue: #1976D2;
 
-	--purple: #9C27B0;
+  --purple: #9C27B0;
 
-	--pink: #EC407A;
+  --pink: #EC407A;
 
-	/* FONTS */
-	--fontColorDark: var(--black);
-	--defaultFontSize: 16px;
-	--rubik: 'Rubik', system-ui, sans-serif;
-	--sourceSans: 'Source Sans Pro', system-ui, sans-serif;
+  /* FONTS */
+  --fontColorDark: var(--black);
+  --defaultFontSize: 16px;
+  --rubik: 'Rubik', system-ui, sans-serif;
+  --sourceSans: 'Source Sans Pro', system-ui, sans-serif;
 
-	/* SIZES */
-	--smallWidth: 550px;
-	--mediumWidth: 768px;
-	--largeWidth: 960px;
-	--xLargeWidth: 1280px;
+  /* SIZES */
+  --smallWidth: 550px;
+  --mediumWidth: 768px;
+  --largeWidth: 960px;
+  --xLargeWidth: 1280px;
 
-	--containerWidth: var(--xLargeWidth);
+  --containerWidth: var(--xLargeWidth);
 }
 
 @custom-media --smallViewport (max-width: 550px);

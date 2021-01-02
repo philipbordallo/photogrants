@@ -10,61 +10,70 @@ import { TABLE_CONFIG } from './meta';
 
 import GrantsDetailsRow from './GrantsDetailsRow';
 
-import Classes from './styles';
+import Classes from './styles.css';
 
 
 class Grants extends Component {
-	static propTypes = {
-		collection: COLLECTION_PROPTYPES.isRequired,
-		loadData: T.func.isRequired,
-		fireAnalyticsEvent: T.func.isRequired,
-		sortTable: T.func.isRequired,
-		toggleRow: T.func.isRequired,
-		currentSort: T.string.isRequired,
-		sortDirection: SORT_DIRECTION_PROPTYPES.isRequired
-	};
+  static propTypes = {
+    collection: COLLECTION_PROPTYPES.isRequired,
+    loadData: T.func.isRequired,
+    fireAnalyticsEvent: T.func.isRequired,
+    sortTable: T.func.isRequired,
+    toggleRow: T.func.isRequired,
+    currentSort: T.string.isRequired,
+    sortDirection: SORT_DIRECTION_PROPTYPES.isRequired,
+  };
 
-	constructor(props) {
-		super(props);
+  constructor(props) {
+    super(props);
 
-		this.handleTableSort = this.handleTableSort.bind(this);
-		this.handleRowClick = this.handleRowClick.bind(this);
-	}
+    this.handleTableSort = this.handleTableSort.bind(this);
+    this.handleRowClick = this.handleRowClick.bind(this);
+  }
 
-	componentWillMount() {
-		this.props.loadData();
-	}
+  componentWillMount() {
+    const { loadData } = this.props;
 
-	handleTableSort(name, direction) {
-		this.props.fireAnalyticsEvent({
-			eventCategory: 'Table Sort',
-			eventAction: 'sort',
-			eventLabel: name
-		});
-		this.props.sortTable(name, direction);
-	}
+    loadData();
+  }
 
-	handleRowClick(slug) {
-		this.props.toggleRow(slug);
-	}
+  handleTableSort(name, direction) {
+    const { fireAnalyticsEvent, sortTable } = this.props;
 
-	render() {
-		const { currentSort, sortDirection, collection, fireAnalyticsEvent } = this.props;
+    fireAnalyticsEvent({
+      eventCategory: 'Table Sort',
+      eventAction: 'sort',
+      eventLabel: name,
+    });
 
-		return (
-			<Table
-				className={ Classes.table }
-				collection={ collection }
-				config={ TABLE_CONFIG }
-				currentSort={ currentSort }
-				detailsRenderer={ GrantsDetailsRow }
-				fireAnalyticsEvent={ fireAnalyticsEvent }
-				onRowClick={ this.handleRowClick }
-				onTableSort={ this.handleTableSort }
-				sortDirection={ sortDirection }
-			/>
-		);
-	}
+    sortTable(name, direction);
+  }
+
+  handleRowClick(slug) {
+    const { toggleRow } = this.props;
+
+    toggleRow(slug);
+  }
+
+  render() {
+    const {
+      currentSort, sortDirection, collection, fireAnalyticsEvent,
+    } = this.props;
+
+    return (
+      <Table
+        className={ Classes.table }
+        collection={ collection }
+        config={ TABLE_CONFIG }
+        currentSort={ currentSort }
+        detailsRenderer={ GrantsDetailsRow }
+        fireAnalyticsEvent={ fireAnalyticsEvent }
+        onRowClick={ this.handleRowClick }
+        onTableSort={ this.handleTableSort }
+        sortDirection={ sortDirection }
+      />
+    );
+  }
 }
 
 export default Grants;
