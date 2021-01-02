@@ -14,9 +14,6 @@ const {
 const isProduction = process.env.NODE_ENV === 'production';
 const isDevelopment = process.env.NODE_ENV === 'development';
 
-
-console.log(process.env.NODE_ENV);
-
 const RULES = {
   jsx: {
     test: /\.(js|jsx)$/,

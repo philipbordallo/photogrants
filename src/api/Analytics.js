@@ -3,8 +3,6 @@ const TRACKING_ID = process.env.GA_ID;
 class Analytics {
   constructor() {
     this.errors = (window.__e && window.__e.q) || []; // eslint-disable-line no-underscore-dangle
-
-    this.handleErrors = this.handleErrors.bind(this);
   }
 
   static sendEvent(data) {
@@ -43,17 +41,17 @@ class Analytics {
 
   collectErrors() {
     this.errors.forEach((event) => {
-      this.handleErrors(event);
+      Analytics.handleErrors(event);
     });
 
-    window.addEventListener('error', this.handleErrors);
+    window.addEventListener('error', Analytics.handleErrors);
   }
 
   init() {
     // eslint-disable-next-line no-return-assign, no-undef
     window.ga = window.ga || ((...args) => (ga.q = ga.q || []).push(args));
 
-    this.createTracker();
+    Analytics.createTracker();
     this.collectErrors();
 
     Analytics.pageView();
