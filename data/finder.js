@@ -12,11 +12,11 @@ const finder = {
         const isNotDirectory = stats && !stats.isDirectory();
         if (error) {
           fs.mkdirSync(directory);
-          console.log(`  Creating => ${directory}`)
+          console.log(`  Creating => ${directory}`);
           resolve(data);
         }
 
-        if (isNotDirectory) reject(`  ${directory} is not a directory`);
+        if (isNotDirectory) reject(new Error(`  ${directory} is not a directory`));
         else resolve(data);
       });
     });
@@ -59,7 +59,7 @@ const finder = {
         resolve(`  Finished => ${file}`);
       });
     });
-  }
+  },
 };
 
 export default finder;

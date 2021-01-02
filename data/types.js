@@ -1,64 +1,64 @@
 export default {
   boolean: {
-    type: "boolean",
+    type: 'boolean',
   },
   string: {
-    type: "string"
+    type: 'string',
   },
   array: {
-    type: "array"
+    type: 'array',
   },
   object: {
-    type: "object"
+    type: 'object',
   },
   integer: {
-    type: "integer"
+    type: 'integer',
   },
   null: {
-    type: "null"
+    type: 'null',
   },
   number: {
-    type: "number"
+    type: 'number',
   },
   studentRange: {
-    type: "string",
+    type: 'string',
     enum: [
-      "ineligible",
-      "only",
-      "accepted"
-    ]
+      'ineligible',
+      'only',
+      'accepted',
+    ],
   },
   genderRange: {
-    type: "string",
+    type: 'string',
     enum: [
-      "men",
-      "women",
-      "nonbinary",
-      "all"
-    ]
+      'men',
+      'women',
+      'nonbinary',
+      'all',
+    ],
   },
   amountRange: {
-    type: "string",
+    type: 'string',
     enum: [
-      "about",
-      "exact",
-      "upto"
-    ]
+      'about',
+      'exact',
+      'upto',
+    ],
   },
   oppTypes: {
-    type: "string",
+    type: 'string',
     enum: [
       'grant',
       'award',
-      'residency'
-    ]
+      'residency',
+    ],
   },
   currency: {
-    type: "string",
+    type: 'string',
     enum: [
-      "EUR",
-      "GBP",
-      "USD"
-    ]
-  }
+      'EUR',
+      'GBP',
+      'USD',
+    ],
+  },
 };

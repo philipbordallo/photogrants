@@ -1,88 +1,91 @@
+/* eslint-disable quote-props */
 import T from './types';
 
 export default {
+  $id: 'https://www.photogrants.org/data/schema.json',
+  $schema: 'https://json-schema.org/draft-07/schema',
   ...T.object,
   properties: {
-    "active": T.boolean,
-    "type": T.oppTypes,
-    "slug": T.string,
-    "organization": {
+    'active': T.boolean,
+    'type': T.oppTypes,
+    'slug': T.string,
+    'organization': {
       ...T.object,
       properties: {
-        "name": T.string,
-        "nickname": T.string,
-        "url": T.string
+        'name': T.string,
+        'nickname': T.string,
+        'url': T.string,
       },
-      required: ["name", "nickname", "url"]
+      required: ['name', 'nickname', 'url'],
     },
-    "name": T.string,
-    "url": T.string,
-    "applicationUrl": T.string,
-    "yearsActive": {
+    'name': T.string,
+    'url': T.string,
+    'applicationUrl': T.string,
+    'yearsActive': {
       ...T.array,
-      items: T.integer
+      items: T.integer,
     },
-    "date": {
+    'date': {
       ...T.object,
       properties: {
-        "callToSubmit": T.string,
-        "deadline": T.string
+        'callToSubmit': T.string,
+        'deadline': T.string,
       },
-      required: ["callToSubmit", "deadline"]
+      required: ['callToSubmit', 'deadline'],
     },
-    "description": T.string,
-    "eligibility": {
+    'description': T.string,
+    'eligibility': {
       ...T.object,
       properties: {
-        "age": {
+        'age': {
           ...T.object,
           properties: {
-            "from": {
+            'from': {
               anyOf: [
                 T.integer,
-                T.null
-              ]
+                T.null,
+              ],
             },
-            "to": {
+            'to': {
               anyOf: [
                 T.integer,
-                T.null
-              ]
-            }
+                T.null,
+              ],
+            },
           },
-          required: ["from", "to"]
+          required: ['from', 'to'],
         },
-        "gender": T.genderRange,
-        "students": T.studentRange,
-        "location": T.string,
-        "other": T.string
+        'gender': T.genderRange,
+        'students': T.studentRange,
+        'location': T.string,
+        'other': T.string,
       },
-      required: ["age", "gender", "students", "location", "other"]
+      required: ['age', 'gender', 'students', 'location', 'other'],
     },
-    "fee": {
+    'fee': {
       ...T.object,
       properties: {
-        "amount": T.number,
-        "currency": T.currency
+        'amount': T.number,
+        'currency': T.currency,
       },
-      required: ["amount", "currency"]
+      required: ['amount', 'currency'],
     },
-    "awards": {
+    'awards': {
       ...T.array,
       items: {
         ...T.object,
         properties: {
-          "given": T.number,
-          "amount": T.number,
-          "amountType":  T.amountRange,
-          "currency": T.currency,
-          "mentorship": T.boolean,
-          "show": T.boolean,
-          "residency": T.boolean
+          'given': T.number,
+          'amount': T.number,
+          'amountType': T.amountRange,
+          'currency': T.currency,
+          'mentorship': T.boolean,
+          'show': T.boolean,
+          'residency': T.boolean,
         },
-        required: ["given", "amount", "amountType", "currency", "mentorship", "show", "residency"]
-      }
-    }
+        required: ['given', 'amount', 'amountType', 'currency', 'mentorship', 'show', 'residency'],
+      },
+    },
   },
-  required: [ "active", "type", "slug", "organization", "name", "url", "applicationUrl", "yearsActive", "date", "description", "eligibility", "fee", "awards"]
+  required: ['active', 'type', 'slug', 'organization', 'name', 'url', 'applicationUrl', 'yearsActive', 'date', 'description', 'eligibility', 'fee', 'awards'],
 };

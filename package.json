@@ -12,18 +12,18 @@
   },
   "scripts": {
     "start": "npm run dev",
-    "build": "npm run cleanup && npm run data-prod && npm run prod",
+    "build": "npm run cleanup && npm run data:prod && npm run prod",
     "cleanup": "rimraf dist/",
-    "data": "npm run data-test && npm run data-build",
-    "data-build": "NODE_ENV=data babel-node data/build",
-    "data-test": "npm run test spec/data/data_spec.js",
-    "data-test-min": "npm run test -- --tap spec/data/data_spec.js | tap-min",
-    "data-prod": "npm run data-test-min && npm run data-build",
+    "data": "npm run data:test && npm run data:build",
+    "data:build": "NODE_ENV=data babel-node data/build",
+    "data:test": "npm run test spec/data/data_spec.js",
+    "data:test:min": "npm run test -- --tap spec/data/data_spec.js | tap-min",
+    "data:prod": "npm run data:test:min && npm run data:build",
     "dev": "NODE_ENV=development webpack serve --config ./configs/webpack.config.dev.js --progress",
     "prod": "NODE_ENV=production webpack --config ./configs/webpack.config.prod.js",
     "server": "http-server dist/",
     "test": "NODE_ENV=test ava",
-    "test-watch": "npm test -- --watch spec/"
+    "test:watch": "npm test -- --watch spec/"
   },
   "ava": {
     "babel": true,
@@ -57,6 +57,7 @@
   "devDependencies": {
     "@ava/babel": "^1.0.1",
     "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "@babel/register": "^7.12.10",

@@ -1,9 +1,11 @@
 const path = require('path');
 
+
 const ROOT_PATH = path.resolve(__dirname, '..');
 const CONFIG_PATH = path.resolve(ROOT_PATH, 'configs');
 const APP_PATH = path.resolve(ROOT_PATH, 'src');
 const DIST_PATH = path.resolve(ROOT_PATH, 'dist');
+const DATA_PATH = path.resolve(ROOT_PATH, 'data');
 
 const LOADER = {
   babel: {
@@ -56,6 +58,7 @@ module.exports = {
   CONFIG_PATH,
   APP_PATH,
   DIST_PATH,
+  DATA_PATH,
   LOADER,
   RESOLVER,
 };

@@ -1,35 +1,36 @@
 import sortKeys from 'sort-keys';
 
-async function createMarkdownOrgList(title, data) {
+function createMarkdownOrgList(title, data) {
   const markup = {};
 
-  for (let item of data) {
+  data.forEach((item) => {
     const { name, url, organization } = item;
 
     if (markup[organization.name]) {
       markup[organization.name].push({
         name,
-        url
-      })
+        url,
+      });
     }
     else {
       markup[organization.name] = [{
         name,
-        url
-      }]
+        url,
+      }];
     }
-  }
+  });
 
-  const sortedMarkup = await sortKeys(markup);
+  const sortedMarkup = sortKeys(markup);
+
   let markupText = `# ${title}\n\n`;
 
-  for (let item in sortedMarkup) {
+  Object.keys(sortedMarkup).forEach((item) => {
     markupText += `\n#### ${item}\n\n`;
 
-    for (let opportunity of sortedMarkup[item]) {
+    sortedMarkup[item].forEach((opportunity) => {
       markupText += `- [${opportunity.name}](${opportunity.url})\n`;
-    }
-  }
+    });
+  });
 
   return markupText;
 }
