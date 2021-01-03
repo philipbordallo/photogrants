@@ -10,18 +10,25 @@ import Analytics from 'api/Analytics';
 import ProvidedApp from './ProvidedApp';
 
 
-const handleDOMReady = () => {
+function renderApp() {
   const applicationElement = document.getElementById('application');
-
-  document.removeEventListener('DOMContentLoaded', handleDOMReady);
 
   if (applicationElement) {
     const component = React.createElement(ProvidedApp);
     ReactDOM.render(component, applicationElement);
   }
-};
+}
 
-const analytics = new Analytics();
-analytics.init();
 
-document.addEventListener('DOMContentLoaded', handleDOMReady);
+function handleDOMReady() {
+  renderApp();
+
+  if (module.hot) module.hot.accept('./ProvidedApp', renderApp);
+}
+
+if (process.env.NODE_ENV === 'production') {
+  const analytics = new Analytics();
+  analytics.init();
+}
+
+document.addEventListener('DOMContentLoaded', handleDOMReady, { once: true });

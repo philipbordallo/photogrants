@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader';
 
 import 'polyfills';
-import 'react-hot-loader/patch';
 
 import 'assets/base/styles';
 import 'assets/variables';

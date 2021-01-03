@@ -30,6 +30,6 @@ module.exports = () => ({
         },
       },
     ],
-    ENV === 'development' && 'react-hot-loader/babel',
+    ENV === 'development' && 'react-refresh/babel',
   ].filter(Boolean),
 });
